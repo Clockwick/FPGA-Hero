@@ -1,1 +1,1 @@
-# FPGA-Hero
+# 🎸 FPGA-Hero 🎸
