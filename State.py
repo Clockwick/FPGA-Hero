@@ -1,6 +1,5 @@
 class State:
     def __init__(self):
-        
         self.quit = False
     def render(self):
         pass

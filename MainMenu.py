@@ -11,22 +11,25 @@ class MainMenuState(State):
         resolution = game_data["resolution"]
         full_screen = game_data["fullscreen"]
 
+        W = resolution[0]
+        H = resolution[1]
+
         self.manager = manager
         if full_screen:
-            self.mainmenu_bg = pygame.Surface(pygame.FULLSCREEN)
+            self.mainmenu_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
         else:
             self.mainmenu_bg = pygame.Surface(resolution)
 
         self.main_font = pygame.font.SysFont("roboto", 30)
 
         #init Gui
-        _1p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 275), (100, 50)),
+        self._1p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((W//2 - 50, H//3), (100, 50)),
                                              text='1P',
                                              manager=self.manager)
-        _2p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 375), (100, 50)),
+        self._2p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((W//2 - 50, H//3 + 100), (100, 50)),
                                              text='2P',
                                              manager=self.manager)
-        howtoplay_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((350, 475), (100, 50)),
+        self.howtoplay_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((W//2 - 50, H//3 + 200), (100, 50)),
                                              text='How to play',
                                              manager=self.manager)
     def update(self,time_delta):
@@ -35,8 +38,10 @@ class MainMenuState(State):
         window.blit(self.mainmenu_bg, (0, 0))
         self.manager.draw_ui(window)
 
-
-                
-        
-
+    def get1PBtn(self):
+        return self._1p_btn
+    def get2PBtn(self):
+        return self._2p_btn
+    def getHTPBtn(self):
+        return self.howtoplay_btn
     

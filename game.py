@@ -1,8 +1,9 @@
 # Own python file
-# from MainMenu import MainMenu
 
-# Pygame
 from MainMenu import MainMenuState
+from GameState import GameState
+# Pygame
+
 import pygame
 import pygame_gui
 
@@ -26,6 +27,10 @@ class Stack:
 
 class Game:
     def __init__(self,game_data):
+        
+        self.game_data = game_data
+        self.prev_time = 0
+        self.canPressed = True
         # unpack game data
         resolution = game_data["resolution"]
         full_screen = game_data["fullscreen"]
@@ -44,7 +49,8 @@ class Game:
         pygame.display.set_caption(game_title)
         #  init state
         self.states = Stack()
-        self.states.push(MainMenuState(self.manager, game_data))
+        self.main_menu = MainMenuState(self.manager, game_data)
+        self.states.push(self.main_menu)
         # Time and Clock
         self.clock = pygame.time.Clock()
         self.time_delta = self.clock.tick(60)/1000.0
@@ -65,12 +71,25 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.is_running = False
                 if event.type == pygame.USEREVENT:
-                    pass
-            
+                    if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
+                        if event.ui_element == self.main_menu.get1PBtn():
+                            _1P_state = GameState(self.game_data)
+                            self.states.push(_1P_state)
+                        if event.ui_element == self.main_menu.get2PBtn():
+                            print('2P')
+                        if event.ui_element == self.main_menu.getHTPBtn():
+                            print('How to play')
+                
                 self.manager.process_events(event)
-
+            
+            if pygame.time.get_ticks() - self.prev_time > 200:
+                self.canPressed = True
             if keys[pygame.K_q]:
                 self.is_running = False
+            if keys[pygame.K_p] and self.canPressed:
+                self.canPressed = False;
+                self.prev_time = pygame.time.get_ticks()
+                self.states.pop()
             if not states.is_empty():
                 states.top().update(self.time_delta)
                 if states.top().getQuit():
