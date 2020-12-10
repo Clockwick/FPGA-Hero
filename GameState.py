@@ -1,5 +1,6 @@
 # Own python
 from State import State
+from MelodyGen import MelodyGen
 # Pygame
 import pygame
 class GameState(State):
@@ -16,7 +17,6 @@ class GameState(State):
         self.main_font = pygame.font.SysFont("roboto", 30)
         self.initVar(game_data)
     def initVar(self, game_data):
-        
         self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT = 80,50
         self.BOTTOM_RECT_WIDTH,self.BOTTOM_RECT_HEIGHT = 160,50
         self.start_pos = (4 * self.W) / 16
@@ -46,9 +46,29 @@ class GameState(State):
         self.br4 = pygame.Rect((self.melody4_end_pos,self.bottom_ypos),(self.BOTTOM_RECT_WIDTH,self.BOTTOM_RECT_HEIGHT))
         self.br5 = pygame.Rect((self.melody5_end_pos,self.bottom_ypos),(self.BOTTOM_RECT_WIDTH,self.BOTTOM_RECT_HEIGHT))
 
+        pos_data = {
+            "start_pos_list" : [
+                self.start_pos,
+                self.start_pos + self.dist_t,
+                self.start_pos + (2 * self.dist_t),
+                self.start_pos + (3 * self.dist_t),
+                self.start_pos + (4 * self.dist_t)
+            ],
+            "end_pos_list": [
+                0,
+                self.dist_b,
+                (2 * self.dist_b),
+                (3 * self.dist_b),
+                (4 * self.dist_b)
+            ],
+            "bottom_y_pos": self.bottom_ypos
+
+        }
         self.RECT1_COLOR,self.RECT2_COLOR,self.RECT3_COLOR,self.RECT4_COLOR,self.RECT5_COLOR = '#FF8C74','#FFF274','#A0FF74','#74FFC8','#20679F'
+
+        self.melody_generator = MelodyGen(pos_data)
     def update(self,time_delta):
-        
+        self.melody_generator.update(time_delta)
     def render(self,window):
         window.blit(self.game_state_bg, (0, 0))
         pygame.draw.rect(window, self.RECT1_COLOR, self.tr1)

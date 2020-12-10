@@ -25,13 +25,10 @@ class Melody:
         pass
     def update(self,target,deltaTime):
         pass
-    def updateRandom(self,target,deltaTime):
-        pass
     def printFonts(self):
         all_font = pygame.font.get_fonts()
         print(all_font)
-    def render(self,target):
+    def render(self,window):
         pass
-    def renderLabel(self):
-        pass
+
 
