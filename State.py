@@ -1,6 +1,7 @@
 class State:
     def __init__(self):
-        self.stack = []
+        
+        self.quit = False
     def render(self):
         pass
     def update(self):
@@ -8,5 +9,8 @@ class State:
     def updateInput(self):
         pass
     def endState(self):
-        pass
+        self.quit = True
+    def getQuit(self):
+        return self.quit
+    
     
