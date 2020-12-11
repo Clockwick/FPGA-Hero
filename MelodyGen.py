@@ -21,36 +21,60 @@ class Queue:
         return self.size() == 0
     def size(self):
         return len(self.lst)
+    def render(self,window,pos):
+        for i in self.lst:
+            i.render(window,pos)
 class MelodyGen:
-    def __init__(self,pos_data):
+    def __init__(self,pos_data,game_data):
         self.melodyQ1 = Queue()
         self.melodyQ2 = Queue()
         self.melodyQ3 = Queue()
         self.melodyQ4 = Queue()
         self.melodyQ5 = Queue()
         self.melodyQ = [self.melodyQ1,self.melodyQ2,self.melodyQ3,self.melodyQ4,self.melodyQ5]
-        self.interval = [2000,3000,4000,5000]
         self.prev_time = 0
         self.canCreated = True
 
         self.start_pos_list = pos_data["start_pos_list"]
         self.end_pos_list = pos_data["end_pos_list"]
         self.bottom_y_pos = pos_data["bottom_y_pos"]
+
+        self.resolution = game_data["resolution"]
+        self.H,self.W = self.resolution[1],self.resolution[0]
+
+        full_screen = game_data["fullscreen"]
+        if full_screen:
+            self.melody_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
+        else:
+            self.melody_bg = pygame.Surface(self.resolution)
+
         
-    def update(self,deltaTime):
-        if pygame.time.get_ticks() - self.prev_time > self.interval[random.randint(0,3)]:
+    def update(self,time_delta):
+        if pygame.time.get_ticks() - self.prev_time > random.randrange(2000,5000,500):
             self.canCreated = True
-            self.prev_time=pygame.time.get_ticks()
+            self.prev_time = pygame.time.get_ticks()
         if self.canCreated:
             rand = random.randint(0,4)
+            # print(rand)
             self.melodyQ[rand].enQ(
                     Melody(self.start_pos_list[rand],0,
                     self.end_pos_list[rand],self.bottom_y_pos,
-                    random.randint(0,999999)
+                    random.randint(0,255)
                 )
             )
+            # print(f"MelodyQ1 : {self.melodyQ1}")
+            # print(f"MelodyQ2 : {self.melodyQ2}")
+            # print(f"MelodyQ3 : {self.melodyQ3}")
+            # print(f"MelodyQ4 : {self.melodyQ4}")
+            # print(f"MelodyQ5 : {self.melodyQ5}")
             self.canCreated = False
+        for meQ in self.melodyQ:
+            for melody in meQ.lst:
+                melody.update(time_delta)
 
     def render(self, window):
-        pass
+        window.blit(self.melody_bg,(0,0))
+        for meQ in self.melodyQ:
+            for melody in meQ.lst:
+                melody.render(self.melody_bg)
         

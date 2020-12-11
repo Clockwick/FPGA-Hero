@@ -37,14 +37,14 @@ class Game:
         game_title = game_data["game_title"]
         # init window, surface, manager
         if full_screen:
-            self.bg = pygame.Surface((0,0),pygame.FULLSCREEN)
+            # self.bg = pygame.Surface((0,0),pygame.FULLSCREEN)
             self.window = pygame.display.set_mode((0,0),pygame.FULLSCREEN) 
             self.manager = pygame_gui.UIManager(resolution) 
         else:
-            self.bg = pygame.Surface(resolution)
+            # self.bg = pygame.Surface(resolution)
             self.window = pygame.display.set_mode(resolution) 
             self.manager = pygame_gui.UIManager(resolution)
-        self.bg.fill(pygame.Color(COLOR["black"]))
+        # self.bg.fill(pygame.Color(COLOR["white"]))
         # set caption
         pygame.display.set_caption(game_title)
         #  init state
@@ -87,7 +87,7 @@ class Game:
             if keys[pygame.K_q]:
                 self.is_running = False
             if keys[pygame.K_p] and self.canPressed:
-                self.canPressed = False;
+                self.canPressed = False
                 self.prev_time = pygame.time.get_ticks()
                 self.states.pop()
             if not states.is_empty():

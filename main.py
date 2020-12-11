@@ -5,6 +5,9 @@ import pygame
 # Own class
 from Game import Game
 
+# python standard libs
+import random
+
 WIDTH,HEIGHT = 800,600
 TOP_RECT_WIDTH,TOP_RECT_HEIGHT = 80,50
 BOTTOM_RECT_WIDTH,BOTTOM_RECT_HEIGHT = 160,50
@@ -14,7 +17,8 @@ BOTTOM_RECT_WIDTH,BOTTOM_RECT_HEIGHT = 160,50
 game_data = {
     "game_title" : "FPGA-Hero",
     "resolution": (WIDTH,HEIGHT),
-    "fullscreen": False
+    "fullscreen": False,
+    "random_seed": random.randint(0,999999)
 }
 
 """

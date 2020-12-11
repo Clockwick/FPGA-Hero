@@ -9,6 +9,7 @@ class GameState(State):
         self.resolution = game_data["resolution"]
         self.H,self.W = self.resolution[1],self.resolution[0]
         full_screen = game_data["fullscreen"]
+        
         if full_screen:
             self.game_state_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
         else:
@@ -48,29 +49,30 @@ class GameState(State):
 
         pos_data = {
             "start_pos_list" : [
-                self.start_pos,
-                self.start_pos + self.dist_t,
-                self.start_pos + (2 * self.dist_t),
-                self.start_pos + (3 * self.dist_t),
-                self.start_pos + (4 * self.dist_t)
+                self.start_pos + (self.TOP_RECT_WIDTH / 2),
+                self.start_pos + self.dist_t +  (self.TOP_RECT_WIDTH / 2),
+                self.start_pos + (2 * self.dist_t)+  (self.TOP_RECT_WIDTH / 2),
+                self.start_pos + (3 * self.dist_t)+  (self.TOP_RECT_WIDTH / 2),
+                self.start_pos + (4 * self.dist_t)+  (self.TOP_RECT_WIDTH / 2)
             ],
             "end_pos_list": [
-                0,
-                self.dist_b,
-                (2 * self.dist_b),
-                (3 * self.dist_b),
-                (4 * self.dist_b)
+                (self.BOTTOM_RECT_WIDTH / 2),
+                self.dist_b+  (self.BOTTOM_RECT_WIDTH / 2),
+                (2 * self.dist_b)+  (self.BOTTOM_RECT_WIDTH / 2),
+                (3 * self.dist_b)+  (self.BOTTOM_RECT_WIDTH / 2),
+                (4 * self.dist_b)+  (self.BOTTOM_RECT_WIDTH / 2)
             ],
             "bottom_y_pos": self.bottom_ypos
 
         }
         self.RECT1_COLOR,self.RECT2_COLOR,self.RECT3_COLOR,self.RECT4_COLOR,self.RECT5_COLOR = '#FF8C74','#FFF274','#A0FF74','#74FFC8','#20679F'
 
-        self.melody_generator = MelodyGen(pos_data)
+        self.melody_generator = MelodyGen(pos_data, game_data)
     def update(self,time_delta):
         self.melody_generator.update(time_delta)
     def render(self,window):
         window.blit(self.game_state_bg, (0, 0))
+        self.melody_generator.render(self.game_state_bg)
         pygame.draw.rect(window, self.RECT1_COLOR, self.tr1)
         pygame.draw.rect(window, self.RECT2_COLOR, self.tr2) 
         pygame.draw.rect(window, self.RECT3_COLOR, self.tr3) 
@@ -81,3 +83,5 @@ class GameState(State):
         pygame.draw.rect(window, self.RECT3_COLOR, self.br3) 
         pygame.draw.rect(window, self.RECT4_COLOR, self.br4) 
         pygame.draw.rect(window, self.RECT5_COLOR, self.br5) 
+
+        
