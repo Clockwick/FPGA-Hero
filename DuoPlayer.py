@@ -23,8 +23,8 @@ class DuoPlayer(State):
         self.gamestate_section_x = 0
         self.gamestate_section_y = self.score_section_height
 
-        self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
-        self.game_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
+        self.player1_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
+        self.player2_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
 
         # ทำ FullScreen ด้วย
         if full_screen:
@@ -41,20 +41,12 @@ class DuoPlayer(State):
             "resolution": (self.gamestate_section_width,self.gamestate_section_height),
             "fullscreen": False,
             "single_player_obj": self,
-            "score_x": 0,
-            "score_y": 0,
-            "player_x": 0,
-            "player_y": self.score_section_height
         }
         gamestate_data_layout2 = {
             "game_title" : "FPGA-Hero",
             "resolution": (self.gamestate_section_width,self.gamestate_section_height),
             "fullscreen": False,
             "single_player_obj": self,
-            "score_x": self.score_section_width,
-            "score_y": 0,
-            "player_x": self.gamestate_section_width,
-            "player_y": self.score_section_height
         }
         self.player_1 = Singleplayer(gamestate_data_layout1)
         self.player_2 = Singleplayer(gamestate_data_layout2)
@@ -64,10 +56,13 @@ class DuoPlayer(State):
         
     def render(self,window):
         window.blit(self.game_state_bg, (0,0))
-        self.player_1.render(self.game_state_bg)
-        self.player_2.render(self.game_state_bg)
-        self.game_state_bg.blit(self.player_1.game_state_bg)
-        self.game_state_bg.blit(self.player_2.game_state_bg)
+        self.player_1.render(self.player1_section)
+        self.player_2.render(self.player2_section)
+        self.game_state_bg.blit(self.player1_section,(0,0))
+        self.game_state_bg.blit(self.player2_section,(self.gamestate_section_width,0))
+        
+        
+
         
         
 
