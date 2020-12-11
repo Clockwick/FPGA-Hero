@@ -34,7 +34,7 @@ class MelodyGen:
         self.melodyQ = [self.melodyQ1,self.melodyQ2,self.melodyQ3,self.melodyQ4,self.melodyQ5]
         self.prev_time = 0
         self.canCreated = True
-
+        self.game_data = game_data
         self.start_pos_list = pos_data["start_pos_list"]
         self.end_pos_list = pos_data["end_pos_list"]
         self.bottom_y_pos = pos_data["bottom_y_pos"]
@@ -59,7 +59,7 @@ class MelodyGen:
             self.melodyQ[rand].enQ(
                     Melody(self.start_pos_list[rand],0,
                     self.end_pos_list[rand],self.bottom_y_pos,
-                    random.randint(0,255)
+                    random.randint(0,255),self.game_data
                 )
             )
             # print(f"MelodyQ1 : {self.melodyQ1}")

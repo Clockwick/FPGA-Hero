@@ -17,8 +17,7 @@ BOTTOM_RECT_WIDTH,BOTTOM_RECT_HEIGHT = 160,50
 game_data = {
     "game_title" : "FPGA-Hero",
     "resolution": (WIDTH,HEIGHT),
-    "fullscreen": False,
-    "random_seed": random.randint(0,999999)
+    "fullscreen": False
 }
 
 """

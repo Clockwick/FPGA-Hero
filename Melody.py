@@ -1,9 +1,10 @@
+
 import random
 import math
 import pygame
+
 class Melody:
-    def __init__(self,start_x,start_y,end_x, end_y,rand_num):
-        
+    def __init__(self,start_x,start_y,end_x, end_y,rand_num,game_data):
         self.start_x = start_x
         self.start_y = start_y
         
@@ -13,8 +14,8 @@ class Melody:
         self.end_x = end_x
         self.end_y = end_y
         
+        self.game_data = game_data
         self.timer = 0
-
         self.main_font = pygame.font.SysFont("roboto", 30)
         self.rand_melody = self.main_font.render("4444", 1 , (255,255,255))
         self.melody_surface = pygame.Surface((self.rand_melody.get_width(),self.rand_melody.get_height()))
@@ -44,6 +45,9 @@ class Melody:
         self.current_x += ratio * delta_x
         self.current_y += ratio * delta_y
         
+        if self.current_y == self.end_y:
+            pass
+            
         
     def printFonts(self):
         all_font = pygame.font.get_fonts()

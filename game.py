@@ -1,7 +1,8 @@
 # Own python file
-
+from DuoPlayer import DuoPlayer
+from Singleplayer import Singleplayer
 from MainMenu import MainMenuState
-from GameState import GameState
+
 # Pygame
 
 import pygame
@@ -27,7 +28,6 @@ class Stack:
 
 class Game:
     def __init__(self,game_data):
-        
         self.game_data = game_data
         self.prev_time = 0
         self.canPressed = True
@@ -73,10 +73,12 @@ class Game:
                 if event.type == pygame.USEREVENT:
                     if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
                         if event.ui_element == self.main_menu.get1PBtn():
-                            _1P_state = GameState(self.game_data)
+
+                            _1P_state = Singleplayer(self.game_data)
                             self.states.push(_1P_state)
                         if event.ui_element == self.main_menu.get2PBtn():
-                            print('2P')
+                            _2P_state = DuoPlayer(self.game_data)
+                            self.states.push(_2P_state)
                         if event.ui_element == self.main_menu.getHTPBtn():
                             print('How to play')
                 

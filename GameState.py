@@ -9,7 +9,6 @@ class GameState(State):
         self.resolution = game_data["resolution"]
         self.H,self.W = self.resolution[1],self.resolution[0]
         full_screen = game_data["fullscreen"]
-        
         if full_screen:
             self.game_state_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
         else:
