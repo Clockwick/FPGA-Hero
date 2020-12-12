@@ -73,7 +73,6 @@ class Game:
                 if event.type == pygame.USEREVENT:
                     if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
                         if event.ui_element == self.main_menu.get1PBtn():
-
                             _1P_state = Singleplayer(self.game_data)
                             self.states.push(_1P_state)
                         if event.ui_element == self.main_menu.get2PBtn():

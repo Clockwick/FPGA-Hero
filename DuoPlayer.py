@@ -34,19 +34,21 @@ class DuoPlayer(State):
 
         self.score_value = 0
         self.main_font = pygame.font.SysFont("roboto", 40)
-        self.front_score_text = self.main_font.render(f"Score : ",1,(255,255,255))
+        self.front_score_text = self.main_font.render("Score : ",1,(255,255,255))
         self.score_text = self.main_font.render(str(self.score_value),1,(255,255,255))
         gamestate_data_layout1 = {
             "game_title" : "FPGA-Hero",
             "resolution": (self.gamestate_section_width,self.gamestate_section_height),
             "fullscreen": False,
             "single_player_obj": self,
+            "player_name": "Player 1"
         }
         gamestate_data_layout2 = {
             "game_title" : "FPGA-Hero",
             "resolution": (self.gamestate_section_width,self.gamestate_section_height),
             "fullscreen": False,
             "single_player_obj": self,
+            "player_name": "Player 2"
         }
         self.player_1 = Singleplayer(gamestate_data_layout1)
         self.player_2 = Singleplayer(gamestate_data_layout2)

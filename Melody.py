@@ -16,7 +16,9 @@ class Melody:
         
         self.game_data = game_data
         self.timer = 0
-        self.main_font = pygame.font.SysFont("roboto", 30)
+
+        self.W,self.H = game_data["resolution"]
+        self.main_font = pygame.font.SysFont("roboto", self.W//20)
         self.rand_melody = self.main_font.render("4444", 1 , (255,255,255))
         self.melody_surface = pygame.Surface((self.rand_melody.get_width(),self.rand_melody.get_height()))
         # Create different
@@ -56,5 +58,4 @@ class Melody:
         window.blit(self.melody_surface, (self.current_x,self.current_y))
         window.blit(self.rand_melody, (self.current_x,self.current_y))
         
-
 

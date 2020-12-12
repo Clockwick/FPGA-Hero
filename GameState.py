@@ -14,11 +14,10 @@ class GameState(State):
         else:
             self.game_state_bg = pygame.Surface(self.resolution)
 
-        self.main_font = pygame.font.SysFont("roboto", 30)
         self.initVar(game_data)
     def initVar(self, game_data):
-        self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT = 80,50
-        self.BOTTOM_RECT_WIDTH,self.BOTTOM_RECT_HEIGHT = 160,50
+        self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT = self.W * 0.1, self.H * 1/12
+        self.BOTTOM_RECT_WIDTH,self.BOTTOM_RECT_HEIGHT = self.W * 0.2, self.H * 1/12
         self.start_pos = (4 * self.W) / 16
         self.bottom_ypos = self.H - self.BOTTOM_RECT_HEIGHT
         self.dist_t = self.TOP_RECT_WIDTH
