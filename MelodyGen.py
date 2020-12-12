@@ -50,7 +50,7 @@ class MelodyGen:
 
         
     def update(self,time_delta):
-        if pygame.time.get_ticks() - self.prev_time > random.randrange(2000,5000,500):
+        if pygame.time.get_ticks() - self.prev_time > random.randrange(5000,7000,500):
             self.canCreated = True
             self.prev_time = pygame.time.get_ticks()
         if self.canCreated:
@@ -59,7 +59,7 @@ class MelodyGen:
             self.melodyQ[rand].enQ(
                     Melody(self.start_pos_list[rand],0,
                     self.end_pos_list[rand],self.bottom_y_pos,
-                    random.randint(0,255),self.game_data
+                    random.randint(0,127),self.game_data
                 )
             )
             # print(f"MelodyQ1 : {self.melodyQ1}")

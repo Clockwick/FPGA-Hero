@@ -23,8 +23,8 @@ class DuoPlayer(State):
         self.gamestate_section_x = 0
         self.gamestate_section_y = self.score_section_height
 
-        self.player1_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
-        self.player2_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
+        self.player1_section = pygame.Surface((self.gamestate_section_width,self.H))
+        self.player2_section = pygame.Surface((self.gamestate_section_width,self.H))
 
         # ทำ FullScreen ด้วย
         if full_screen:
@@ -38,14 +38,14 @@ class DuoPlayer(State):
         self.score_text = self.main_font.render(str(self.score_value),1,(255,255,255))
         gamestate_data_layout1 = {
             "game_title" : "FPGA-Hero",
-            "resolution": (self.gamestate_section_width,self.gamestate_section_height),
+            "resolution": (self.gamestate_section_width,self.H),
             "fullscreen": False,
             "single_player_obj": self,
             "player_name": "Player 1"
         }
         gamestate_data_layout2 = {
             "game_title" : "FPGA-Hero",
-            "resolution": (self.gamestate_section_width,self.gamestate_section_height),
+            "resolution": (self.gamestate_section_width,self.H),
             "fullscreen": False,
             "single_player_obj": self,
             "player_name": "Player 2"
