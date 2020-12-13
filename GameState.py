@@ -3,6 +3,10 @@ from State import State
 from MelodyGen import MelodyGen
 # Pygame
 import pygame
+
+# Python standard libs
+import random
+
 class GameState(State):
     def __init__(self,game_data):
         super().__init__()
@@ -64,8 +68,8 @@ class GameState(State):
 
         }
         self.RECT1_COLOR,self.RECT2_COLOR,self.RECT3_COLOR,self.RECT4_COLOR,self.RECT5_COLOR = '#FF8C74','#FFF274','#A0FF74','#74FFC8','#20679F'
-
         self.melody_generator = MelodyGen(pos_data, game_data)
+        
     def update(self,time_delta):
         self.melody_generator.update(time_delta)
     def render(self,window):

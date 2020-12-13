@@ -38,16 +38,19 @@ class MelodyGen:
         self.start_pos_list = pos_data["start_pos_list"]
         self.end_pos_list = pos_data["end_pos_list"]
         self.bottom_y_pos = pos_data["bottom_y_pos"]
-
         self.resolution = game_data["resolution"]
         self.H,self.W = self.resolution[1],self.resolution[0]
+        
+        self.player = game_data["single_player_obj"]
 
+        self.game_data = game_data
         full_screen = game_data["fullscreen"]
         if full_screen:
             self.melody_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
         else:
             self.melody_bg = pygame.Surface(self.resolution)
-
+        # print(game_data["random_seed"])
+        
         
     def update(self,time_delta):
         if pygame.time.get_ticks() - self.prev_time > random.randrange(5000,7000,500):
@@ -56,6 +59,7 @@ class MelodyGen:
         if self.canCreated:
             rand = random.randint(0,4)
             # print(rand)
+            # random.seed(random.randint(0,9999))
             self.melodyQ[rand].enQ(
                     Melody(self.start_pos_list[rand],0,
                     self.end_pos_list[rand],self.bottom_y_pos,
@@ -71,6 +75,11 @@ class MelodyGen:
         for meQ in self.melodyQ:
             for melody in meQ.lst:
                 melody.update(time_delta)
+                if melody.get_position()[1] >= self.bottom_y_pos:
+                    meQ.deQ()
+                    self.player.set_score(self.player.get_score() + 10)
+                    self.player.score_update()
+        
 
     def render(self, window):
         window.blit(self.melody_bg,(0,0))

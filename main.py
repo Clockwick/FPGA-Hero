@@ -18,12 +18,12 @@ game_data = {
     "game_title" : "FPGA-Hero",
     "resolution": (WIDTH,HEIGHT),
     "fullscreen": False,
-    "player_name": "Player"
 }
 
 """
     INITIALIZE GAME
 """
+
 pygame.init()
 if __name__ == "__main__":
     game = Game(game_data)

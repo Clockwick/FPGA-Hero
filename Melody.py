@@ -24,7 +24,7 @@ class Melody:
         self.game_data = game_data
         self.timer = 0
         # Melody Speed
-        self.vel = 0.5
+        self.vel = 2
 
     def __str__(self):
         return str(self.randnum)
@@ -43,8 +43,9 @@ class Melody:
         ratio = self.vel / goal_dist
         self.current_x += ratio * delta_x
         self.current_y += ratio * delta_y
-        
+        # print(f"{self.current_y} : {self.end_y}")
         if self.current_y == self.end_y:
+            # print("Score")
             pass
             
         
@@ -54,6 +55,8 @@ class Melody:
     def render(self,window):
         window.blit(self.melody_surface, (self.current_x,self.current_y))
         window.blit(self.rand_melody, (self.current_x+10,self.current_y))
+    def get_position(self):
+        return (self.current_x,self.current_y)
         
         
 
