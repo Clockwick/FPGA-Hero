@@ -24,7 +24,7 @@ class Melody:
         self.game_data = game_data
         self.timer = 0
         # Melody Speed
-        self.vel = 2
+        self.vel = 1
 
     def __str__(self):
         return str(self.randnum)

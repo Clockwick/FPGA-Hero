@@ -24,7 +24,7 @@ class DuoPlayer(State):
 
         # Special mode surface
         self.spec_section_width = self.W
-        self.spec_section_height = 2 * self.H // 8
+        self.spec_section_height = 2 * self.H // 10
         self.spec_section_x = 0
         self.spec_section_y = 0
         self.spec_section_y = self.timer_section_height
@@ -62,16 +62,22 @@ class DuoPlayer(State):
         
         # Var for special mode
         self.is_spec = False
+        self.enable_spec = False
         self.ready_text = self.main_font.render("Ready",1,(255,255,255))
         self.three_text = self.main_font.render("3",1,(255,255,255))
         self.two_text = self.main_font.render("2",1,(255,255,255))
         self.one_text = self.main_font.render("1",1,(255,255,255))
-        self.spec_time = 20000
+        self.spec_time = 10000
         self.is_start_spec = True
-        self.current_spec_time = 0
+        self.current_spec_time = 100000000000
         self.current_time = 0
-        self.rand_num = random.randint(5,10)
+        self.rand_num = 0
         self.one_time = True
+        self.one_time_2 = True
+
+        self.rand_summ = 0
+        self.rand_div = 0
+
         gamestate_data_layout1 = {
             "game_title" : "FPGA-Hero",
             "resolution": (self.gamestate_section_width,self.gamestate_section_height),
@@ -104,10 +110,10 @@ class DuoPlayer(State):
         # print(rand_num)
         if current_time >= 0:
             self.countdown(self.max_time)
-            if current_time == self.point_time - self.rand_num:
-                # print("Special mode")
+            if current_time == self.point_time - self.rand_num and not self.is_spec:
+                print("Special mode")
                 # print(current_time)
-                self.point_time = current_time
+                # self.point_time = current_time
                 # print(rand_num)
                 # print(current_time)
                 # print(f"Point time : {self.point_time}")
@@ -129,13 +135,16 @@ class DuoPlayer(State):
         self.game_state_bg.blit(self.player2_section,(self.gamestate_section_width,self.gamestate_section_y))
         # print(pygame.time.get_ticks())
         if self.is_spec:
-            if pygame.time.get_ticks() - self.current_spec_time >= self.spec_time:
-                self.is_spec = False
-                self.is_start_spec = True
-                self.operator_state.disable()
-            if self.is_start_spec:
-                self.current_spec_time = pygame.time.get_ticks()
-                self.is_start_spec = False
+            if self.enable_spec:
+                if pygame.time.get_ticks() - self.current_spec_time >= self.spec_time:
+                    # Reset var
+                    self.is_spec = False
+                    self.is_start_spec = True
+                    self.point_time = self.max_time
+                    self.one_time = True
+                    self.enable_spec = False
+                    self.operator_state.disable()
+                    print("Over")
             self.game_state_bg.blit(self.spec_section,(0,self.timer_section_height))
             if self.operator_state.is_active():
                 self.operator_state.render(self.game_state_bg)
@@ -149,7 +158,9 @@ class DuoPlayer(State):
         mins, secs = divmod(t, 60) 
         self.timer = '{:02d}:{:02d}'.format(mins, secs) 
         if pygame.time.get_ticks() - self.prev_time >= 1000:
-            self.rand_num = random.randint(3,5)
+            self.rand_summ = random.randint(0,127)
+            self.rand_div = random.randint(0,127)
+            self.rand_num = random.randint(5,10)
             # print(self.rand_num)
             self.prev_time = pygame.time.get_ticks()
             # print(self.timer) 
@@ -162,7 +173,8 @@ class DuoPlayer(State):
         if self.one_time:
             self.current_time = pygame.time.get_ticks()
             self.one_time = False
-
+            self.spec_section.fill("#000000")
+        
         self.spec_section.blit(self.ready_text, (self.spec_section_width // 2 - self.ready_text.get_width() // 2,
             self.spec_section_height // 2 - self.ready_text.get_height() // 2))
             
@@ -184,17 +196,21 @@ class DuoPlayer(State):
             
         if pygame.time.get_ticks() - self.current_time >= 6000:
             # self.spec_section.fill("#000000")
-            self.operator_state.get_random_number(random.randint(0,127),random.randint(0,127))
+            if self.is_start_spec:
+                self.operator_state.get_random_number(self.rand_summ, self.rand_div)
+                self.current_spec_time = pygame.time.get_ticks()
+                self.is_start_spec = False
+                self.enable_spec = True
             # print("operator state")
             # current_time = pygame.time.get_ticks()
-            # self.one_time = True
+            
             # self.is_spec = False
 
     def render_spec_mode(self, window):
         window.blit(self.spec_section,(0,self.timer_section_height))
 
         
-        
+    
 
         
 
