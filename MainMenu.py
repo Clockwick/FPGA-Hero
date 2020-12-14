@@ -84,10 +84,7 @@ class MainMenuState(State):
         self.manager.update(time_delta)
     def render(self,window):
         window.blit(self.mainmenu_bg, (0, 0))
-        window.blit(self.mainmenu_bg,(0,0))
-        # self.mainmenu_button_1P_texture.render(self.mainmenu_bg_sur)
-        # self.mainmenu_button_2P_texture.render(self.mainmenu_bg_sur)
-        # self.mainmenu_button_howtoplay_texture.render(self.mainmenu_bg_sur)
+        # window.blit(self.mainmenu_bg,(0,0))
         self.mainmenu_button_1P_texture.render(window)
         self.mainmenu_button_2P_texture.render(window)
         self.mainmenu_button_howtoplay_texture.render(window)

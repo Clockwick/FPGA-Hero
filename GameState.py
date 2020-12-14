@@ -6,6 +6,7 @@ import pygame
 
 # Python standard libs
 import random
+import os 
 
 class GameState(State):
     def __init__(self,game_data):
@@ -20,6 +21,22 @@ class GameState(State):
             self.game_state_bg = pygame.Surface(self.resolution)
 
         self.initVar(game_data)
+        
+        
+        
+        self.gamestate_blue_1=pygame.image.load(os.path.join("assets","1blue-01-01.png"))
+        self.gamestate_blue_2=pygame.image.load(os.path.join("assets","lineblue2-01.png"))
+        self.gamestate_blue_3=pygame.image.load(os.path.join("assets","lineblue3-01.png"))
+        self.gamestate_blue_4=pygame.image.load(os.path.join("assets","lineblue4-01.png"))
+        self.gamestate_blue_5=pygame.image.load(os.path.join("assets","lineblue5-01.png"))
+
+        self.gamestate_purple_1=pygame.image.load(os.path.join("assets","linepurple1-01.png"))
+        self.gamestate_purple_2=pygame.image.load(os.path.join("assets","linepurple2-01.png"))
+        self.gamestate_purple_3=pygame.image.load(os.path.join("assets","linepurple3-01.png"))
+        self.gamestate_purple_4=pygame.image.load(os.path.join("assets","linepurple4-01.png"))
+        self.gamestate_purple_5=pygame.image.load(os.path.join("assets","linepurple5-01.png"))
+        
+        
     def initVar(self, game_data):
         self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT = self.W * 0.1, self.H * 1/12
         self.BOTTOM_RECT_WIDTH,self.BOTTOM_RECT_HEIGHT = self.W * 0.2, self.H * 1/12

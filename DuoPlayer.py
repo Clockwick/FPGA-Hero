@@ -7,6 +7,7 @@ import pygame
 import pygame_gui
 # Python standard lib
 import random
+import os
 
 class DuoPlayer(State):
     
@@ -16,8 +17,11 @@ class DuoPlayer(State):
         self.resolution = game_data["resolution"]
         self.H,self.W = self.resolution[1],self.resolution[0]
         full_screen = game_data["fullscreen"]
+
+
+        self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")),self.resolution)
         # Timer surface
-        self.timer_section_width = self.W
+        self.timer_section_width = self.W   
         self.timer_section_height = self.H // 8
         self.timer_section_x = 0
         self.timer_section_y = 0
@@ -36,6 +40,7 @@ class DuoPlayer(State):
         self.gamestate_section_y = self.timer_section_height
 
         self.timer_section = pygame.Surface((self.W,self.timer_section_height))
+        self.background_section = pygame.Surface((self.W,self.H))
         self.player1_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
         self.player2_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
         self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
@@ -45,6 +50,7 @@ class DuoPlayer(State):
             self.game_state_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
         else:
             self.game_state_bg = pygame.Surface(self.resolution)
+
         self.timer = 0
         self.score_value = 0
         self.main_font = pygame.font.SysFont("roboto", 40)
@@ -121,13 +127,15 @@ class DuoPlayer(State):
         self.player_2.update(time_delta)
         
     def render(self,window):
-        window.blit(self.game_state_bg, (0,0))
+        window.blit(self.bg, (0,0))
+        # window.blit(self.game_state_bg, (0,0))
+        # self.background_section.blit(self.bg,(0,0))
         self.timer_section.blit(self.timer_text, (self.timer_section_width // 2 - self.timer_text.get_width() // 2, self.timer_section_height // 2 - self.timer_text.get_height() // 2))
-        self.game_state_bg.blit(self.timer_section, (0,0))
+        self.bg.blit(self.timer_section, (0,0))
         self.player_1.render(self.player1_section)
         self.player_2.render(self.player2_section)
-        self.game_state_bg.blit(self.player1_section,(0,self.gamestate_section_y))
-        self.game_state_bg.blit(self.player2_section,(self.gamestate_section_width,self.gamestate_section_y))
+        self.bg.blit(self.player1_section,(0,self.gamestate_section_y))
+        self.bg.blit(self.player2_section,(self.gamestate_section_width,self.gamestate_section_y))
         # print(pygame.time.get_ticks())
         if self.is_spec:
             if self.enable_spec:
