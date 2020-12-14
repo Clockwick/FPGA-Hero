@@ -12,6 +12,7 @@ class GameState(State):
         super().__init__()
         self.resolution = game_data["resolution"]
         self.H,self.W = self.resolution[1],self.resolution[0]
+        self.is_spec = False
         full_screen = game_data["fullscreen"]
         if full_screen:
             self.game_state_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
@@ -71,10 +72,12 @@ class GameState(State):
         self.melody_generator = MelodyGen(pos_data, game_data)
         
     def update(self,time_delta):
-        self.melody_generator.update(time_delta)
+        if not self.is_spec:
+            self.melody_generator.update(time_delta)
     def render(self,window):
         window.blit(self.game_state_bg, (0, 0))
-        self.melody_generator.render(self.game_state_bg)
+        if not self.is_spec:
+            self.melody_generator.render(self.game_state_bg)
         pygame.draw.rect(window, self.RECT1_COLOR, self.tr1)
         pygame.draw.rect(window, self.RECT2_COLOR, self.tr2) 
         pygame.draw.rect(window, self.RECT3_COLOR, self.tr3) 
@@ -85,5 +88,7 @@ class GameState(State):
         pygame.draw.rect(window, self.RECT3_COLOR, self.br3) 
         pygame.draw.rect(window, self.RECT4_COLOR, self.br4) 
         pygame.draw.rect(window, self.RECT5_COLOR, self.br5) 
+    def update_spec(self, is_spec):
+        self.is_spec = is_spec
 
         

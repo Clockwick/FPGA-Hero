@@ -24,9 +24,8 @@ class DuoPlayer(State):
 
         # Special mode surface
         self.spec_section_width = self.W
-        self.spec_section_height = 2 * self.H // 10
+        self.spec_section_height = 2 * self.H // 9
         self.spec_section_x = 0
-        self.spec_section_y = 0
         self.spec_section_y = self.timer_section_height
 
         # Game surface
@@ -73,7 +72,7 @@ class DuoPlayer(State):
         self.current_time = 0
         self.rand_num = 0
         self.one_time = True
-        self.one_time_2 = True
+        
 
         self.rand_summ = 0
         self.rand_div = 0
@@ -112,16 +111,12 @@ class DuoPlayer(State):
             self.countdown(self.max_time)
             if current_time == self.point_time - self.rand_num and not self.is_spec:
                 print("Special mode")
-                # print(current_time)
-                # self.point_time = current_time
-                # print(rand_num)
-                # print(current_time)
-                # print(f"Point time : {self.point_time}")
-                # self.current_spec_time = current_time
                 self.is_spec = True
         if self.is_spec:
             self.update_spec_mode()
         self.update_timer()
+        self.player_1.update_is_spec(self.is_spec)
+        self.player_2.update_is_spec(self.is_spec)
         self.player_1.update(time_delta)
         self.player_2.update(time_delta)
         
@@ -180,17 +175,17 @@ class DuoPlayer(State):
             
         if pygame.time.get_ticks() - self.current_time >= 3000:
             self.spec_section.fill("#000000")
-            self.spec_section.blit(self.three_text, (self.spec_section_width // 2 - self.ready_text.get_width() // 2,
+            self.spec_section.blit(self.three_text, (self.spec_section_width // 2 - self.three_text.get_width() // 2,
             self.spec_section_height // 2 - self.ready_text.get_height() // 2))
             current_time = pygame.time.get_ticks()
         if pygame.time.get_ticks() - self.current_time >= 4000:
             self.spec_section.fill("#000000")
-            self.spec_section.blit(self.two_text, (self.spec_section_width // 2 - self.ready_text.get_width() // 2,
+            self.spec_section.blit(self.two_text, (self.spec_section_width // 2 - self.two_text.get_width() // 2,
              self.spec_section_height // 2 - self.ready_text.get_height() // 2))
             current_time = pygame.time.get_ticks()
         if pygame.time.get_ticks() - self.current_time >= 5000:
             self.spec_section.fill("#000000")
-            self.spec_section.blit(self.one_text, (self.spec_section_width // 2 - self.ready_text.get_width() // 2,
+            self.spec_section.blit(self.one_text, (self.spec_section_width // 2 - self.one_text.get_width() // 2,
              self.spec_section_height // 2 - self.ready_text.get_height() // 2))
             current_time = pygame.time.get_ticks()
             

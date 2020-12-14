@@ -42,12 +42,13 @@ class OperatorMode:
             self.answer = self.random_summand & self.random_divider
         elif self.rand_operator == 2:
             self.answer = self.random_summand | self.random_divider
-        print(self.answer)
+        # print(self.answer)
         self.active = True
         self.summ_text = self.main_font.render(str(self.random_summand),1,(255,255,255))
         self.divide_text = self.main_font.render(str(self.random_divider),1,(255,255,255))
         self.operator_text = self.main_font.render(str(self.operator_list[self.rand_operator]),1,(255,255,255))
-
+    
+        self.answer_text = self.main_font.render(str(self.answer),1,(255,0,0))
     def disable(self):
         self.active = False
     def is_active(self):
@@ -59,6 +60,8 @@ class OperatorMode:
         self.operator_surface.blit(self.divide_text,(4 * self.space, self.half_y))
         self.operator_surface.blit(self.main_font.render(" =", 1 , (255,255,255)),(5 * self.space, self.half_y))
         self.operator_surface.blit(self.main_font.render("?", 1 , (255,255,255)),(6 * self.space, self.half_y))
+
+        self.operator_surface.blit(self.answer_text,(self.window_width - self.answer_text.get_width(),self.window_height - self.answer_text.get_height()))
         # pygame.draw.line(self.operator_surface, (0,0,255), (0,self.operator_surface.get_height()),(self.operator_surface.get_width(),self.operator_surface.get_height()),8)
         window.blit(self.operator_surface, (0,self.time_section_height))
 
