@@ -7,6 +7,8 @@ import pygame
 import pygame_gui
  # Python standard lib
 import random
+import os
+
 class Singleplayer(State):
     
     def __init__(self,game_data):
@@ -68,7 +70,8 @@ class Singleplayer(State):
             self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
             self.game_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
             self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
-
+            self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")),self.resolution)
+            
             # Var for special mode
             self.is_spec = False
             self.enable_spec = False
@@ -145,8 +148,6 @@ class Singleplayer(State):
         self.game_state.update(time_delta)
     def render(self,window):
         window.blit(self.game_state_bg, (0,0))
-        
-
         self.score_section.blit(self.front_score_text, (
             (self.score_section_width // 2) - self.front_score_text.get_width()//2,
              (2 * self.score_section_height // 3) - self.player_text.get_height()//2)
@@ -163,12 +164,17 @@ class Singleplayer(State):
              (self.score_section_height // 3) - self.front_score_text.get_height()//2)
         )
         
-        self.game_state.render(self.game_section)
-        self.game_state_bg.blit(self.score_section, (self.score_section_x,self.score_section_y))
-        self.game_state_bg.blit(self.game_section, (self.gamestate_section_x,self.gamestate_section_y))
+       
         if self.is_single:
+            self.score_section.set_colorkey((0,0,0))
+            self.game_section.set_colorkey((0,0,0))
+            self.timer_section.set_colorkey((0,0,0))
+            self.game_state_bg.blit(self.bg, (0,0))
             self.timer_section.blit(self.timer_text, (self.timer_section_width // 2 - self.timer_text.get_width() // 2, self.timer_section_height // 2 - self.timer_text.get_height() // 2))
             self.game_state_bg.blit(self.timer_section, (0,0))
+            self.game_state_bg.blit(self.score_section, (self.score_section_x,self.score_section_y))
+            self.game_state_bg.blit(self.game_section, (self.gamestate_section_x,self.gamestate_section_y))
+            self.game_state.render(self.game_section)
             if self.is_spec:
                 if self.enable_spec:
                     if pygame.time.get_ticks() - self.current_spec_time >= self.spec_time:
@@ -183,6 +189,10 @@ class Singleplayer(State):
                 self.game_state_bg.blit(self.spec_section,(0,self.timer_section_height))
                 if self.operator_state.is_active():
                     self.operator_state.render(self.game_state_bg)
+        else:
+            self.game_state.render(self.game_section)
+            self.game_state_bg.blit(self.score_section, (self.score_section_x,self.score_section_y))
+            self.game_state_bg.blit(self.game_section, (self.gamestate_section_x,self.gamestate_section_y))
         if self.is_single:
             pygame.draw.line(self.game_state_bg, (255,0,0), (0,self.score_section_height + self.timer_section_height),(self.score_section_width,self.score_section_height + self.timer_section_height),5)
         else:
@@ -230,17 +240,17 @@ class Singleplayer(State):
             
         if pygame.time.get_ticks() - self.current_time >= 3000:
             self.spec_section.fill("#000000")
-            self.spec_section.blit(self.three_text, (self.spec_section_width // 2 - self.ready_text.get_width() // 2,
+            self.spec_section.blit(self.three_text, (self.spec_section_width // 2,
             self.spec_section_height // 2 - self.ready_text.get_height() // 2))
             current_time = pygame.time.get_ticks()
         if pygame.time.get_ticks() - self.current_time >= 4000:
             self.spec_section.fill("#000000")
-            self.spec_section.blit(self.two_text, (self.spec_section_width // 2 - self.ready_text.get_width() // 2,
+            self.spec_section.blit(self.two_text, (self.spec_section_width // 2,
              self.spec_section_height // 2 - self.ready_text.get_height() // 2))
             current_time = pygame.time.get_ticks()
         if pygame.time.get_ticks() - self.current_time >= 5000:
             self.spec_section.fill("#000000")
-            self.spec_section.blit(self.one_text, (self.spec_section_width // 2 - self.ready_text.get_width() // 2,
+            self.spec_section.blit(self.one_text, (self.spec_section_width // 2 ,
              self.spec_section_height // 2 - self.ready_text.get_height() // 2))
             current_time = pygame.time.get_ticks()
             

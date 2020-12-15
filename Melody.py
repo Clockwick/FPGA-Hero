@@ -24,7 +24,7 @@ class Melody:
         self.game_data = game_data
         self.timer = 0
         # Melody Speed
-        self.vel = 1
+        self.vel = 5
 
     def __str__(self):
         return str(self.randnum)
@@ -44,9 +44,9 @@ class Melody:
         self.current_x += ratio * delta_x
         self.current_y += ratio * delta_y
         # print(f"{self.current_y} : {self.end_y}")
-        if self.current_y == self.end_y:
-            # print("Score")
-            pass
+        if self.current_y >= self.end_y:
+            self.melody_surface.set_colorkey((0,0,0))
+            # pass
             
         
     def printFonts(self):

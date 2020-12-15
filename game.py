@@ -8,10 +8,7 @@ from MainMenu import MainMenuState
 import pygame
 import pygame_gui
 
-COLOR = {
-    "white" : "#ffffff",
-    "black" : "#000000"
-}
+
 class Stack:
     def __init__(self):
         self.lst = []

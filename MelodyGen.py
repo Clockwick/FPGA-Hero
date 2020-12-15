@@ -53,7 +53,7 @@ class MelodyGen:
         
         
     def update(self,time_delta):
-        if pygame.time.get_ticks() - self.prev_time > random.randrange(5000,7000,500):
+        if pygame.time.get_ticks() - self.prev_time > random.randrange(500,700,50):
             self.canCreated = True
             self.prev_time = pygame.time.get_ticks()
         if self.canCreated:

@@ -12,7 +12,8 @@ class GameState(State):
     def __init__(self,game_data):
         super().__init__()
         self.resolution = game_data["resolution"]
-        self.H,self.W = self.resolution[1],self.resolution[0]
+        self.H,self.W = self.resolution[1],self.resolution[0] 
+        # print(self.W, self.H)
         self.is_spec = False
         full_screen = game_data["fullscreen"]
         if full_screen:
@@ -24,8 +25,8 @@ class GameState(State):
         
         
         
-        self.gamestate_blue_1=pygame.image.load(os.path.join("assets","1blue-01-01.png"))
-        self.gamestate_blue_2=pygame.image.load(os.path.join("assets","lineblue2-01.png"))
+        self.gamestate_blue_1=pygame.transform.scale(pygame.image.load(os.path.join("assets","1blue-01-01.png")), (self.W,self.H))
+        self.gamestate_blue_2=pygame.transform.scale(pygame.image.load(os.path.join("assets","lineblue2-01.png")), (780,780))
         self.gamestate_blue_3=pygame.image.load(os.path.join("assets","lineblue3-01.png"))
         self.gamestate_blue_4=pygame.image.load(os.path.join("assets","lineblue4-01.png"))
         self.gamestate_blue_5=pygame.image.load(os.path.join("assets","lineblue5-01.png"))
@@ -92,12 +93,16 @@ class GameState(State):
         if not self.is_spec:
             self.melody_generator.update(time_delta)
     def render(self,window):
+        # self.gamestate_blue_1.set_colorkey((0,0,0))
+        # self.gamestate_blue_2.set_colorkey((0,0,0))
         window.blit(self.game_state_bg, (0, 0))
+        # window.blit(self.gamestate_blue_1, (self.melody1_start_pos - 375,-93))
+        # window.blit(self.gamestate_blue_2, (self.melody4_start_pos - 375,-93))
         if not self.is_spec:
             self.melody_generator.render(self.game_state_bg)
         pygame.draw.rect(window, self.RECT1_COLOR, self.tr1)
         pygame.draw.rect(window, self.RECT2_COLOR, self.tr2) 
-        pygame.draw.rect(window, self.RECT3_COLOR, self.tr3) 
+        pygame.draw.rect(window, self.RECT3_COLOR, self.tr3)
         pygame.draw.rect(window, self.RECT4_COLOR, self.tr4) 
         pygame.draw.rect(window, self.RECT5_COLOR, self.tr5)
         pygame.draw.rect(window, self.RECT1_COLOR, self.br1)
@@ -105,6 +110,7 @@ class GameState(State):
         pygame.draw.rect(window, self.RECT3_COLOR, self.br3) 
         pygame.draw.rect(window, self.RECT4_COLOR, self.br4) 
         pygame.draw.rect(window, self.RECT5_COLOR, self.br5) 
+        
     def update_spec(self, is_spec):
         self.is_spec = is_spec
 

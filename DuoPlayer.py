@@ -20,6 +20,7 @@ class DuoPlayer(State):
 
 
         self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")),self.resolution)
+        
         # Timer surface
         self.timer_section_width = self.W   
         self.timer_section_height = self.H // 8
@@ -127,15 +128,18 @@ class DuoPlayer(State):
         self.player_2.update(time_delta)
         
     def render(self,window):
-        window.blit(self.bg, (0,0))
-        # window.blit(self.game_state_bg, (0,0))
+        # window.blit(self.bg, (0,0))
+        self.game_state_bg.blit(self.bg, (0,0))
+        self.player1_section.set_colorkey((0,0,0))
+        self.player2_section.set_colorkey((0,0,0))
+        self.timer_section.set_colorkey((0,0,0))
         # self.background_section.blit(self.bg,(0,0))
         self.timer_section.blit(self.timer_text, (self.timer_section_width // 2 - self.timer_text.get_width() // 2, self.timer_section_height // 2 - self.timer_text.get_height() // 2))
-        self.bg.blit(self.timer_section, (0,0))
+        self.game_state_bg.blit(self.timer_section, (0,0))
         self.player_1.render(self.player1_section)
         self.player_2.render(self.player2_section)
-        self.bg.blit(self.player1_section,(0,self.gamestate_section_y))
-        self.bg.blit(self.player2_section,(self.gamestate_section_width,self.gamestate_section_y))
+        self.game_state_bg.blit(self.player1_section,(0,self.gamestate_section_y))
+        self.game_state_bg.blit(self.player2_section,(self.gamestate_section_width,self.gamestate_section_y))
         # print(pygame.time.get_ticks())
         if self.is_spec:
             if self.enable_spec:
@@ -152,7 +156,7 @@ class DuoPlayer(State):
             if self.operator_state.is_active():
                 self.operator_state.render(self.game_state_bg)
             # self.render_spec_mode(self.game_state_bg)
-        
+        window.blit(self.game_state_bg, (0,0))
             
         # pygame.draw.line(self.game_state_bg, (0,255,0), (0,self.timer_section_height),(self.timer_section_width,self.timer_section_height),5)
         
@@ -163,7 +167,7 @@ class DuoPlayer(State):
         if pygame.time.get_ticks() - self.prev_time >= 1000:
             self.rand_summ = random.randint(0,127)
             self.rand_div = random.randint(0,127)
-            self.rand_num = random.randint(5,10)
+            self.rand_num = random.randint(30,45)
             # print(self.rand_num)
             self.prev_time = pygame.time.get_ticks()
             # print(self.timer) 
