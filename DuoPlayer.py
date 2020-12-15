@@ -90,7 +90,9 @@ class DuoPlayer(State):
             "fullscreen": False,
             "player_name": "Player 1",
             # "random_seed" : rand,
-            "is_single": False
+            "is_single": False,
+            "main_color": (25,255,245),
+            "sub_color": (170,255,249)
         }
         gamestate_data_layout2 = {
             "game_title" : "FPGA-Hero",
@@ -98,7 +100,10 @@ class DuoPlayer(State):
             "fullscreen": False,
             "player_name": "Player 2",
             # "random_seed" : rand,
-            "is_single": False
+            "is_single": False,
+            "main_color": (248,81,245),
+            "sub_color": (249,146,247)
+            
         }
 
         self.player_1 = Singleplayer(gamestate_data_layout1)

@@ -25,6 +25,8 @@ class Singleplayer(State):
 
         # Player section
         self.player_name = game_data["player_name"]
+        self.offset_x, self.offset_y = self.W // 5, self.H // 5
+        
         
         self.max_time = 120
         self.is_spec = False
@@ -35,7 +37,8 @@ class Singleplayer(State):
         self.spec_section_height = 2 * self.H // 8
         self.spec_section_x = 0
         self.spec_section_y = self.timer_section_height
-
+        
+        
         operator_data = {
             "size" : (self.spec_section_width,self.spec_section_height),
             "time_size" : (self.timer_section_width, self.timer_section_height)
@@ -71,7 +74,7 @@ class Singleplayer(State):
             self.game_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
             self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
             self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")),self.resolution)
-            
+
             # Var for special mode
             self.is_spec = False
             self.enable_spec = False
@@ -89,7 +92,8 @@ class Singleplayer(State):
             # random
             self.rand_summ = 0
             self.rand_div = 0
-
+            # print(self.W,self.H)
+            # self.scoreboard_pos = (0.05 * self.W , 0.136 * self.H)
             
             
         else:
@@ -106,6 +110,8 @@ class Singleplayer(State):
             self.gamestate_section_y = self.score_section_height
             self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
             self.game_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
+
+            self.scoreboard_pos = (0.1 * self.W , 0.165 * self.H)
         # ทำ FullScreen ด้วย
         if full_screen:
             self.game_state_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
@@ -123,15 +129,21 @@ class Singleplayer(State):
         self.front_score_text = self.main_font.render("Score : ",1,(255,255,255))
         self.score_text = self.main_font.render(str(self.score_value),1,(255,255,255))
         self.player_text = self.sub_font.render(self.player_name, 1 ,(255,255,255))
-        
+        if game_data["main_color"] == (25,255,245):
+            self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scoreblue-01.png")), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
+        else:
+            self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scorepurple-01.png")), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
         self.score_value_section = pygame.Surface((self.score_text.get_width(),self.score_text.get_height()))
+        self.scoreboard_pos = (0.1 * self.W , 0.165 * self.H)
         # print(game_data["random_seed"])
         gamestate_data_layout1 = {
             "game_title" : "FPGA-Hero",
             "resolution": (self.gamestate_section_width,self.gamestate_section_height),
             "fullscreen": False,
             "single_player_obj": self,
-            # "random_seed" : game_data["random_seed"]
+            "main_color": game_data["main_color"],
+            "sub_color": game_data["sub_color"],
+            # "random_seed" : game_data["random_seed"]p
         }
         self.game_state = GameState(gamestate_data_layout1)
     def update(self,time_delta):
@@ -148,6 +160,9 @@ class Singleplayer(State):
         self.game_state.update(time_delta)
     def render(self,window):
         window.blit(self.game_state_bg, (0,0))
+        self.scoreboard.set_colorkey((0,0,0))
+        self.score_section.blit(self.scoreboard, (self.scoreboard_pos[0],-1*self.scoreboard_pos[1]))
+        # self.score_section.blit(self.scoreboard, (0,0))
         self.score_section.blit(self.front_score_text, (
             (self.score_section_width // 2) - self.front_score_text.get_width()//2,
              (2 * self.score_section_height // 3) - self.player_text.get_height()//2)
@@ -193,12 +208,12 @@ class Singleplayer(State):
             self.game_state.render(self.game_section)
             self.game_state_bg.blit(self.score_section, (self.score_section_x,self.score_section_y))
             self.game_state_bg.blit(self.game_section, (self.gamestate_section_x,self.gamestate_section_y))
-        if self.is_single:
-            pygame.draw.line(self.game_state_bg, (255,0,0), (0,self.score_section_height + self.timer_section_height),(self.score_section_width,self.score_section_height + self.timer_section_height),5)
-        else:
-            pygame.draw.line(self.game_state_bg, (255,0,0), (0,self.score_section_height),(self.score_section_width,self.score_section_height),5)
-        pygame.draw.line(self.game_state_bg, (0,255,0), (0,0),(0,self.H),8)
-        pygame.draw.line(self.game_state_bg, (0,0,255), (self.score_section_width,0),(self.score_section_width,self.H),8)
+        # if self.is_single:
+            # pygame.draw.line(self.game_state_bg, (255,0,0), (0,self.score_section_height + self.timer_section_height),(self.score_section_width,self.score_section_height + self.timer_section_height),5)
+        # else:
+        #     pygame.draw.line(self.game_state_bg, (255,0,0), (0,self.score_section_height),(self.score_section_width,self.score_section_height),5)
+        # pygame.draw.line(self.game_state_bg, (0,255,0), (0,0),(0,self.H),8)
+        # pygame.draw.line(self.game_state_bg, (0,0,255), (self.score_section_width,0),(self.score_section_width,self.H),8)
         
         # pygame.draw.line(self.game_state_bg, (255,0,0), (0,self.H),(self.gamestate_section_width,self.H),8)
 
@@ -207,9 +222,9 @@ class Singleplayer(State):
     def set_score(self, i):
         self.score_value = i
     def score_update(self):
+        self.score_value_section.blit(self.score_text, (self.score_section_x, self.score_section_y))
         self.score_text = self.main_font.render(str(self.score_value),1,(255,255,255))
         self.score_value_section = pygame.Surface((self.score_text.get_width(),self.score_text.get_height()))
-        self.score_value_section.fill("#000000")
 
     def countdown(self, t):
         # import the time module  

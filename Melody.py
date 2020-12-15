@@ -7,7 +7,7 @@ class Melody:
     def __init__(self,start_x,start_y,end_x, end_y,rand_num,game_data):
         self.W,self.H = game_data["resolution"]
         self.main_font = pygame.font.SysFont("roboto", self.W//20)
-        self.rand_melody = self.main_font.render("4444", 1 , (255,255,255))
+        self.rand_melody = self.main_font.render("4444", 1 ,(255,0,0))
         self.melody_surface = pygame.Surface((self.rand_melody.get_width() + 20,self.rand_melody.get_height() + 20))
         # Create different
         
@@ -24,17 +24,16 @@ class Melody:
         self.game_data = game_data
         self.timer = 0
         # Melody Speed
-        self.vel = 5
+        self.vel = 2
 
     def __str__(self):
         return str(self.randnum)
-    def start(self):
-        pass
+
     def update(self,time_delta):
         self.updateRandom(time_delta)
         self.updatePosition(time_delta)
     def updateRandom(self,time_delta):
-        self.rand_melody = self.main_font.render(str(self.rand_num), 1 , (255,255,255))
+        self.rand_melody = self.main_font.render(str(self.rand_num), 1 , (1,1,1))
         self.melody_surface = pygame.Surface((self.rand_melody.get_width() + 20,self.rand_melody.get_height() + 20))
     def updatePosition(self,time_delta):
         delta_x = self.end_x - self.start_x
@@ -45,7 +44,7 @@ class Melody:
         self.current_y += ratio * delta_y
         # print(f"{self.current_y} : {self.end_y}")
         if self.current_y >= self.end_y:
-            self.melody_surface.set_colorkey((0,0,0))
+            pass
             # pass
             
         

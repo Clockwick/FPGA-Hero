@@ -72,6 +72,8 @@ class Game:
                         if event.ui_element == self.main_menu.get1PBtn():
                             self.game_data.update({"player_name" : "Player"})
                             self.game_data.update({"is_single": True})
+                            self.game_data.update({"main_color": (25,255,245)}),
+                            self.game_data.update({"sub_color" : (170,255,249)})
                             single_player_game_data = self.game_data
                             # print(single_player_game_data)
                             _1P_state = Singleplayer(single_player_game_data)
