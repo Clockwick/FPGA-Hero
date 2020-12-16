@@ -8,6 +8,9 @@ from Game import Game
 # python standard libs
 import random
 
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BOARD)
 WIDTH,HEIGHT = 1200,900
 TOP_RECT_WIDTH,TOP_RECT_HEIGHT = 80,50
 BOTTOM_RECT_WIDTH,BOTTOM_RECT_HEIGHT = 160,50

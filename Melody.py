@@ -7,7 +7,7 @@ class Melody:
     def __init__(self,start_x,start_y,end_x, end_y,rand_num,game_data):
         self.W,self.H = game_data["resolution"]
         self.main_font = pygame.font.SysFont("roboto", self.W//20)
-        self.rand_melody = self.main_font.render("4444", 1 ,(255,0,0))
+        self.rand_melody = self.main_font.render("    ", 1 ,(255,255,255))
         self.melody_surface = pygame.Surface((self.rand_melody.get_width() + 20,self.rand_melody.get_height() + 20))
         # Create different
         
@@ -24,7 +24,7 @@ class Melody:
         self.game_data = game_data
         self.timer = 0
         # Melody Speed
-        self.vel = 2
+        self.vel = 1
 
     def __str__(self):
         return str(self.randnum)
