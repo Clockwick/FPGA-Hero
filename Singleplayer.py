@@ -146,6 +146,11 @@ class Singleplayer(State):
             # "random_seed" : game_data["random_seed"]p
         }
         self.game_state = GameState(gamestate_data_layout1)
+    def __str__(self):
+        if self.is_single:
+            return "Single"
+    def getName(self):
+        return "Single"
     def update(self,time_delta):
         current_time = self.max_time
         if self.is_single:

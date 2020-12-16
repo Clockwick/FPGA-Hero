@@ -67,7 +67,7 @@ class MainMenuState(State):
         resolution = game_data["resolution"]
         full_screen = game_data["fullscreen"]
         self.pb = 0
-        self.current_state = 0
+        self.current_state = 1
 
         # Game
         resolution = game_data["resolution"]
@@ -89,37 +89,37 @@ class MainMenuState(State):
 
         self.mainmenu_howtoplay_x=self.W//2
         self.mainmenu_howtoplay_y=self.H//2.5 + self.space_y*2
-
-        self.mainmenu_button_1P=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunp1-01.png")),(self.button_width,self.button_height))
-        self.mainmenu_button_1P_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","p1hold-01.png")),(self.button_width,self.button_height))
-        self.mainmenu_button_2P=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunp2-01.png")),(self.button_width,self.button_height))
-        self.mainmenu_button_2P_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","p2hold-01.png")),(self.button_width,self.button_height))
-        self.mainmenu_button_howtoplay=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunhtp-01.png")),(self.button_width,self.button_height))
-        self.mainmenu_button_howtoplay_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","htphold-01.png")),(self.button_width,self.button_height))
-
-        self.mainmenu_button_1P_data={
-            "ideal_img" : self.mainmenu_button_1P,
-            "active_img" : self.mainmenu_button_1P_click,
-            "position" : (self.mainmenu_button_1P_x,self.mainmenu_button_1P_y)
-        }
-
-        self.mainmenu_button_2P_data={
-            "ideal_img" : self.mainmenu_button_2P,
-            "active_img" : self.mainmenu_button_2P_click,
-            "position" : (self.mainmenu_button_2P_x,self.mainmenu_button_2P_y)
-        }
-
-        self.mainmenu_button_howtoplay_data={
-            "ideal_img" : self.mainmenu_button_howtoplay,
-            "active_img" : self.mainmenu_button_howtoplay_click,
-            "position" : (self.mainmenu_howtoplay_x,self.mainmenu_howtoplay_y)
-        }
-
-        self.mainmenu_button_1P_texture=pygame.Surface((self.button_width, self.button_height))
-        self.mainmenu_button_2P_texture=pygame.Surface((self.button_width, self.button_height))
-        self.mainmenu_button_howtoplay_texture=pygame.Surface((self.button_width, self.button_height))
+#        self.mainmenu_button_1P=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunp1-01.png")),(self.button_width,self.button_height))
+#        self.mainmenu_button_1P_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","p1hold-01.png")),(self.button_width,self.button_height))
+#        self.mainmenu_button_2P=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunp2-01.png")),(self.button_width,self.button_height))
+#        self.mainmenu_button_2P_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","p2hold-01.png")),(self.button_width,self.button_height))
+#        self.mainmenu_button_howtoplay=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunhtp-01.png")),(self.button_width,self.button_height))
+#        self.mainmenu_button_howtoplay_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","htphold-01.png")),(self.button_width,self.button_height))
+#
+#        self.mainmenu_button_1P_data={
+#            "ideal_img" : self.mainmenu_button_1P,
+#            "active_img" : self.mainmenu_button_1P_click,
+#            "position" : (self.mainmenu_button_1P_x,self.mainmenu_button_1P_y)
+#        }
+#
+#        self.mainmenu_button_2P_data={
+#            "ideal_img" : self.mainmenu_button_2P,
+#            "active_img" : self.mainmenu_button_2P_click,
+#            "position" : (self.mainmenu_button_2P_x,self.mainmenu_button_2P_y)
+#        }
+#
+#        self.mainmenu_button_howtoplay_data={
+#            "ideal_img" : self.mainmenu_button_howtoplay,
+#            "active_img" : self.mainmenu_button_howtoplay_click,
+#            "position" : (self.mainmenu_howtoplay_x,self.mainmenu_howtoplay_y)
+#        }
+#
+#        self.mainmenu_button_1P_texture=pygame.Surface((self.button_width, self.button_height))
+#        self.mainmenu_button_2P_texture=pygame.Surface((self.button_width, self.button_height))
+#        self.mainmenu_button_howtoplay_texture=pygame.Surface((self.button_width, self.button_height))
 
         self.mainmenu_bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","mainmenu_bg.png")),(self.W,self.H))
+        #self.manager = pygame_gui.UIManager(resolution, str(os.path.join("themes","button.json")))
         self.manager = manager
         if full_screen:
             self.mainmenu_bg_sur = pygame.Surface((0,0),pygame.FULLSCREEN)
@@ -127,29 +127,63 @@ class MainMenuState(State):
             self.mainmenu_bg_sur = pygame.Surface(resolution)
 
         self.main_font = pygame.font.SysFont("roboto", 30)
+        self.i = 0
 
         #init Gui
-        self._1p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.W//2 - 50, self.H//3), (self.button_width, self.button_height)),
-                                             text='1P',
+        self._1p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_button_1P_x - self.button_width // 2, self.mainmenu_button_1P_y - self.button_height // 2), (self.button_width, self.button_height)),
+                                             text='1 Player',
                                              manager=self.manager)
-        self._2p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.W//2 - 50, self.H//3 + 100), (self.button_width, self.button_height)),
-                                             text='2P',
+        self._2p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_button_2P_x - self.button_width // 2, self.mainmenu_button_2P_y - self.button_height // 2), (self.button_width, self.button_height)),
+                                             text='2 Player',
                                              manager=self.manager)
-        self.howtoplay_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.W//2 - 50, self.H//3 + 200), (self.button_width, self.button_height)),
+        self.howtoplay_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_howtoplay_x- self.button_width // 2, self.mainmenu_howtoplay_y  - self.button_height // 2), (self.button_width, self.button_height)),
                                              text='How to play',
                                              manager=self.manager)
+
+        # Make ratio with W,H
+        self.mid = self.button_height // 2
+        self.mid_mid = self.button_height // 4
+        self.arrow_length = self.button_width // 2
+        self.arrow_more_half =  (2 * self.arrow_length) // 3
+        self.arrow_less_half = self.arrow_length // 3
+        self.start_arrow = 400 
+        self.l_m = self.mainmenu_button_1P_y - 30 
+        self.pos_1 = [self.start_arrow, self.l_m + (self.mid_mid // 2)]
+        self.pos_2 = [self.start_arrow, self.pos_1[1]+ self.mid_mid]
+        self.pos_3 = [self.start_arrow + self.arrow_more_half, self.pos_2[1]]
+        self.pos_4 = [self.pos_3[0], self.pos_3[1] + self.mid_mid // 2]
+        self.pos_5 = [self.start_arrow + self.arrow_length, self.l_m + (self.mid // 2)]
+        self.pos_6 = [self.pos_3[0], self.l_m]
+        self.pos_7 = [self.pos_6[0], self.pos_6[1] + (self.mid_mid // 2)]
+
+
+        self.going_change = False
+    def __str__(self):
+        return "mainmenu"
+
+    def getName(self):
+        return "mainmenu"
+    def getEvent(self):
+        return self.going_change
+    def set_going_change(self, boo):
+        self.going_change = boo
+    def getState(self):
+        return self.current_state
     def update(self,time_delta):
         self.manager.update(time_delta)
     def render(self,window):
-        self.update_player_input(self.mainmenu_bg)
-        self.mainmenu_button_1P_texture.set_colorkey((0,0,0))
-        self.mainmenu_button_2P_texture.set_colorkey((0,0,0))
-        self.mainmenu_button_howtoplay_texture.set_colorkey((0,0,0))
-        self.mainmenu_bg.blit(self.mainmenu_button_1P_texture, (self.mainmenu_button_1P_x - self.mainmenu_button_1P_texture.get_width() // 2, self.mainmenu_button_1P_y - self.mainmenu_button_1P_texture.get_height() // 2))
-        self.mainmenu_bg.blit(self.mainmenu_button_2P_texture, (self.mainmenu_button_2P_x - self.mainmenu_button_2P_texture.get_width() // 2, self.mainmenu_button_2P_y - self.mainmenu_button_2P_texture.get_height() // 2))
-        self.mainmenu_bg.blit(self.mainmenu_button_howtoplay_texture,(self.mainmenu_howtoplay_x- self.mainmenu_button_howtoplay_texture.get_width() // 2, self.mainmenu_howtoplay_y- self.mainmenu_button_howtoplay_texture.get_height() // 2))
-        window.blit(self.mainmenu_bg, (0, 0))
-        # self.manager.draw_ui(window)
+        self.update_player_input()
+        #self.mainmenu_button_1P_texture.set_colorkey((0,0,0))
+        #self.mainmenu_button_2P_texture.set_colorkey((0,0,0))
+        #self.mainmenu_button_howtoplay_texture.set_colorkey((0,0,0))
+        #self.mainmenu_bg.blit(self.mainmenu_button_1P_texture, (self.mainmenu_button_1P_x - self.mainmenu_button_1P_texture.get_width() // 2, self.mainmenu_button_1P_y - self.mainmenu_button_1P_texture.get_height() // 2))
+        #self.mainmenu_bg.blit(self.mainmenu_button_2P_texture, (self.mainmenu_button_2P_x - self.mainmenu_button_2P_texture.get_width() // 2, self.mainmenu_button_2P_y - self.mainmenu_button_2P_texture.get_height() // 2))
+        #self.mainmenu_bg.blit(self.mainmenu_button_howtoplay_texture,(self.mainmenu_howtoplay_x- self.mainmenu_button_howtoplay_texture.get_width() // 2, self.mainmenu_howtoplay_y- self.mainmenu_button_howtoplay_texture.get_height() // 2))
+        self.mainmenu_bg_sur.blit(self.mainmenu_bg,(0,0))
+        pygame.draw.polygon(self.mainmenu_bg_sur, (255, 255, 255), (self.pos_1, self.pos_2, self.pos_3, self.pos_4, self.pos_5, self.pos_6, self.pos_7))
+        window.blit(self.mainmenu_bg_sur, (0, 0))
+
+        self.manager.draw_ui(window)
 
     def get1PBtn(self):
         return self._1p_btn
@@ -157,8 +191,9 @@ class MainMenuState(State):
         return self._2p_btn
     def getHTPBtn(self):
         return self.howtoplay_btn
-
-    def update_player_input(self, window):
+    def update_player_input(self):
+        #print(self.i)
+        #self.i+=1
         bit_inp2 = GPIO.input(self.P2_PIN_BIT)
         bit_clk2 = GPIO.input(self.P2_PIN_CLKBIT)
         bit_flg2 = GPIO.input(self.P2_PIN_FLAGBIT)
@@ -171,9 +206,9 @@ class MainMenuState(State):
             self.booBit2 = True
         if self.counterBit2 == 8:
             self.counterBit2 = 0
-            #print("Bit = ",end = "")
-            #print(binaryToDecimal(int(self.Bit2[::-1])))
-            #print("------------------------------------------")
+            print("Bit = ",end = "")
+            print(binaryToDecimal(int(self.Bit2[::-1])))
+            print("------------------------------------------")
             self.Bit2 = ''
 
         button_inp2 = GPIO.input(self.P2_PIN_BUTTON)
@@ -186,11 +221,11 @@ class MainMenuState(State):
             self.booButton2 = False
         if button_clk2 == 0:
             self.booButton2 = True
-        if self.counterButton2 == 4:
+        if self.counterButton2 == 8:
             self.counterButton2 = 0
-            #print("*****Player 2*****")
-            #print("Button = ",end = "")
-            #print(color(binaryToDecimal(int(self.Button2[::-1]))))
+            print("*****Player 2*****")
+            print("Button = ",end = "")
+            print(color(binaryToDecimal(int(self.Button2[::-1]))))
             self.Button2 = ''
 
         bit_inp1 = GPIO.input(self.P1_PIN_BIT)
@@ -205,9 +240,9 @@ class MainMenuState(State):
             self.booBit1 = True
         if self.counterBit1 == 8:
             self.counterBit1 = 0
-            #print("Bit = ",end = "")
-            #print(binaryToDecimal(int(self.Bit1[::-1])))
-            #print("------------------------------------------")
+            print("Bit = ",end = "")
+            print(binaryToDecimal(int(self.Bit1[::-1])))
+            print("------------------------------------------")
             self.Bit1 = ''
 
         button_inp1 = GPIO.input(self.P1_PIN_BUTTON)
@@ -220,34 +255,34 @@ class MainMenuState(State):
             self.booButton1 = False
         if button_clk1 == 0:
             self.booButton1 = True
-        if self.counterButton1 == 4:
-            #print("asda")
+        if self.counterButton1 == 8:
             self.counterButton1 = 0
-            #print("*****Player 1*****")
-            #print("Button = ",end = "")
-            #print(self.Button1[::-1])
-            #print(color(binaryToDecimal(int(self.Button1[::-1]))))
-
+            print("*****Player 1*****")
+            print("Button = ",end = "")
+            print(color(binaryToDecimal(int(self.Button1[::-1]))))
             self.pb = binaryToDecimal(int(self.Button1[::-1]))
-            self.current_state = self.pb - 1
+            if self.pb == 1 and self.current_state > 1:
+                self.pos_1[1] -=  self.button_height+ (self.space_y // 2 ) - 20
+                self.pos_2[1] -=  self.button_height+ (self.space_y // 2 ) - 20
+                self.pos_3[1] -=  self.button_height+ (self.space_y // 2 ) - 20
+                self.pos_4[1] -=  self.button_height+ (self.space_y // 2 ) - 20
+                self.pos_5[1] -=  self.button_height+ (self.space_y // 2 ) - 20
+                self.pos_6[1] -=  self.button_height+ (self.space_y // 2 ) - 20
+                self.pos_7[1] -=  self.button_height+ (self.space_y // 2 ) - 20
+                self.current_state -= 1
+            elif self.pb == 5 and self.current_state < 3:
+                self.pos_1[1] +=  self.button_height + (self.space_y // 2) - 20
+                self.pos_2[1] +=  self.button_height + (self.space_y // 2) - 20
+                self.pos_3[1] +=  self.button_height + (self.space_y // 2) - 20
+                self.pos_4[1] +=  self.button_height + (self.space_y // 2) - 20
+                self.pos_5[1] +=  self.button_height + (self.space_y // 2) - 20
+                self.pos_6[1] +=  self.button_height + (self.space_y // 2) - 20
+                self.pos_7[1] +=  self.button_height + (self.space_y // 2) - 20
+                self.current_state += 1
+            elif self.pb == 3:
+                self.going_change = True 
             self.Button1 = ''
 
-        if self.current_state == 0:
-            print("State 1")
-            self.mainmenu_button_1P_texture.blit(self.mainmenu_button_1P_click, (0,0))
-            self.mainmenu_button_2P_texture.blit(self.mainmenu_button_2P,(0,0))
-            self.mainmenu_button_howtoplay_texture.blit(self.mainmenu_button_howtoplay,(0,0))
-        elif self.current_state == 1:
-            print("State 2")
-        #    self.mainmenu_button_1P_texture.blit(self.mainmenu_button_1P,(0,0))
-        #    self.mainmenu_button_2P_texture.blit(self.mainmenu_button_2P_click,(0,0))
-        #    self.mainmenu_button_howtoplay_texture.blit(self.mainmenu_button_howtoplay,(0,0))
-        elif self.current_state == 2:
-            print("State 3")
-        #    self.mainmenu_button_1P_texture.blit(self.mainmenu_button_1P,(0,0))
-        #    self.mainmenu_button_2P_texture.blit(self.mainmenu_button_2P,(0,0))
-        #    self.mainmenu_button_howtoplay_texture.blit(self.mainmenu_button_howtoplay_click,(0,0))
-        #print(f"Current state : {self.current_state}")
 
 def binaryToDecimal(binary): 
     binary1 = binary 

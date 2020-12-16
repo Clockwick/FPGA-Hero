@@ -114,6 +114,10 @@ class DuoPlayer(State):
             "time_size" : (self.timer_section_width, self.timer_section_height)
         }
         self.operator_state = OperatorMode(operator_data)
+    def __str__(self):
+        return "Duo"
+    def getName(self):
+        return "Duo"
     def update(self,time_delta):
         current_time = self.max_time
         

@@ -218,6 +218,27 @@ class Game:
                 self.states.pop()
             if not states.is_empty():
                 states.top().update(self.time_delta)
+                if states.top().getName() == "mainmenu":
+                    if states.top().getEvent():
+                        state = states.top().getState()
+                        print(f"Change state to {state}")
+                        if state == 1:
+                            self.game_data.update({"player_name" : "Player"})
+                            self.game_data.update({"is_single": True})
+                            self.game_data.update({"main_color": (25,255,245)}),
+                            self.game_data.update({"sub_color" : (170,255,249)})
+                            single_player_game_data = self.game_data
+                            # print(single_player_game_data)
+                            _1P_state = Singleplayer(single_player_game_data)
+                            self.states.top().set_going_change(False)
+                            self.states.push(_1P_state)
+                        if state == 2:
+                            _2P_state = DuoPlayer(self.game_data)
+                            self.states.top().set_going_change(False)
+                            self.states.push(_2P_state)
+                        if state == 3:
+                            self.states.top().set_going_change(False)
+                            print('How to play')
                 if states.top().getQuit():
                     states.top().endState()
                     states.pop()
