@@ -19,7 +19,7 @@ class DuoPlayer(State):
         full_screen = game_data["fullscreen"]
 
 
-        self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")),self.resolution)
+        self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")).convert(),self.resolution)
         
         # Timer surface
         self.timer_section_width = self.W   

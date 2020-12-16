@@ -221,7 +221,7 @@ class Game:
                 if states.top().getName() == "mainmenu":
                     if states.top().getEvent():
                         state = states.top().getState()
-                        print(f"Change state to {state}")
+                        #print(f"Change state to {state}")
                         if state == 1:
                             self.game_data.update({"player_name" : "Player"})
                             self.game_data.update({"is_single": True})

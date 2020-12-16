@@ -73,7 +73,7 @@ class Singleplayer(State):
             self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
             self.game_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
             self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
-            self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")),self.resolution)
+            self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")).convert(),self.resolution)
 
             # Var for special mode
             self.is_spec = False
@@ -130,9 +130,9 @@ class Singleplayer(State):
         self.score_text = self.main_font.render(str(self.score_value),1,(255,255,255))
         self.player_text = self.sub_font.render(self.player_name, 1 ,(255,255,255))
         if game_data["main_color"] == (25,255,245):
-            self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scoreblue-01.png")), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
+            self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scoreblue-01.png")).convert_alpha(), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
         else:
-            self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scorepurple-01.png")), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
+            self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scorepurple-01.png")).convert_alpha(), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
         self.score_value_section = pygame.Surface((self.score_text.get_width(),self.score_text.get_height()))
         self.scoreboard_pos = (0.1 * self.W , 0.165 * self.H)
         # print(game_data["random_seed"])

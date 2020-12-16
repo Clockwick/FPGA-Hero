@@ -118,7 +118,7 @@ class MainMenuState(State):
 #        self.mainmenu_button_2P_texture=pygame.Surface((self.button_width, self.button_height))
 #        self.mainmenu_button_howtoplay_texture=pygame.Surface((self.button_width, self.button_height))
 
-        self.mainmenu_bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","mainmenu_bg.png")),(self.W,self.H))
+        self.mainmenu_bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","mainmenu_bg.png")).convert(),(self.W,self.H))
         #self.manager = pygame_gui.UIManager(resolution, str(os.path.join("themes","button.json")))
         self.manager = manager
         if full_screen:
@@ -192,8 +192,8 @@ class MainMenuState(State):
     def getHTPBtn(self):
         return self.howtoplay_btn
     def update_player_input(self):
-        #print(self.i)
-        #self.i+=1
+        print(self.i)
+        self.i+=1
         bit_inp2 = GPIO.input(self.P2_PIN_BIT)
         bit_clk2 = GPIO.input(self.P2_PIN_CLKBIT)
         bit_flg2 = GPIO.input(self.P2_PIN_FLAGBIT)
