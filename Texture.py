@@ -12,5 +12,6 @@ class Texture:
     def update(self):
         pass
     def render(self,window):
-        window.blit(self.ideal_image,(self.position_image[0]-self.ideal_image.get_width()//2,self.position_image[1]-self.ideal_image.get_height()//2))
+        self.ideal_image_sur.blit(self.ideal_image,(self.position_image[0]-self.ideal_image.get_width()//2,self.position_image[1]-self.ideal_image.get_height()//2))
+        window.blit(self.ideal_image_sur,(0,0))
         

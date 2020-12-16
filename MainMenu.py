@@ -10,17 +10,13 @@ import os
 # Gpio
 import RPi.GPIO as GPIO
 
-P1_PIN_BIT = 8
 
-GPIO.setmode(GPIO.BOARD)
 class MainMenuState(State):
     def __init__(self, manager,game_data):
         super().__init__()
-        global P1_PIN_BIT
         # GPIO
         GPIO.setmode(GPIO.BOARD)
 
-        
         # Raspi 
         #PLAYER 1
         self.P1_PIN_BIT = 8
@@ -72,7 +68,7 @@ class MainMenuState(State):
         full_screen = game_data["fullscreen"]
         self.pb = 0
         self.current_state = 0
-         
+
         # Game
         resolution = game_data["resolution"]
         full_screen = game_data["fullscreen"]
@@ -100,7 +96,6 @@ class MainMenuState(State):
         self.mainmenu_button_2P_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","p2hold-01.png")),(self.button_width,self.button_height))
         self.mainmenu_button_howtoplay=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunhtp-01.png")),(self.button_width,self.button_height))
         self.mainmenu_button_howtoplay_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","htphold-01.png")),(self.button_width,self.button_height))
-       
 
         self.mainmenu_button_1P_data={
             "ideal_img" : self.mainmenu_button_1P,
@@ -120,9 +115,9 @@ class MainMenuState(State):
             "position" : (self.mainmenu_howtoplay_x,self.mainmenu_howtoplay_y)
         }
 
-        self.mainmenu_button_1P_texture=Texture(self.mainmenu_button_1P_data)
-        self.mainmenu_button_2P_texture=Texture(self.mainmenu_button_2P_data)
-        self.mainmenu_button_howtoplay_texture=Texture(self.mainmenu_button_howtoplay_data)
+        self.mainmenu_button_1P_texture=pygame.Surface((self.button_width, self.button_height))
+        self.mainmenu_button_2P_texture=pygame.Surface((self.button_width, self.button_height))
+        self.mainmenu_button_howtoplay_texture=pygame.Surface((self.button_width, self.button_height))
 
         self.mainmenu_bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","mainmenu_bg.png")),(self.W,self.H))
         self.manager = manager
@@ -144,14 +139,16 @@ class MainMenuState(State):
                                              text='How to play',
                                              manager=self.manager)
     def update(self,time_delta):
-        #self.updateInput()
         self.manager.update(time_delta)
     def render(self,window):
-        #self.update_player_input(self.mainmenu_bg)
+        self.update_player_input(self.mainmenu_bg)
+        self.mainmenu_button_1P_texture.set_colorkey((0,0,0))
+        self.mainmenu_button_2P_texture.set_colorkey((0,0,0))
+        self.mainmenu_button_howtoplay_texture.set_colorkey((0,0,0))
+        self.mainmenu_bg.blit(self.mainmenu_button_1P_texture, (self.mainmenu_button_1P_x - self.mainmenu_button_1P_texture.get_width() // 2, self.mainmenu_button_1P_y - self.mainmenu_button_1P_texture.get_height() // 2))
+        self.mainmenu_bg.blit(self.mainmenu_button_2P_texture, (self.mainmenu_button_2P_x - self.mainmenu_button_2P_texture.get_width() // 2, self.mainmenu_button_2P_y - self.mainmenu_button_2P_texture.get_height() // 2))
+        self.mainmenu_bg.blit(self.mainmenu_button_howtoplay_texture,(self.mainmenu_howtoplay_x- self.mainmenu_button_howtoplay_texture.get_width() // 2, self.mainmenu_howtoplay_y- self.mainmenu_button_howtoplay_texture.get_height() // 2))
         window.blit(self.mainmenu_bg, (0, 0))
-        self.mainmenu_button_1P_texture.render(window)
-        self.mainmenu_button_2P_texture.render(window)
-        self.mainmenu_button_howtoplay_texture.render(window)
         # self.manager.draw_ui(window)
 
     def get1PBtn(self):
@@ -161,10 +158,8 @@ class MainMenuState(State):
     def getHTPBtn(self):
         return self.howtoplay_btn
 
-    
     def update_player_input(self, window):
         bit_inp2 = GPIO.input(self.P2_PIN_BIT)
-        print(bit_inp2,end='')
         bit_clk2 = GPIO.input(self.P2_PIN_CLKBIT)
         bit_flg2 = GPIO.input(self.P2_PIN_FLAGBIT)
         if bit_flg2 == 1 and bit_clk2 == 1 and self.booBit2 == True:
@@ -176,9 +171,9 @@ class MainMenuState(State):
             self.booBit2 = True
         if self.counterBit2 == 8:
             self.counterBit2 = 0
-            print("Bit = ",end = "")
-            print(binaryToDecimal(int(self.Bit2[::-1])))
-            print("------------------------------------------")
+            #print("Bit = ",end = "")
+            #print(binaryToDecimal(int(self.Bit2[::-1])))
+            #print("------------------------------------------")
             self.Bit2 = ''
 
         button_inp2 = GPIO.input(self.P2_PIN_BUTTON)
@@ -193,9 +188,9 @@ class MainMenuState(State):
             self.booButton2 = True
         if self.counterButton2 == 4:
             self.counterButton2 = 0
-            print("*****Player 2*****")
-            print("Button = ",end = "")
-            print(color(binaryToDecimal(int(self.Button2[::-1]))))
+            #print("*****Player 2*****")
+            #print("Button = ",end = "")
+            #print(color(binaryToDecimal(int(self.Button2[::-1]))))
             self.Button2 = ''
 
         bit_inp1 = GPIO.input(self.P1_PIN_BIT)
@@ -210,9 +205,9 @@ class MainMenuState(State):
             self.booBit1 = True
         if self.counterBit1 == 8:
             self.counterBit1 = 0
-            print("Bit = ",end = "")
-            print(binaryToDecimal(int(self.Bit1[::-1])))
-            print("------------------------------------------")
+            #print("Bit = ",end = "")
+            #print(binaryToDecimal(int(self.Bit1[::-1])))
+            #print("------------------------------------------")
             self.Bit1 = ''
 
         button_inp1 = GPIO.input(self.P1_PIN_BUTTON)
@@ -228,27 +223,30 @@ class MainMenuState(State):
         if self.counterButton1 == 4:
             #print("asda")
             self.counterButton1 = 0
-            print("*****Player 1*****")
-            print("Button = ",end = "")
-            print(self.Button1[::-1])
-            print(color(binaryToDecimal(int(self.Button1[::-1]))))
-            
-            self.Button1 = ''
+            #print("*****Player 1*****")
+            #print("Button = ",end = "")
+            #print(self.Button1[::-1])
+            #print(color(binaryToDecimal(int(self.Button1[::-1]))))
+
             self.pb = binaryToDecimal(int(self.Button1[::-1]))
             self.current_state = self.pb - 1
-            
+            self.Button1 = ''
+
         if self.current_state == 0:
-            self.mainmenu_button_1P_texture.render(self.mainmenu_button_1P_click)
-            self.mainmenu_button_2P_texture.render(self.mainmenu_button_2P)
-            self.mainmenu_button_howtoplay_texture.render(self.mainmenu_button_howtoplay)
+            print("State 1")
+            self.mainmenu_button_1P_texture.blit(self.mainmenu_button_1P_click, (0,0))
+            self.mainmenu_button_2P_texture.blit(self.mainmenu_button_2P,(0,0))
+            self.mainmenu_button_howtoplay_texture.blit(self.mainmenu_button_howtoplay,(0,0))
         elif self.current_state == 1:
-            self.mainmenu_button_1P_texture.render(self.mainmenu_button_1P)
-            self.mainmenu_button_2P_texture.render(self.mainmenu_button_2P_click)
-            self.mainmenu_button_howtoplay_texture.render(self.mainmenu_button_howtoplay)
+            print("State 2")
+        #    self.mainmenu_button_1P_texture.blit(self.mainmenu_button_1P,(0,0))
+        #    self.mainmenu_button_2P_texture.blit(self.mainmenu_button_2P_click,(0,0))
+        #    self.mainmenu_button_howtoplay_texture.blit(self.mainmenu_button_howtoplay,(0,0))
         elif self.current_state == 2:
-            self.mainmenu_button_1P_texture.render(self.mainmenu_button_1P)
-            self.mainmenu_button_2P_texture.render(self.mainmenu_button_2P)
-            self.mainmenu_button_howtoplay_texture.render(self.mainmenu_button_howtoplay_click)
+            print("State 3")
+        #    self.mainmenu_button_1P_texture.blit(self.mainmenu_button_1P,(0,0))
+        #    self.mainmenu_button_2P_texture.blit(self.mainmenu_button_2P,(0,0))
+        #    self.mainmenu_button_howtoplay_texture.blit(self.mainmenu_button_howtoplay_click,(0,0))
         #print(f"Current state : {self.current_state}")
 
 def binaryToDecimal(binary): 
@@ -272,6 +270,3 @@ def color(n):
         return "Red"
     elif n == 5:
         return "White" 
-            
-            
-    

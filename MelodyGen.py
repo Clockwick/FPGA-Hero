@@ -63,7 +63,7 @@ class MelodyGen:
             self.melodyQ[rand].enQ(
                     Melody(self.start_pos_list[rand],0,
                     self.end_pos_list[rand],self.bottom_y_pos,
-                    random.randint(0,127),self.game_data
+                    7,self.game_data
                 )
             )
             # print(f"MelodyQ1 : {self.melodyQ1}")
