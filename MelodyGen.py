@@ -9,14 +9,16 @@ import random
 import pygame
 
 class Queue:
-    def __init__(self):
-        self.lst = []
+    def __init__(self): 
+        self.lst = [] 
     def __str__(self):
         return str(self.lst)
     def enQ(self, items):
         self.lst.append(items)
     def deQ(self):
-        return self.lst.pop(0)
+        if not self.is_empty():
+            self.lst[0].clear_surface()
+            self.lst.pop(0)
     def is_empty(self):
         return self.size() == 0
     def size(self):
@@ -24,6 +26,8 @@ class Queue:
     def render(self,window,pos):
         for i in self.lst:
             i.render(window,pos)
+    def peek(self):
+        return self.lst[0]
 class MelodyGen:
     def __init__(self,pos_data,game_data):
         self.melodyQ1 = Queue()
@@ -49,11 +53,17 @@ class MelodyGen:
             self.melody_bg = pygame.Surface((0,0),pygame.FULLSCREEN)
         else:
             self.melody_bg = pygame.Surface(self.resolution)
+
         # print(game_data["random_seed"])
+        self.front_Q = [0,0,0,0,0]
         
         
+    def get_front_Q(self):
+        return self.front_Q 
+    def get_melody_Q(self):
+        return self.melodyQ
     def update(self,time_delta):
-        if pygame.time.get_ticks() - self.prev_time > random.randrange(10000,12000,500):
+        if pygame.time.get_ticks() - self.prev_time > random.randrange(8000,12000,500):
             self.canCreated = True
             self.prev_time = pygame.time.get_ticks()
         if self.canCreated:
@@ -66,19 +76,25 @@ class MelodyGen:
                     random.randint(0,127),self.game_data
                 )
             )
-            # print(f"MelodyQ1 : {self.melodyQ1}")
-            # print(f"MelodyQ2 : {self.melodyQ2}")
-            # print(f"MelodyQ3 : {self.melodyQ3}")
-            # print(f"MelodyQ4 : {self.melodyQ4}")
-            # print(f"MelodyQ5 : {self.melodyQ5}")
             self.canCreated = False
+
+        # Front of melody queue
+        for i in range(5):
+            if not self.melodyQ[i].is_empty():
+                self.front_Q[i] = self.melodyQ[i].peek()
+        #print(f"MelodyQ1 : {self.melodyQ1}")
+        #print(f"MelodyQ2 : {self.melodyQ2}")
+        #print(f"MelodyQ3 : {self.melodyQ3}")
+        #print(f"MelodyQ4 : {self.melodyQ4}")
+        #print(f"MelodyQ5 : {self.melodyQ5}")
         for meQ in self.melodyQ:
             for melody in meQ.lst:
                 melody.update(time_delta)
                 if melody.get_position()[1] >= self.bottom_y_pos + 100:
-                    meQ.deQ().melody_surface.fill("#ffffff")
+                    meQ.deQ()
                     self.player.set_score(self.player.get_score() + 10)
                     self.player.score_update()
+
         
 
     def render(self, window):

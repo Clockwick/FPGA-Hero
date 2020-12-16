@@ -89,6 +89,9 @@ class MainMenuState(State):
 
         self.mainmenu_howtoplay_x=self.W//2
         self.mainmenu_howtoplay_y=self.H//2.5 + self.space_y*2
+
+        self.current_time = 0
+        self.clear_time = 2000
 #        self.mainmenu_button_1P=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunp1-01.png")),(self.button_width,self.button_height))
 #        self.mainmenu_button_1P_click=pygame.transform.scale(pygame.image.load(os.path.join("assets","p1hold-01.png")),(self.button_width,self.button_height))
 #        self.mainmenu_button_2P=pygame.transform.scale(pygame.image.load(os.path.join("assets","buttunp2-01.png")),(self.button_width,self.button_height))
@@ -158,6 +161,7 @@ class MainMenuState(State):
 
 
         self.going_change = False
+        self.one_time = True
     def __str__(self):
         return "mainmenu"
 
@@ -170,9 +174,9 @@ class MainMenuState(State):
     def getState(self):
         return self.current_state
     def update(self,time_delta):
+        self.update_player_input()
         self.manager.update(time_delta)
     def render(self,window):
-        self.update_player_input()
         #self.mainmenu_button_1P_texture.set_colorkey((0,0,0))
         #self.mainmenu_button_2P_texture.set_colorkey((0,0,0))
         #self.mainmenu_button_howtoplay_texture.set_colorkey((0,0,0))
@@ -191,9 +195,18 @@ class MainMenuState(State):
         return self._2p_btn
     def getHTPBtn(self):
         return self.howtoplay_btn
+    def clear(self):
+        self.Bit1 = ''
+        self.Button1 = ''
+        self.counterBit1 = 0
+        self.counterButton1 = 0
+
+        self.booBit1 = True
+        self.booButton1 = True
+
     def update_player_input(self):
-        print(self.i)
-        self.i+=1
+        #print(self.i)
+        #self.i+=1
         bit_inp2 = GPIO.input(self.P2_PIN_BIT)
         bit_clk2 = GPIO.input(self.P2_PIN_CLKBIT)
         bit_flg2 = GPIO.input(self.P2_PIN_FLAGBIT)
@@ -206,9 +219,9 @@ class MainMenuState(State):
             self.booBit2 = True
         if self.counterBit2 == 8:
             self.counterBit2 = 0
-            print("Bit = ",end = "")
-            print(binaryToDecimal(int(self.Bit2[::-1])))
-            print("------------------------------------------")
+            #print("Bit = ",end = "")
+            #print(binaryToDecimal(int(self.Bit2[::-1])))
+            #print("------------------------------------------")
             self.Bit2 = ''
 
         button_inp2 = GPIO.input(self.P2_PIN_BUTTON)
@@ -223,9 +236,9 @@ class MainMenuState(State):
             self.booButton2 = True
         if self.counterButton2 == 8:
             self.counterButton2 = 0
-            print("*****Player 2*****")
-            print("Button = ",end = "")
-            print(color(binaryToDecimal(int(self.Button2[::-1]))))
+            #print("*****Player 2*****")
+            #print("Button = ",end = "")
+            #print(color(binaryToDecimal(int(self.Button2[::-1]))))
             self.Button2 = ''
 
         bit_inp1 = GPIO.input(self.P1_PIN_BIT)
@@ -240,12 +253,24 @@ class MainMenuState(State):
             self.booBit1 = True
         if self.counterBit1 == 8:
             self.counterBit1 = 0
-            print("Bit = ",end = "")
-            print(binaryToDecimal(int(self.Bit1[::-1])))
-            print("------------------------------------------")
+            #print(f"Bits : {self.Bit1[::-1]}")
+            #print("Bit = ",end = "")
+            #print(binaryToDecimal(int(self.Bit1[::-1])))
+            #print("------------------------------------------")
             self.Bit1 = ''
 
         button_inp1 = GPIO.input(self.P1_PIN_BUTTON)
+        if button_inp1 == 0:
+            if self.one_time:
+                self.current_time = pygame.time.get_ticks()
+                self.one_time = False
+            if pygame.time.get_ticks() - self.current_time >= self.clear_time:
+                self.current_time = pygame.time.get_ticks()
+                self.clear()
+                self.one_time = True
+                print("Clear")
+        else:
+            self.one_time = True
         button_clk1 = GPIO.input(self.P1_PIN_CLKBUTTON)
         button_flg1 = GPIO.input(self.P1_PIN_FLAG_BUTTON)
         if button_flg1 == 1 and button_clk1 == 1 and self.booButton1 == True:
@@ -257,9 +282,10 @@ class MainMenuState(State):
             self.booButton1 = True
         if self.counterButton1 == 8:
             self.counterButton1 = 0
-            print("*****Player 1*****")
-            print("Button = ",end = "")
-            print(color(binaryToDecimal(int(self.Button1[::-1]))))
+            #print(f"Button : {self.Button1[::-1]}")
+            #print("*****Player 1*****")
+            #print("Button = ",end = "")
+            #print(color(binaryToDecimal(int(self.Button1[::-1]))))
             self.pb = binaryToDecimal(int(self.Button1[::-1]))
             if self.pb == 1 and self.current_state > 1:
                 self.pos_1[1] -=  self.button_height+ (self.space_y // 2 ) - 20

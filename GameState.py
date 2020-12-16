@@ -102,6 +102,10 @@ class GameState(State):
             self.melody_generator.update(time_delta)
 
 
+    def get_melody_Q(self):
+        return self.melody_generator.get_melody_Q()
+    def get_front_Q(self):
+        return self.melody_generator.get_front_Q()
     def render(self,window):
         
         # self.gamestate_blue_1.set_colorkey((0,0,0))

@@ -92,7 +92,8 @@ class DuoPlayer(State):
             # "random_seed" : rand,
             "is_single": False,
             "main_color": (25,255,245),
-            "sub_color": (170,255,249)
+            "sub_color": (170,255,249),
+            "player_id": 1
         }
         gamestate_data_layout2 = {
             "game_title" : "FPGA-Hero",
@@ -102,7 +103,8 @@ class DuoPlayer(State):
             # "random_seed" : rand,
             "is_single": False,
             "main_color": (248,81,245),
-            "sub_color": (249,146,247)
+            "sub_color": (249,146,247),
+            "player_id": 2
             
         }
 

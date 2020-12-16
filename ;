@@ -73,7 +73,6 @@ class Singleplayer(State):
             "time_size" : (self.timer_section_width, self.timer_section_height)
         }
         self.operator_state = OperatorMode(operator_data)
-        self.player_id = game_data["player_id"]
       
         if self.is_single:
             self.player_name = game_data["player_name"]
@@ -105,6 +104,7 @@ class Singleplayer(State):
             self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
             self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")).convert(),self.resolution)
 
+            self.player_id == game_data["player_id"]
             # Var for special mode
             self.is_spec = False
             self.enable_spec = False
@@ -157,10 +157,8 @@ class Singleplayer(State):
             GPIO.setup(self.PIN_CLKBIT,GPIO.IN)
             GPIO.setup(self.PIN_CLKBUTTON,GPIO.IN)
 
-            # Check with score            
             self.ch = 0
             self.mel = 0
-            self.is_ch = False
 
             # Score section
             self.score_section_width = self.W
@@ -199,8 +197,6 @@ class Singleplayer(State):
         self.cur_time = 0
         self.timtim = True
         self.clear_time = 5000 
-
-
         if game_data["main_color"] == (25,255,245):
             self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scoreblue-01.png")).convert_alpha(), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
         else:
@@ -226,7 +222,7 @@ class Singleplayer(State):
     def clear(self):
         self.Bit = ''
         self.Button = ''
-        self.counterBit = 0
+        self.counterBit1 = 0
         self.counterButton = 0
 
         self.booBit = True
@@ -247,12 +243,22 @@ class Singleplayer(State):
             #print("Bit = ",end = "")
             #print(binaryToDecimal(int(self.Bit[::-1])))
             #print("------------------------------------------")
-            self.mel = binaryToDecimal(int(self.Bit[::-1]))
-#            print("Bit :", self.mel)
-#            print("Bit decimal:", binaryToDecimal(int(self.mel)))
+            self.mel = self.Bit[::-1]
+            print("Bit :", self.mel)
             self.Bit = ''
 
         button_inp = GPIO.input(self.PIN_BUTTON)
+        if button_inp == 0:
+            if self.timtim:
+                self.cur_time = pygame.time.get_ticks()
+                self.timtim = False
+            if pygame.time.get_ticks() - self.cur_time >= self.clear_time:
+                self.cur_time = pygame.time.get_ticks()
+                self.clear()
+                self.timtim = True
+                print("Clear from player ", self.player_id)
+        else:
+            self.timtim = True
         button_clk = GPIO.input(self.PIN_CLKBUTTON)
         button_flg = GPIO.input(self.PIN_FLAG_BUTTON)
         if button_flg == 1 and button_clk == 1 and self.booButton == True:
@@ -268,55 +274,8 @@ class Singleplayer(State):
             #print("Button = ",end = "")
             #print(color(binaryToDecimal(int(self.Button[::-1]))))
             self.ch = binaryToDecimal(int(self.Button[::-1]))
-            self.is_ch = True
-#            print("Ch :", self.ch)
+            print("Ch :", self.ch)
             self.Button = ''
-        if button_inp == 0:
-            if self.timtim:
-                self.cur_time = pygame.time.get_ticks()
-                self.timtim = False
-            if pygame.time.get_ticks() - self.cur_time >= self.clear_time:
-                self.cur_time = pygame.time.get_ticks()
-                self.clear()
-                self.timtim = True
-                print("Clear from player ", self.player_id)
-        else:
-            self.timtim = True
-
-    def update_melody(self, time_delta):
-        if self.is_ch:
-            self.ch -= 1
-            if self.ch == 0:
-                print(f"Current Melody : {self.mel} Compare with {self.game_state.get_front_Q()[self.ch]}")
-                if self.game_state.get_front_Q()[self.ch] != 0:
-                    if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
-                        self.game_state.get_melody_Q()[self.ch].deQ()
-                        print("Score")
-            if self.ch == 1:
-                print(f"Current Melody : {self.mel} Compare with {self.game_state.get_front_Q()[self.ch]}")
-                if self.game_state.get_front_Q()[self.ch] != 0:
-                    if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
-                        self.game_state.get_melody_Q()[self.ch].deQ()
-                        print("Score")
-            if self.ch == 2:
-                print(f"Current Melody : {self.mel} Compare with {self.game_state.get_front_Q()[self.ch]}")
-                if self.game_state.get_front_Q()[self.ch] != 0:
-                    if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
-                        self.game_state.get_melody_Q()[self.ch].deQ()
-                        print("Score")
-            if self.ch == 3:
-                print(f"Current Melody : {self.mel} Compare with {self.game_state.get_front_Q()[self.ch]}")
-                if self.game_state.get_front_Q()[self.ch] != 0:
-                    if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
-                        self.game_state.get_melody_Q()[self.ch].deQ()
-                        print("Score")
-            if self.ch == 4:
-                print(f"Current Melody : {self.mel} Compare with {self.game_state.get_front_Q()[self.ch]}")
-                if self.game_state.get_front_Q()[self.ch] != 0:
-                    if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
-                        self.game_state.get_melody_Q()[self.ch].deQ()
-                        print("Score")
-            self.is_ch = False
 
     def update(self,time_delta):
         current_time = self.max_time
@@ -328,7 +287,6 @@ class Singleplayer(State):
                 if self.is_spec:
                     self.update_spec_mode()
         self.update_input()
-        self.update_melody(time_delta)
         self.game_state.update_spec(self.is_spec)
         self.update_timer()
         self.game_state.update(time_delta)
