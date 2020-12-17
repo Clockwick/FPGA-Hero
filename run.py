@@ -101,7 +101,7 @@ while True:
         booButton2 = False
     if button_clk2 == 0:
         booButton2 = True
-    if counterButton2 == 4:
+    if counterButton2 == 8:
         counterButton2 = 0
         print("*****Player 2*****")
         print("Button = ",end = "")
@@ -139,7 +139,7 @@ while True:
         booButton1 = False
     if button_clk1 == 0:
         booButton1 = True
-    if counterButton1 == 4:
+    if counterButton1 == 8:
         counterButton1 = 0
         print("*****Player 1*****")
         print("Button = ",end = "")

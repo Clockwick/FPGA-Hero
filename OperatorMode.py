@@ -49,6 +49,8 @@ class OperatorMode:
         self.operator_text = self.main_font.render(str(self.operator_list[self.rand_operator]),1,(255,255,255))
     
         self.answer_text = self.main_font.render(str(self.answer),1,(255,0,0))
+    def get_answer(self):
+        return self.answer
     def disable(self):
         self.active = False
     def is_active(self):

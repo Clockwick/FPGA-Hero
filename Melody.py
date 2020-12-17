@@ -6,6 +6,8 @@ import pygame
 class Melody:
     def __init__(self,start_x,start_y,end_x, end_y,rand_num,game_data):
         self.W,self.H = game_data["resolution"]
+        self.long_color = game_data["long_color"]
+        self.short_color = game_data["short_color"]
         self.main_font = pygame.font.SysFont("Arial", self.W//20)
         self.rand_melody = self.main_font.render("    ", 1 ,(255,255,255))
         self.melody_surface = pygame.Surface((self.rand_melody.get_width() + 20,self.rand_melody.get_height() + 20))
@@ -24,7 +26,7 @@ class Melody:
         self.game_data = game_data
         self.timer = 0
         # Melody Speed
-        self.vel = 2
+        self.vel = 5
 
         self.is_running = True
         self.is_clear = False
@@ -39,7 +41,6 @@ class Melody:
     def updateRandom(self,time_delta):
         self.rand_melody = self.main_font.render(str(self.rand_num), 1 , (1,1,1))
         self.melody_surface = pygame.Surface((self.rand_melody.get_width(),self.rand_melody.get_height()))
-        self.dumb_surface =  pygame.Surface((self.rand_melody.get_width(),self.rand_melody.get_height()))
     def updatePosition(self,time_delta):
         delta_x = self.end_x - self.start_x
         delta_y = self.end_y - self.start_y
@@ -47,17 +48,23 @@ class Melody:
         ratio = self.vel / goal_dist
         self.current_x += ratio * delta_x
         self.current_y += ratio * delta_y
-        # print(f"{self.current_y} : {self.end_y}")
-        if self.current_y >= self.end_y:
-            pass
             
         
     def printFonts(self):
         all_font = pygame.font.get_fonts()
         print(all_font)
     def clear_surface(self):
-        self.dumb_surface.fill("#111111")
-        self.melody_surface.blit(self.dumb_surface, (self.current_x, self.current_y))
+        #dumb_block = pygame.Rect((self.current_x,self.current_y),(self.rand_melody.get_width(),self.rand_melody.get_height()))
+        #pygame.draw.rect(self.parent_window, self.long_color , dumb_block)
+        self.parent_window.blit(self.melody_surface, (self.current_x, self.current_y))
+
+
+        #self.dumb_surface.fill("#111111")
+        #self.melody_surface.blit(self.dumb_surface, (self.current_x, self.current_y))
+    def get_current_y(self):
+        return self.current_y
+    def set_parent_window(self, window):
+        self.parent_window = window
         
     def render(self,window):
         #self.rand_melody.set_colorkey(0)

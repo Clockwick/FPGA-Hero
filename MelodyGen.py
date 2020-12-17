@@ -27,7 +27,8 @@ class Queue:
         for i in self.lst:
             i.render(window,pos)
     def peek(self):
-        return self.lst[0]
+        if not self.is_empty():
+            return self.lst[0]
 class MelodyGen:
     def __init__(self,pos_data,game_data):
         self.melodyQ1 = Queue()
@@ -73,7 +74,7 @@ class MelodyGen:
             self.melodyQ[rand].enQ(
                     Melody(self.start_pos_list[rand],0,
                     self.end_pos_list[rand],self.bottom_y_pos,
-                    random.randint(0,127),self.game_data
+                    random.randint(0,127),self.game_data 
                 )
             )
             self.canCreated = False
@@ -92,8 +93,8 @@ class MelodyGen:
                 melody.update(time_delta)
                 if melody.get_position()[1] >= self.bottom_y_pos + 100:
                     meQ.deQ()
-                    self.player.set_score(self.player.get_score() + 10)
-                    self.player.score_update()
+                    #self.player.set_score(self.player.get_score() + 10)
+                    #self.player.score_update()
 
         
 
@@ -103,4 +104,5 @@ class MelodyGen:
         for meQ in self.melodyQ:
             for melody in meQ.lst:
                 melody.render(self.melody_bg)
+                melody.set_parent_window(self.melody_bg)
         

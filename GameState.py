@@ -94,8 +94,10 @@ class GameState(State):
 
         }
         
-        
-        self.melody_generator = MelodyGen(pos_data, game_data)
+        game_data.update({"long_color": self.SUB_COLOR})
+        game_data.update({"short_color": self.MAIN_COLOR})
+        temp_data = game_data
+        self.melody_generator = MelodyGen(pos_data, temp_data)
         
     def update(self,time_delta):
         if not self.is_spec:

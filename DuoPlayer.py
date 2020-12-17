@@ -135,8 +135,12 @@ class DuoPlayer(State):
         self.update_timer()
         self.player_1.update_is_spec(self.is_spec)
         self.player_2.update_is_spec(self.is_spec)
+        if not self.enable_spec:
+            self.player_1.update_melody(time_delta)
+            self.player_2.update_melody(time_delta)
         self.player_1.update(time_delta)
         self.player_2.update(time_delta)
+        self.update_special_mode()
         
     def render(self,window):
         # window.blit(self.bg, (0,0))
@@ -178,7 +182,7 @@ class DuoPlayer(State):
         if pygame.time.get_ticks() - self.prev_time >= 1000:
             self.rand_summ = random.randint(0,127)
             self.rand_div = random.randint(0,127)
-            self.rand_num = random.randint(30,45)
+            self.rand_num = random.randint(10,15)
             # print(self.rand_num)
             self.prev_time = pygame.time.get_ticks()
             # print(self.timer) 
@@ -186,7 +190,35 @@ class DuoPlayer(State):
     def update_timer(self):
         self.timer_section.fill("#000000")
         self.timer_text = self.main_font.render(str(self.timer), 1,(255,255,255))
-        
+
+    def update_special_mode(self):
+        if self.enable_spec:
+            if self.player_1.get_ch():
+                print(f"Player 1 : {self.player_1.mel} compare with {self.operator_state.get_answer()}")
+                if self.player_1.mel == self.operator_state.get_answer():
+                    self.player_1.score_value += pygame.time.get_ticks() - self.current_spec_time
+                    self.player_1.score_update()
+                    self.is_spec = False
+                    self.is_start_spec = True
+                    self.point_time = self.max_time
+                    self.one_time = True
+                    self.enable_spec = False
+                    self.operator_state.disable()
+                    print("Player 1 Win")
+                self.player_1.set_ch(False)
+            if self.player_2.get_ch():
+                print(f"Player 2 : {self.player_2.mel} compare with {self.operator_state.get_answer()}")
+                if self.player_2.mel == self.operator_state.get_answer():
+                    self.player_2.score_value += pygame.time.get_ticks() - self.current_spec_time
+                    self.player_2.score_update()
+                    self.is_spec = False
+                    self.is_start_spec = True
+                    self.point_time = self.max_time
+                    self.one_time = True
+                    self.enable_spec = False
+                    self.operator_state.disable()
+                    print("Player 2 Win")
+                self.player_2.set_ch(False)
     def update_spec_mode(self):
         if self.one_time:
             self.current_time = pygame.time.get_ticks()
