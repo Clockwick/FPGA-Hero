@@ -74,6 +74,8 @@ class GameState(State):
 
         self.MAIN_COLOR = game_data["main_color"]
         self.SUB_COLOR = game_data["sub_color"]
+        self.PRESS_COLOR_SHORT = game_data["press_color_short"]
+        self.PRESS_COLOR_LONG= game_data["press_color_long"]
         
         pos_data = {
             "start_pos_list" : [
@@ -123,7 +125,7 @@ class GameState(State):
         
         window.blit(self.game_state_bg, (0, 0))
         
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr1)
+        pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.tr1)
         pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr2) 
         pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr3)
         pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr4) 
@@ -133,7 +135,7 @@ class GameState(State):
         pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr3,1)
         pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr4,1) 
         pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr5,1)
-        pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+        pygame.draw.polygon(self.game_state_bg, self.PRESS_COLOR_LONG, [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
         pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody2_start_pos,self.TOP_RECT_HEIGHT),(self.melody2_end_pos,self.bottom_ypos), (self.melody2_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody2_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
         pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
         pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
@@ -143,7 +145,7 @@ class GameState(State):
         pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
         pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
         pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody5_start_pos,self.TOP_RECT_HEIGHT),(self.melody5_end_pos,self.bottom_ypos), (self.melody5_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody5_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br1)
+        pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.br1)
         pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br2) 
         pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br3) 
         pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br4) 

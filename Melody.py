@@ -26,13 +26,14 @@ class Melody:
         self.game_data = game_data
         self.timer = 0
         # Melody Speed
-        self.vel = 5
+        self.vel = 2
 
         self.is_running = True
         self.is_clear = False
 
     def __str__(self):
         return str(self.rand_num)
+    
 
     def update(self,time_delta):
         #self.timer = pygame.Clock.get_ticks()
@@ -48,6 +49,8 @@ class Melody:
         ratio = self.vel / goal_dist
         self.current_x += ratio * delta_x
         self.current_y += ratio * delta_y
+    def get_end_y(self):
+        return self.end_y
             
         
     def printFonts(self):

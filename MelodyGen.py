@@ -91,7 +91,7 @@ class MelodyGen:
         for meQ in self.melodyQ:
             for melody in meQ.lst:
                 melody.update(time_delta)
-                if melody.get_position()[1] >= self.bottom_y_pos + 100:
+                if melody.get_position()[1] >= self.bottom_y_pos:
                     meQ.deQ()
                     #self.player.set_score(self.player.get_score() + 10)
                     #self.player.score_update()

@@ -101,6 +101,7 @@ class Singleplayer(State):
             self.gamestate_section_y = self.score_section_height + self.timer_section_height
 
             self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
+            #self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
             self.game_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
             self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
             self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")).convert(),self.resolution)
@@ -198,7 +199,7 @@ class Singleplayer(State):
         # Calm down mode
         self.cur_time = 0
         self.timtim = True
-        self.clear_time = 1000 
+        self.clear_time = 2000 
 
 
         if game_data["main_color"] == (25,255,245):
@@ -215,6 +216,8 @@ class Singleplayer(State):
             "single_player_obj": self,
             "main_color": game_data["main_color"],
             "sub_color": game_data["sub_color"],
+            "press_color_long" : game_data["press_color_long"],
+            "press_color_short" : game_data["press_color_short"]
             # "random_seed" : game_data["random_seed"]p
         }
         self.game_state = GameState(gamestate_data_layout1)
@@ -222,7 +225,7 @@ class Singleplayer(State):
         if self.is_single:
             return "Single"
     def getName(self):
-        return "Single"
+        return self.player_name
     def clear(self):
         self.Bit = ''
         self.Button = ''
@@ -262,8 +265,13 @@ class Singleplayer(State):
                 if self.game_state.get_front_Q()[self.ch] != 0:
                     if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
                         if self.game_state.get_melody_Q()[self.ch].peek() != None:
-                            score = int(self.game_state.get_melody_Q()[self.ch].peek().get_current_y())
-                            self.score_value += score
+                            end_point = self.game_state.get_melody_Q()[self.ch].peek().get_end_y()
+                            current_point = self.game_state.get_melody_Q()[self.ch].peek().get_current_y()
+                            update_score = int(end_point - current_point)
+                            if update_score >= 0:
+                                self.score_value += update_score
+                            else:
+                                self.score_value += random.randint(10,20)
                             self.score_update()
                             self.game_state.get_melody_Q()[self.ch].deQ()
             if self.ch == 1:
@@ -271,8 +279,13 @@ class Singleplayer(State):
                 if self.game_state.get_front_Q()[self.ch] != 0:
                     if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
                         if self.game_state.get_melody_Q()[self.ch].peek() != None:
-                            score = int(self.game_state.get_melody_Q()[self.ch].peek().get_current_y())
-                            self.score_value += score
+                            end_point = self.game_state.get_melody_Q()[self.ch].peek().get_end_y()
+                            current_point = self.game_state.get_melody_Q()[self.ch].peek().get_current_y()
+                            update_score = int(end_point - current_point)
+                            if update_score >= 0:
+                                self.score_value += update_score
+                            else:
+                                self.score_value += random.randint(10,20)
                             self.score_update()
                             self.game_state.get_melody_Q()[self.ch].deQ()
             if self.ch == 2:
@@ -280,8 +293,13 @@ class Singleplayer(State):
                 if self.game_state.get_front_Q()[self.ch] != 0:
                     if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
                         if self.game_state.get_melody_Q()[self.ch].peek() != None:
-                            score = int(self.game_state.get_melody_Q()[self.ch].peek().get_current_y())
-                            self.score_value += score
+                            end_point = self.game_state.get_melody_Q()[self.ch].peek().get_end_y()
+                            current_point = self.game_state.get_melody_Q()[self.ch].peek().get_current_y()
+                            update_score = int(end_point - current_point)
+                            if update_score >= 0:
+                                self.score_value += update_score
+                            else:
+                                self.score_value += random.randint(10,20)
                             self.score_update()
                             self.game_state.get_melody_Q()[self.ch].deQ()
             if self.ch == 3:
@@ -289,8 +307,13 @@ class Singleplayer(State):
                 if self.game_state.get_front_Q()[self.ch] != 0:
                     if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
                         if self.game_state.get_melody_Q()[self.ch].peek() != None:
-                            score = int(self.game_state.get_melody_Q()[self.ch].peek().get_current_y())
-                            self.score_value += score
+                            end_point = self.game_state.get_melody_Q()[self.ch].peek().get_end_y()
+                            current_point = self.game_state.get_melody_Q()[self.ch].peek().get_current_y()
+                            update_score = int(end_point - current_point)
+                            if update_score >= 0:
+                                self.score_value += update_score
+                            else:
+                                self.score_value += random.randint(10,20)
                             self.score_update()
                             self.game_state.get_melody_Q()[self.ch].deQ()
             if self.ch == 4:
@@ -298,8 +321,13 @@ class Singleplayer(State):
                 if self.game_state.get_front_Q()[self.ch] != 0:
                     if self.mel == self.game_state.get_front_Q()[self.ch].rand_num:
                         if self.game_state.get_melody_Q()[self.ch].peek() != None:
-                            score = int(self.game_state.get_melody_Q()[self.ch].peek().get_current_y())
-                            self.score_value += score
+                            end_point = self.game_state.get_melody_Q()[self.ch].peek().get_end_y()
+                            current_point = self.game_state.get_melody_Q()[self.ch].peek().get_current_y()
+                            update_score = int(end_point - current_point)
+                            if update_score >= 0:
+                                self.score_value += update_score
+                            else:
+                                self.score_value += random.randint(10,20)
                             self.score_update()
                             self.game_state.get_melody_Q()[self.ch].deQ()
             self.is_ch = False
