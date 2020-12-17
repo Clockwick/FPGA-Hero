@@ -4,10 +4,13 @@ from Singleplayer import Singleplayer
 from MainMenu import MainMenuState
 
 # Pygame
-
 import pygame
 import pygame_gui
 
+# Python standard libs
+import random
+
+# GPIO
 import RPi.GPIO as GPIO
 
 class Stack:
@@ -223,10 +226,24 @@ class Game:
                         state = states.top().getState()
                         #print(f"Change state to {state}")
                         if state == 1:
-                            self.game_data.update({"player_name" : "Player"})
-                            self.game_data.update({"is_single": True})
-                            self.game_data.update({"main_color": (25,255,245)}),
-                            self.game_data.update({"sub_color" : (170,255,249)})
+                            rand = random.randint(1,2)
+                            if rand == 1:
+                                self.game_data.update({"player_name" : "Player"})
+                                self.game_data.update({"is_single": True})
+                                self.game_data.update({"main_color": (25,255,245)})
+                                self.game_data.update({"sub_color" : (170,255,249)})
+                                self.game_data.update({"press_color_short": (255,243,0)})
+                                self.game_data.update({"press_color_long": (255,252,182)})
+                                self.game_data.update({"player_id" : 1})
+                            else:
+                                self.game_data.update({"player_name" : "Player"})
+                                self.game_data.update({"is_single": True})
+                                self.game_data.update({"main_color": (25,255,245)})
+                                self.game_data.update({"sub_color" : (170,255,249)})
+                                self.game_data.update({"press_color_short": (255,25,35)})
+                                self.game_data.update({"press_color_long": (255,182,185)})
+                                self.game_data.update({"player_id" : 2})
+
                             single_player_game_data = self.game_data
                             # print(single_player_game_data)
                             _1P_state = Singleplayer(single_player_game_data)

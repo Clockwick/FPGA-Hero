@@ -19,30 +19,34 @@ class Singleplayer(State):
         GPIO.setmode(GPIO.BOARD)
 
         # Raspi 
-        #PLAYER 1
-        self.P1_PIN_BIT = 8
-        self.P1_PIN_BUTTON = 10
-        self.P1_PIN_FLAGBIT = 12
-        self.P1_PIN_FLAG_BUTTON = 37
-        self.P1_PIN_CLKBIT = 40
-        self.P1_PIN_CLKBUTTON = 16
+        if game_data["player_id"] == 2:
+            self.PIN_BIT = 35
+            self.PIN_BUTTON = 33
+            self.PIN_FLAGBIT = 31
+            self.PIN_FLAG_BUTTON = 21
+            self.PIN_CLKBIT = 23
+            self.PIN_CLKBUTTON = 29
+        else:
+            self.PIN_BIT = 8
+            self.PIN_BUTTON = 10
+            self.PIN_FLAGBIT = 12
+            self.PIN_FLAG_BUTTON = 37
+            self.PIN_CLKBIT = 40
+            self.PIN_CLKBUTTON = 16
+        GPIO.setup(self.PIN_BIT,GPIO.IN)
+        GPIO.setup(self.PIN_BUTTON, GPIO.IN)
+        GPIO.setup(self.PIN_FLAGBIT,GPIO.IN)
+        GPIO.setup(self.PIN_FLAG_BUTTON,GPIO.IN)
+        GPIO.setup(self.PIN_CLKBIT,GPIO.IN)
+        GPIO.setup(self.PIN_CLKBUTTON,GPIO.IN)
 
+        self.Bit = ''
+        self.Button = ''
+        self.counterBit = 0
+        self.counterButton = 0
+        self.booBit = True
+        self.booButton = True
 
-        GPIO.setup(self.P1_PIN_BIT,GPIO.IN)
-        GPIO.setup(self.P1_PIN_BUTTON, GPIO.IN)
-        GPIO.setup(self.P1_PIN_FLAGBIT,GPIO.IN)
-        GPIO.setup(self.P1_PIN_FLAG_BUTTON,GPIO.IN)
-        GPIO.setup(self.P1_PIN_CLKBIT,GPIO.IN)
-        GPIO.setup(self.P1_PIN_CLKBUTTON,GPIO.IN)
-
-        self.Bit1 = ''
-        self.Button1 = ''
-        self.counterBit1 = 0
-        self.counterButton1 = 0
-
-        self.booBit1 = True
-        self.booButton1 = True
-        
         self.is_single = game_data["is_single"]
         self.resolution = game_data["resolution"]
         full_screen = game_data["fullscreen"]
@@ -57,7 +61,8 @@ class Singleplayer(State):
         self.offset_x, self.offset_y = self.W // 5, self.H // 5
         
         
-        self.max_time = 120
+        
+        self.max_time = 120 
         self.is_spec = False
         # Special mode surface
         self.timer_section_width = self.W
@@ -70,12 +75,12 @@ class Singleplayer(State):
         
         operator_data = {
             "size" : (self.spec_section_width,self.spec_section_height),
-            "time_size" : (self.timer_section_width, self.timer_section_height)
-        }
+            "time_size" : (self.timer_section_width, self.timer_section_height) }
         self.operator_state = OperatorMode(operator_data)
         self.player_id = game_data["player_id"]
       
         if self.is_single:
+            self.is_going_quit = False
             self.player_name = game_data["player_name"]
             self.timer = 0
             self.timer_section_width = self.W
@@ -85,7 +90,7 @@ class Singleplayer(State):
             self.timer_section = pygame.Surface((self.W,self.timer_section_height))
             self.timer_text = self.main_font.render(str(self.timer), 1,(255,255,255))
              # Count down timer
-            self.max_time = 120
+            self.max_time = 120 
             self.prev_time = 0
             self.point_time = self.max_time
             
@@ -100,10 +105,19 @@ class Singleplayer(State):
             self.gamestate_section_x = 0
             self.gamestate_section_y = self.score_section_height + self.timer_section_height
 
+            # Winner surface
+            self.winner_section_height = self.H // 2
+            self.winner_section_width = self.W // 2
+            self.winner_section_x = self.W // 4
+            self.winner_section_y = self.H // 4
+
             self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
             #self.score_section = pygame.Surface((self.score_section_width,self.score_section_height))
             self.game_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
             self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
+            self.winner_section = pygame.Surface(self.resolution)
+            self.winner_window = pygame.Rect((self.winner_section_x,self.winner_section_y), (self.winner_section_width,self.winner_section_height))
+            self.winner = ""
             self.bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","onlybg2player-01.png")).convert(),self.resolution)
 
             # Var for special mode
@@ -125,39 +139,11 @@ class Singleplayer(State):
             self.rand_div = 0
             # print(self.W,self.H)
             # self.scoreboard_pos = (0.05 * self.W , 0.136 * self.H)
+            self.is_ch = False
+            self.ch = -1
+            self.is_stop_game = False
             
         else:
-            if game_data["player_id"] == 2:
-                self.PIN_BIT = 35
-                self.PIN_BUTTON = 33
-                self.PIN_FLAGBIT = 31
-                self.PIN_FLAG_BUTTON = 21
-                self.PIN_CLKBIT = 23
-                self.PIN_CLKBUTTON = 29
-            else:
-                self.PIN_BIT = 8
-                self.PIN_BUTTON = 10
-                self.PIN_FLAGBIT = 12
-                self.PIN_FLAG_BUTTON = 37
-                self.PIN_CLKBIT = 40
-                self.PIN_CLKBUTTON = 16
-                
-                
-            self.Bit = ''
-            self.Button = ''
-            self.counterBit = 0
-            self.counterButton = 0
-
-            self.booBit = True
-            self.booButton = True
-
-            GPIO.setup(self.PIN_BIT,GPIO.IN)
-            GPIO.setup(self.PIN_BUTTON, GPIO.IN)
-            GPIO.setup(self.PIN_FLAGBIT,GPIO.IN)
-            GPIO.setup(self.PIN_FLAG_BUTTON,GPIO.IN)
-            GPIO.setup(self.PIN_CLKBIT,GPIO.IN)
-            GPIO.setup(self.PIN_CLKBUTTON,GPIO.IN)
-
             # Check with score            
             self.ch = 0
             self.mel = 0
@@ -199,7 +185,8 @@ class Singleplayer(State):
         # Calm down mode
         self.cur_time = 0
         self.timtim = True
-        self.clear_time = 1500 
+        self.clear_time = 1750 
+        self.is_stop_game = False
 
 
         if game_data["main_color"] == (25,255,245):
@@ -227,6 +214,7 @@ class Singleplayer(State):
     def getName(self):
         return self.player_name
     def clear(self):
+        print("Clear")
         self.Bit = ''
         self.Button = ''
         self.counterBit = 0
@@ -241,20 +229,36 @@ class Singleplayer(State):
         self.is_ch = ch
 
     def update_special_mode(self):
-        
-        if self.is_start_spec:
-            if self.is_ch:
-                if self.mel == self.operator_state.get_answer():
-                    self.score_value += pygame.time.get_ticks() - self.current_spec_time
-                    self.score_update()
-                    self.is_spec = False
-                    self.is_start_spec = True
-                    self.point_time = self.max_time
-                    self.one_time = True
-                    self.enable_spec = False
-                    self.operator_state.disable()
-                    print("Over")
-                self.is_ch = False
+        if self.is_single:
+            if self.enable_spec:
+                if self.get_ch():
+                    if self.mel == self.operator_state.get_answer():
+                        time_out = self.current_spec_time
+                        self.score_value += int(0.2 * (self.spec_time - (pygame.time.get_ticks() - self.current_spec_time)))
+                        self.score_update()
+                        self.is_spec = False
+                        self.is_start_spec = True
+                        self.point_time = self.max_time
+                        self.one_time = True
+                        self.enable_spec = False
+                        self.operator_state.disable()
+                        print("Player Win")
+                    self.set_ch(False)
+
+        else:
+            if self.is_start_spec:
+                if self.is_ch:
+                    if self.mel == self.operator_state.get_answer():
+                        self.score_value += pygame.time.get_ticks() - self.current_spec_time
+                        self.score_update()
+                        self.is_spec = False
+                        self.is_start_spec = True
+                        self.point_time = self.max_time
+                        self.one_time = True
+                        self.enable_spec = False
+                        self.operator_state.disable()
+                        print("Over")
+                    self.is_ch = False
 
 
     def update_melody(self, time_delta):
@@ -336,19 +340,38 @@ class Singleplayer(State):
     def update(self,time_delta):
         current_time = self.max_time
         if self.is_single:
-            if self.max_time >= 0:
+            if current_time >= 0:
                 self.countdown(self.max_time)
                 if current_time == self.point_time - self.rand_num and not self.is_spec:
+                    #print("Special mode")
                     self.is_spec = True
-                if self.is_spec:
-                    self.update_spec_mode()
-                    self.update_special_mode()
-        self.update_button()
-        self.update_mel()
-        self.game_state.update_effect(self.is_ch, self.ch)
-        self.game_state.update_spec(self.is_spec)
-        self.update_timer()
-        self.game_state.update(time_delta)
+            else:
+                self.winner_text = self.main_font.render(f"Your score is {self.score_value}", 1, (255,255,255))
+                self.is_stop_game = True
+            if self.is_spec:
+                self.update_spec_mode()
+            self.update_is_spec(self.is_spec)
+            if not self.enable_spec:
+                self.update_melody(time_delta)
+            self.update_button()
+            self.update_mel()
+            self.game_state.update_effect(self.is_ch, self.ch)
+            self.game_state.update_spec(self.is_spec)
+            self.update_timer()
+            self.game_state.update(time_delta)
+            self.update_special_mode()
+#            if current_time == 118 and self.one_shot:
+#                self.mel = 128
+#                self.is_ch = True
+#                self.ch = 2
+#                self.one_shot = False
+        else:
+            self.update_button()
+            self.update_mel()
+            self.game_state.update_effect(self.is_ch, self.ch)
+            self.game_state.update_spec(self.is_spec)
+            self.update_timer()
+            self.game_state.update(time_delta)
     def update_button(self):
         button_inp = GPIO.input(self.PIN_BUTTON)
         button_clk = GPIO.input(self.PIN_CLKBUTTON)
@@ -393,15 +416,16 @@ class Singleplayer(State):
             self.booBit = True
         if self.counterBit == 8:
             self.counterBit = 0
-            #print("Bit = ",end = "")
-            #print(binaryToDecimal(int(self.Bit[::-1])))
+            print("Bit = ",end = "")
+            print(binaryToDecimal(int(self.Bit[::-1])))
             #print("------------------------------------------")
             self.mel = binaryToDecimal(int(self.Bit[::-1]))
 #            print("Bit :", self.mel)
 #            print("Bit decimal:", binaryToDecimal(int(self.mel)))
             self.Bit = ''
     def render(self,window):
-        window.blit(self.game_state_bg, (0,0))
+        if not self.is_stop_game:
+            window.blit(self.game_state_bg, (0,0))
         self.scoreboard.set_colorkey((0,0,0))
         self.score_section.blit(self.scoreboard, (self.scoreboard_pos[0],-1*self.scoreboard_pos[1]))
         # self.score_section.blit(self.scoreboard, (0,0))
@@ -458,6 +482,21 @@ class Singleplayer(State):
         # pygame.draw.line(self.game_state_bg, (0,0,255), (self.score_section_width,0),(self.score_section_width,self.H),8)
         
         # pygame.draw.line(self.game_state_bg, (255,0,0), (0,self.H),(self.gamestate_section_width,self.H),8)
+        if self.is_single:
+            if not self.is_stop_game:
+                window.blit(self.game_state_bg, (0,0))
+            else:
+                if not self.is_going_quit:
+                    self.current_timeout = pygame.time.get_ticks()
+                    self.is_going_quit = True
+                if pygame.time.get_ticks() - self.current_timeout >= 5000:
+                    print("Quit")
+                    self.endState()
+                self.winner_section.set_colorkey(0)
+                pygame.draw.rect(self.winner_section, "#111111", self.winner_window)
+                self.winner_section.blit(self.winner_text, (self.winner_section_x + self.winner_section_width//2 - self.winner_text.get_width() // 2 , self.winner_section_y + self.winner_section_height // 2))
+                window.blit(self.winner_section, (0,0))
+            
 
     def get_score(self):
         return self.score_value
@@ -475,7 +514,7 @@ class Singleplayer(State):
         if pygame.time.get_ticks() - self.prev_time >= 1000:
             self.rand_summ = random.randint(0,127)
             self.rand_div = random.randint(0,127)
-            self.rand_num = random.randint(5,10)
+            self.rand_num = random.randint(30,45)
             # print(self.rand_num)
             self.prev_time = pygame.time.get_ticks()
             # print(self.timer) 

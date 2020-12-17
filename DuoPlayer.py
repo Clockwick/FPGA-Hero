@@ -52,8 +52,8 @@ class DuoPlayer(State):
         self.player2_section = pygame.Surface((self.gamestate_section_width,self.gamestate_section_height))
         self.spec_section = pygame.Surface((self.spec_section_width,self.spec_section_height))
 
-        self.winner_section = pygame.Surface(self.resolution)
         self.winner_window = pygame.Rect((self.winner_section_x,self.winner_section_y), (self.winner_section_width,self.winner_section_height))
+        self.winner_section = pygame.Surface(self.resolution)
         self.winner = ""
         self.is_stop_game = False
         # ทำ FullScreen ด้วย

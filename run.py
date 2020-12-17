@@ -59,7 +59,7 @@ P2_PIN_CLKBUTTON = 29
 
 GPIO.setup(P2_PIN_BIT,GPIO.IN)
 GPIO.setup(P2_PIN_BUTTON, GPIO.IN)
-GPIO.setup(P2_PIN_FLAGBIT,GPIO.IN)
+GPIO.setup(P2_PIN_FLAGBIT,GPIO.IN) 
 GPIO.setup(P2_PIN_FLAG_BUTTON,GPIO.IN)
 GPIO.setup(P2_PIN_CLKBIT,GPIO.IN)
 GPIO.setup(P2_PIN_CLKBUTTON,GPIO.IN)
@@ -105,6 +105,7 @@ while True:
         counterButton2 = 0
         print("*****Player 2*****")
         print("Button = ",end = "")
+        #print(Button2[::-1])
         print(color(binaryToDecimal(int(Button2[::-1]))))
         Button2 = ''
 
@@ -143,5 +144,6 @@ while True:
         counterButton1 = 0
         print("*****Player 1*****")
         print("Button = ",end = "")
+        #print(Button1[::-1])
         print(color(binaryToDecimal(int(Button1[::-1]))))
         Button1 = ''
