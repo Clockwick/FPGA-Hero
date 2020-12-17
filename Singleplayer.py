@@ -199,7 +199,7 @@ class Singleplayer(State):
         # Calm down mode
         self.cur_time = 0
         self.timtim = True
-        self.clear_time = 2000 
+        self.clear_time = 1500 
 
 
         if game_data["main_color"] == (25,255,245):
@@ -331,6 +331,7 @@ class Singleplayer(State):
                             self.score_update()
                             self.game_state.get_melody_Q()[self.ch].deQ()
             self.is_ch = False
+            self.ch += 1
 
     def update(self,time_delta):
         current_time = self.max_time
@@ -344,6 +345,7 @@ class Singleplayer(State):
                     self.update_special_mode()
         self.update_button()
         self.update_mel()
+        self.game_state.update_effect(self.is_ch, self.ch)
         self.game_state.update_spec(self.is_spec)
         self.update_timer()
         self.game_state.update(time_delta)
@@ -375,7 +377,7 @@ class Singleplayer(State):
                 self.cur_time = pygame.time.get_ticks()
                 self.clear()
                 self.timtim = True
-                print("Clear from player ", self.player_id)
+                #print("Clear from player ", self.player_id)
         else:
             self.timtim = True
     def update_mel(self):

@@ -121,7 +121,7 @@ class MainMenuState(State):
 #        self.mainmenu_button_2P_texture=pygame.Surface((self.button_width, self.button_height))
 #        self.mainmenu_button_howtoplay_texture=pygame.Surface((self.button_width, self.button_height))
 
-        self.mainmenu_bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","mainmenu_bg.png")).convert(),(self.W,self.H))
+        self.mainmenu_bg=pygame.transform.scale(pygame.image.load(os.path.join("assets","bgmainmenu.png")).convert(),(self.W,self.H))
         #self.manager = pygame_gui.UIManager(resolution, str(os.path.join("themes","button.json")))
         self.manager = manager
         if full_screen:
@@ -133,15 +133,15 @@ class MainMenuState(State):
         self.i = 0
 
         #init Gui
-        self._1p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_button_1P_x - self.button_width // 2, self.mainmenu_button_1P_y - self.button_height // 2), (self.button_width, self.button_height)),
-                                             text='1 Player',
-                                             manager=self.manager)
-        self._2p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_button_2P_x - self.button_width // 2, self.mainmenu_button_2P_y - self.button_height // 2), (self.button_width, self.button_height)),
-                                             text='2 Player',
-                                             manager=self.manager)
-        self.howtoplay_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_howtoplay_x- self.button_width // 2, self.mainmenu_howtoplay_y  - self.button_height // 2), (self.button_width, self.button_height)),
-                                             text='How to play',
-                                             manager=self.manager)
+       # self._1p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_button_1P_x - self.button_width // 2, self.mainmenu_button_1P_y - self.button_height // 2), (self.button_width, self.button_height)),
+       #                                      text='1 Player',
+       #                                      manager=self.manager)
+       # self._2p_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_button_2P_x - self.button_width // 2, self.mainmenu_button_2P_y - self.button_height // 2), (self.button_width, self.button_height)),
+       #                                      text='2 Player',
+       #                                      manager=self.manager)
+       # self.howtoplay_btn = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((self.mainmenu_howtoplay_x- self.button_width // 2, self.mainmenu_howtoplay_y  - self.button_height // 2), (self.button_width, self.button_height)),
+       #                                      text='How to play',
+       #                                      manager=self.manager)
 
         # Make ratio with W,H
         self.mid = self.button_height // 2
@@ -150,7 +150,7 @@ class MainMenuState(State):
         self.arrow_more_half =  (2 * self.arrow_length) // 3
         self.arrow_less_half = self.arrow_length // 3
         self.start_arrow = 400 
-        self.l_m = self.mainmenu_button_1P_y - 30 
+        self.l_m = self.mainmenu_button_1P_y 
         self.pos_1 = [self.start_arrow, self.l_m + (self.mid_mid // 2)]
         self.pos_2 = [self.start_arrow, self.pos_1[1]+ self.mid_mid]
         self.pos_3 = [self.start_arrow + self.arrow_more_half, self.pos_2[1]]
@@ -184,7 +184,8 @@ class MainMenuState(State):
         #self.mainmenu_bg.blit(self.mainmenu_button_2P_texture, (self.mainmenu_button_2P_x - self.mainmenu_button_2P_texture.get_width() // 2, self.mainmenu_button_2P_y - self.mainmenu_button_2P_texture.get_height() // 2))
         #self.mainmenu_bg.blit(self.mainmenu_button_howtoplay_texture,(self.mainmenu_howtoplay_x- self.mainmenu_button_howtoplay_texture.get_width() // 2, self.mainmenu_howtoplay_y- self.mainmenu_button_howtoplay_texture.get_height() // 2))
         self.mainmenu_bg_sur.blit(self.mainmenu_bg,(0,0))
-        pygame.draw.polygon(self.mainmenu_bg_sur, (255, 255, 255), (self.pos_1, self.pos_2, self.pos_3, self.pos_4, self.pos_5, self.pos_6, self.pos_7))
+        pygame.draw.polygon(self.mainmenu_bg_sur, (255, 255, 255), (self.pos_1, self.pos_2, self.pos_3, self.pos_4, self.pos_5, self.pos_6, self.pos_7), 8)
+        pygame.draw.polygon(self.mainmenu_bg_sur, (233, 0, 254), (self.pos_1, self.pos_2, self.pos_3, self.pos_4, self.pos_5, self.pos_6, self.pos_7))
         window.blit(self.mainmenu_bg_sur, (0, 0))
 
         self.manager.draw_ui(window)
@@ -268,7 +269,7 @@ class MainMenuState(State):
                 self.current_time = pygame.time.get_ticks()
                 self.clear()
                 self.one_time = True
-                print("Clear")
+                #print("Clear")
         else:
             self.one_time = True
         button_clk1 = GPIO.input(self.P1_PIN_CLKBUTTON)

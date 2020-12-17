@@ -43,8 +43,8 @@ class DuoPlayer(State):
         # Winner surface
         self.winner_section_height = self.H // 2
         self.winner_section_width = self.W // 2
-        self.winner_section_x = self.W // 3
-        self.winner_section_y = self.H // 3
+        self.winner_section_x = self.W // 4
+        self.winner_section_y = self.H // 4
 
         self.timer_section = pygame.Surface((self.W,self.timer_section_height))
         self.background_section = pygame.Surface((self.W,self.H))
@@ -54,6 +54,7 @@ class DuoPlayer(State):
 
         self.winner_section = pygame.Surface(self.resolution)
         self.winner_window = pygame.Rect((self.winner_section_x,self.winner_section_y), (self.winner_section_width,self.winner_section_height))
+        self.winner = ""
         self.is_stop_game = False
         # ทำ FullScreen ด้วย
         if full_screen:
@@ -72,7 +73,7 @@ class DuoPlayer(State):
         
         
         # Count down timer
-        self.max_time = 120
+        self.max_time =  120 
         self.prev_time = 0
         self.point_time = self.max_time
 
@@ -146,18 +147,18 @@ class DuoPlayer(State):
         if current_time >= 0:
             self.countdown(self.max_time)
             if current_time == self.point_time - self.rand_num and not self.is_spec:
-                print("Special mode")
+                #print("Special mode")
                 self.is_spec = True
         else:
-            winner = ""
+            self.winner = ""
             if self.player_1.get_score() > self.player_2.get_score():
-                winner = self.player_1.getName()
-                self.winner_text = self.main_font.render(f"{winner} is the winner.", 1, (255,255,255))
+                self.winner = self.player_1.getName()
+                self.winner_text = self.main_font.render(f"{self.winner} is the winner.", 1, (255,255,255))
             elif self.player_1.get_score() < self.player_2.get_score():
-                winner = self.player_2.getName()
-                self.winner_text = self.main_font.render(f"{winner} is the winner.", 1, (255,255,255))
+                self.winner = self.player_2.getName()
+                self.winner_text = self.main_font.render(f"{self.winner} is the winner.", 1, (255,255,255))
             elif self.player_1.get_score() == self.player_2.get_score():
-                window = "Draw"
+                self.winner = "Draw"
                 self.winner_text = self.main_font.render("Draw", 1, (255,255,255))
             self.is_stop_game = True
         if self.is_spec:
@@ -212,7 +213,10 @@ class DuoPlayer(State):
                 self.endState()
             self.winner_section.set_colorkey(0)
             pygame.draw.rect(self.winner_section, "#111111", self.winner_window)
-            self.winner_section.blit(self.winner_text, (self.winner_section_x, self.winner_section_y))
+            if self.winner == "Draw":
+                self.winner_section.blit(self.winner_text, (self.winner_section_x + self.winner_section_width//2 - self.winner_text.get_width() // 2 , self.winner_section_y + self.winner_section_height // 2))
+            else:
+                self.winner_section.blit(self.winner_text, (self.winner_section_x + self.winner_section_width // 4, self.winner_section_y + self.winner_section_height // 2))
             window.blit(self.winner_section, (0,0))
             
         # pygame.draw.line(self.game_state_bg, (0,255,0), (0,self.timer_section_height),(self.timer_section_width,self.timer_section_height),5)
@@ -236,7 +240,7 @@ class DuoPlayer(State):
     def update_special_mode(self):
         if self.enable_spec:
             if self.player_1.get_ch():
-                print(f"Player 1 : {self.player_1.mel} compare with {self.operator_state.get_answer()}")
+                #print(f"Player 1 : {self.player_1.mel} compare with {self.operator_state.get_answer()}")
                 if self.player_1.mel == self.operator_state.get_answer():
                     time_out = self.current_spec_time
                     self.player_1.score_value += int(0.2 * (self.spec_time - (pygame.time.get_ticks() - self.current_spec_time)))
@@ -250,7 +254,7 @@ class DuoPlayer(State):
                     print("Player 1 Win")
                 self.player_1.set_ch(False)
             if self.player_2.get_ch():
-                print(f"Player 2 : {self.player_2.mel} compare with {self.operator_state.get_answer()}")
+                #print(f"Player 2 : {self.player_2.mel} compare with {self.operator_state.get_answer()}")
                 if self.player_2.mel == self.operator_state.get_answer():
                     self.player_2.score_value += int(0.2 * (self.spec_time - (pygame.time.get_ticks() - self.current_spec_time)))
                     self.player_2.score_update()

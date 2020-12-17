@@ -10,7 +10,8 @@ class Melody:
         self.short_color = game_data["short_color"]
         self.main_font = pygame.font.SysFont("Arial", self.W//20)
         self.rand_melody = self.main_font.render("    ", 1 ,(255,255,255))
-        self.melody_surface = pygame.Surface((self.rand_melody.get_width() + 20,self.rand_melody.get_height() + 20))
+        self.fol_rand_melody = self.main_font.render("    ", 1 ,(0,7,39))
+        self.melody_surface = pygame.Surface((self.rand_melody.get_width() + 15,self.rand_melody.get_height() + 15))
         # Create different
         
         self.rand_num = rand_num
@@ -33,15 +34,15 @@ class Melody:
 
     def __str__(self):
         return str(self.rand_num)
-    
 
     def update(self,time_delta):
         #self.timer = pygame.Clock.get_ticks()
         self.updateRandom(time_delta)
         self.updatePosition(time_delta)
     def updateRandom(self,time_delta):
-        self.rand_melody = self.main_font.render(str(self.rand_num), 1 , (1,1,1))
-        self.melody_surface = pygame.Surface((self.rand_melody.get_width(),self.rand_melody.get_height()))
+        self.rand_melody = self.main_font.render(str(self.rand_num), 1 , (255,255,255))
+        self.fol_rand_melody = self.main_font.render(str(self.rand_num), 1 , (0,7,39))
+        self.melody_surface = pygame.Surface((self.rand_melody.get_width() + 15,self.rand_melody.get_height() + 15))
     def updatePosition(self,time_delta):
         delta_x = self.end_x - self.start_x
         delta_y = self.end_y - self.start_y
@@ -51,15 +52,14 @@ class Melody:
         self.current_y += ratio * delta_y
     def get_end_y(self):
         return self.end_y
-            
-        
+
     def printFonts(self):
         all_font = pygame.font.get_fonts()
         print(all_font)
     def clear_surface(self):
         #dumb_block = pygame.Rect((self.current_x,self.current_y),(self.rand_melody.get_width(),self.rand_melody.get_height()))
         #pygame.draw.rect(self.parent_window, self.long_color , dumb_block)
-        self.parent_window.blit(self.melody_surface, (self.current_x, self.current_y))
+        self.parent_window.blit(self.melody_surface, (self.current_x - 15, self.current_y - 15))
 
 
         #self.dumb_surface.fill("#111111")
@@ -71,7 +71,9 @@ class Melody:
         
     def render(self,window):
         #self.rand_melody.set_colorkey(0)
-        window.blit(self.melody_surface, (self.current_x,self.current_y))
+
+        window.blit(self.melody_surface, (self.current_x - 15,self.current_y - 15))
+        window.blit(self.fol_rand_melody, (self.current_x, self.current_y - 2))
         window.blit(self.rand_melody, (self.current_x,self.current_y))
     def get_position(self):
         return (self.current_x,self.current_y)

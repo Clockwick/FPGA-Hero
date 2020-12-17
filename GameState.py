@@ -28,6 +28,7 @@ class GameState(State):
         self.BOTTOM_RECT_WIDTH,self.BOTTOM_RECT_HEIGHT = self.W * 0.2, self.H * 1/12
         self.start_pos = (4 * self.W) / 16
         self.bottom_ypos = self.H - self.BOTTOM_RECT_HEIGHT
+        self.ch = -1
    
         
         self.offset_x, self.offset_y = 335, 40
@@ -110,6 +111,12 @@ class GameState(State):
         return self.melody_generator.get_melody_Q()
     def get_front_Q(self):
         return self.melody_generator.get_front_Q()
+    def update_effect(self,is_ch,  ch):
+        if is_ch:
+            self.ch = ch
+        else:
+            self.ch = 0
+
     def render(self,window):
         
         # self.gamestate_blue_1.set_colorkey((0,0,0))
@@ -125,36 +132,76 @@ class GameState(State):
         
         window.blit(self.game_state_bg, (0, 0))
         
-        pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.tr1)
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr2) 
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr3)
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr4) 
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr5)
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr1,1)
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr2,1) 
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr3,1)
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr4,1) 
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr5,1)
-        pygame.draw.polygon(self.game_state_bg, self.PRESS_COLOR_LONG, [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
-        pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody2_start_pos,self.TOP_RECT_HEIGHT),(self.melody2_end_pos,self.bottom_ypos), (self.melody2_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody2_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
-        pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
-        pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
-        pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody5_start_pos,self.TOP_RECT_HEIGHT),(self.melody5_end_pos,self.bottom_ypos), (self.melody5_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody5_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
-        pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
-        pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody2_start_pos,self.TOP_RECT_HEIGHT),(self.melody2_end_pos,self.bottom_ypos), (self.melody2_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody2_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
-        pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
-        pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
-        pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody5_start_pos,self.TOP_RECT_HEIGHT),(self.melody5_end_pos,self.bottom_ypos), (self.melody5_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody5_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
-        pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.br1)
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br2) 
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br3) 
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br4) 
-        pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br5) 
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.br1,1)
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.br2,1) 
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.br3,1) 
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.br4,1) 
-        pygame.draw.rect(self.game_state_bg, "#ffffff", self.br5,1) 
+        if self.ch == 1:
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.tr1) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr1,3)
+            pygame.draw.polygon(self.game_state_bg, self.PRESS_COLOR_LONG, [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],3)
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.br1)
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br1,3)
+        else:
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr1) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr1,1)
+            pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody1_start_pos,self.TOP_RECT_HEIGHT),(self.melody1_end_pos,self.bottom_ypos), (self.melody1_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody1_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br1)
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br1,1)
+        if self.ch == 2:
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.tr2) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr2,3) 
+            pygame.draw.polygon(self.game_state_bg, self.PRESS_COLOR_LONG, [(self.melody2_start_pos,self.TOP_RECT_HEIGHT),(self.melody2_end_pos,self.bottom_ypos), (self.melody2_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody2_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody2_start_pos,self.TOP_RECT_HEIGHT),(self.melody2_end_pos,self.bottom_ypos), (self.melody2_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody2_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],3)
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.br2) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br2,3) 
+        else:
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr2) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr2,1) 
+            pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody2_start_pos,self.TOP_RECT_HEIGHT),(self.melody2_end_pos,self.bottom_ypos), (self.melody2_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody2_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody2_start_pos,self.TOP_RECT_HEIGHT),(self.melody2_end_pos,self.bottom_ypos), (self.melody2_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody2_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br2) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br2,1) 
+        if self.ch == 3:
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.tr3)
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr3,3)
+            pygame.draw.polygon(self.game_state_bg, self.PRESS_COLOR_LONG, [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],3)
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.br3) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br3,3) 
+        else:
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr3)
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr3,1)
+            pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody3_start_pos,self.TOP_RECT_HEIGHT),(self.melody3_end_pos,self.bottom_ypos), (self.melody3_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody3_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br3) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br3,1) 
+        if self.ch == 4:
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.tr4) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr4,3) 
+            pygame.draw.polygon(self.game_state_bg, self.PRESS_COLOR_LONG, [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],3)
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.br4) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br5,3) 
+        else:
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr4) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr4,1) 
+            pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody4_start_pos,self.TOP_RECT_HEIGHT),(self.melody4_end_pos,self.bottom_ypos), (self.melody4_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody4_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br4) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br5,1) 
+        if self.ch == 5:
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.tr5)
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr5,3)
+            pygame.draw.polygon(self.game_state_bg, self.PRESS_COLOR_LONG, [(self.melody5_start_pos,self.TOP_RECT_HEIGHT),(self.melody5_end_pos,self.bottom_ypos), (self.melody5_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody5_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody5_start_pos,self.TOP_RECT_HEIGHT),(self.melody5_end_pos,self.bottom_ypos), (self.melody5_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody5_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],3)
+            pygame.draw.rect(self.game_state_bg, self.PRESS_COLOR_SHORT, self.br5) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br4,3) 
+        else:
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.tr5)
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.tr5,1)
+            pygame.draw.polygon(self.game_state_bg, self.SUB_COLOR, [(self.melody5_start_pos,self.TOP_RECT_HEIGHT),(self.melody5_end_pos,self.bottom_ypos), (self.melody5_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody5_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ])
+            pygame.draw.polygon(self.game_state_bg, "#ffffff", [(self.melody5_start_pos,self.TOP_RECT_HEIGHT),(self.melody5_end_pos,self.bottom_ypos), (self.melody5_end_pos + self.BOTTOM_RECT_WIDTH,self.bottom_ypos), (self.melody5_start_pos + self.TOP_RECT_WIDTH,self.TOP_RECT_HEIGHT) ],1)
+            pygame.draw.rect(self.game_state_bg, self.MAIN_COLOR, self.br5) 
+            pygame.draw.rect(self.game_state_bg, "#ffffff", self.br4,1) 
         if not self.is_spec:
             self.melody_generator.render(self.game_state_bg)
     def update_spec(self, is_spec):
