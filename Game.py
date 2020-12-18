@@ -2,6 +2,7 @@
 from DuoPlayer import DuoPlayer
 from Singleplayer import Singleplayer
 from MainMenu import MainMenuState
+from Howtoplay import Howtoplay
 
 # Pygame
 import pygame
@@ -254,8 +255,9 @@ class Game:
                             self.states.top().set_going_change(False)
                             self.states.push(_2P_state)
                         if state == 3:
+                            howtoplay_state = Howtoplay(self.game_data)
                             self.states.top().set_going_change(False)
-                            print('How to play')
+                            self.states.push(howtoplay_state)
                 if states.top().getQuit():
                     states.top().endState()
                     states.pop()

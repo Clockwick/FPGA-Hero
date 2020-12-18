@@ -58,7 +58,7 @@ class Singleplayer(State):
 
         # Player section
         self.player_name = game_data["player_name"]
-        self.offset_x, self.offset_y = self.W // 5, self.H // 5
+        self.offset_x, self.offset_y = self.W // 5, self.H //5
         
         
         
@@ -191,6 +191,7 @@ class Singleplayer(State):
 
         if game_data["main_color"] == (25,255,245):
             self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scoreblue-01.png")).convert_alpha(), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
+
         else:
             self.scoreboard = pygame.transform.scale(pygame.image.load(os.path.join("assets","player,scorepurple-01.png")).convert_alpha(), (self.score_section_width - self.offset_x,self.score_section_width - self.offset_y))
         self.score_value_section = pygame.Surface((self.score_text.get_width(),self.score_text.get_height()))
@@ -214,7 +215,7 @@ class Singleplayer(State):
     def getName(self):
         return self.player_name
     def clear(self):
-        print("Clear")
+        #print("Clear")
         self.Bit = ''
         self.Button = ''
         self.counterBit = 0
@@ -416,8 +417,8 @@ class Singleplayer(State):
             self.booBit = True
         if self.counterBit == 8:
             self.counterBit = 0
-            print("Bit = ",end = "")
-            print(binaryToDecimal(int(self.Bit[::-1])))
+            #print("Bit = ",end = "")
+            #print(binaryToDecimal(int(self.Bit[::-1])))
             #print("------------------------------------------")
             self.mel = binaryToDecimal(int(self.Bit[::-1]))
 #            print("Bit :", self.mel)
@@ -426,9 +427,10 @@ class Singleplayer(State):
     def render(self,window):
         if not self.is_stop_game:
             window.blit(self.game_state_bg, (0,0))
-        self.scoreboard.set_colorkey((0,0,0))
-        self.score_section.blit(self.scoreboard, (self.scoreboard_pos[0],-1*self.scoreboard_pos[1]))
-        # self.score_section.blit(self.scoreboard, (0,0))
+        if not self.is_single:
+            self.scoreboard.set_colorkey((0,0,0))
+            self.score_section.blit(self.scoreboard, (self.scoreboard_pos[0],-1*self.scoreboard_pos[1]))
+            # self.score_section.blit(self.scoreboard, (0,0))
         self.score_section.blit(self.front_score_text, (
             (self.score_section_width // 2) - self.front_score_text.get_width()//2,
              (2 * self.score_section_height // 3) - self.player_text.get_height()//2)
@@ -466,7 +468,7 @@ class Singleplayer(State):
                         self.one_time = True
                         self.enable_spec = False
                         self.operator_state.disable()
-                        print("Over")
+                        #print("Over")
                 self.game_state_bg.blit(self.spec_section,(0,self.timer_section_height))
                 if self.operator_state.is_active():
                     self.operator_state.render(self.game_state_bg)
@@ -503,7 +505,7 @@ class Singleplayer(State):
     def set_score(self, i):
         self.score_value = i
     def score_update(self):
-        self.score_value_section.blit(self.score_text, (self.score_section_x, self.score_section_y))
+        self.score_value_section.blit(self.score_text, (self.score_section_x + 10, self.score_section_y))
         self.score_text = self.main_font.render(str(self.score_value),1,(255,255,255))
         self.score_value_section = pygame.Surface((self.score_text.get_width(),self.score_text.get_height()))
 

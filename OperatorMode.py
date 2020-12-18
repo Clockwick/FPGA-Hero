@@ -8,7 +8,7 @@ import random
 """
 class OperatorMode:
     def __init__(self, game_data):
-        self.operator_list = ["⊕", "AND", "OR"]
+        self.operator_list = ["XOR", "AND", "OR"]
         self.random_summand = random.randint(0,127)
         self.random_divider = random.randint(0,127)
         self.answer = 0
