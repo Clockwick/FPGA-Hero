@@ -1,0 +1,50 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : commandCounter.vf
+// /___/   /\     Timestamp : 12/14/2020 17:15:24
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/commandCounter.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/commandCounter.sch
+//Design Name: commandCounter
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module commandCounter(CLK_, 
+                      PB1, 
+                      PB2, 
+                      PB3, 
+                      PB4, 
+                      PB5, 
+                      clk_out);
+
+    input CLK_;
+    input PB1;
+    input PB2;
+    input PB3;
+    input PB4;
+    input PB5;
+   output clk_out;
+   
+   wire XLXN_1;
+   
+   OR5  XLXI_1 (.I0(PB5), 
+               .I1(PB4), 
+               .I2(PB3), 
+               .I3(PB2), 
+               .I4(PB1), 
+               .O(XLXN_1));
+   AND2  XLXI_2 (.I0(CLK_), 
+                .I1(XLXN_1), 
+                .O(clk_out));
+endmodule

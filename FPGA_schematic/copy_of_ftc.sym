@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="ftc">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2000-1-1T10:10:10</timestamp>
+    <attr value="FTC_HXILINX" name="VeriModel" />
+    <attr value="Copy Of Symbol With Level: HXILINX" name="Level" />
+    <attr value="FTC_HXILINX" name="VhdlModel" />
+    <attr value="2.0.0" name="Libver" />
+    <pin polarity="Input" x="0" y="-128" name="C" />
+    <pin polarity="Input" x="0" y="-32" name="CLR" />
+    <pin polarity="Input" x="0" y="-256" name="T" />
+    <pin polarity="Output" x="384" y="-256" name="Q" />
+    <graph>
+        <rect width="256" x="64" y="-320" height="256" />
+        <line x2="64" y1="-32" y2="-32" x1="192" />
+        <line x2="192" y1="-64" y2="-32" x1="192" />
+        <line x2="64" y1="-128" y2="-144" x1="80" />
+        <line x2="80" y1="-112" y2="-128" x1="64" />
+        <line x2="320" y1="-256" y2="-256" x1="384" />
+        <line x2="64" y1="-256" y2="-256" x1="0" />
+        <line x2="64" y1="-32" y2="-32" x1="0" />
+        <line x2="64" y1="-128" y2="-128" x1="0" />
+        <text style="alignment:RIGHT;fontsize:24;fontname:Arial" x="304" y="-256">Q</text>
+        <text style="fontsize:24;fontname:Arial" x="80" y="-256">T</text>
+        <text style="alignment:CENTER;fontsize:24;fontname:Arial" x="192" y="-80">CLR</text>
+        <text style="alignment:CENTER;fontsize:24;fontname:Arial" x="96" y="-128">C</text>
+        <text style="alignment:CENTER;fontsize:56;fontname:Arial" x="188" y="-360">FTC</text>
+    </graph>
+</symbol>

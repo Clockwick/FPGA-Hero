@@ -1,0 +1,71 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Dec 09 22:44:24 2020
+# Process ID: 5048
+# Log file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P82 [get_ports LED1_P82]
+endgroup
+startgroup
+set_property package_pin P67 [get_ports LED7_P67]
+endgroup
+startgroup
+set_property package_pin P45 [get_ports PB1_P45]
+endgroup
+startgroup
+set_property package_pin P123 [get_ports OSC_P123]
+endgroup
+startgroup
+set_property package_pin P45 [get_ports PB1_P45]
+endgroup
+startgroup
+set_property package_pin P46 [get_ports PB2_P46]
+endgroup
+startgroup
+set_property package_pin P47 [get_ports PB3_P47]
+endgroup
+startgroup
+set_property package_pin P48 [get_ports PB4_P48]
+endgroup
+startgroup
+set_property package_pin P51 [get_ports PB5_P51]
+endgroup
+startgroup
+set_property package_pin P66 [get_ports SW0_P66]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports SW1_P62]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports SW2_P61]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports SW3_P56]
+endgroup
+startgroup
+set_property package_pin P58 [get_ports SW4_P58]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports SW5_P57]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports SW5_P57]
+endgroup
+set_property package_pin "" [get_ports [list  SW6_P56]]
+set_property is_loc_fixed false [get_ports [list  PB4_P48]]
+startgroup
+set_property package_pin P59 [get_ports SW3_P56]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports SW6_P56]
+endgroup
+startgroup
+set_property package_pin P55 [get_ports SW7_P55]
+endgroup
+save_constraints

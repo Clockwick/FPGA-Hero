@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Mon Dec 14 17:26:39 2020
+# Process ID: 19300
+# Log file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_4/planAhead.log
+# Journal file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pa.fromNetlist.tcl

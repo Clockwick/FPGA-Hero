@@ -1,0 +1,32 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : mainRX.vf
+// /___/   /\     Timestamp : 12/12/2020 00:30:54
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.sch
+//Design Name: mainRX
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module mainRX(bin, 
+              bcd);
+
+    input [7:0] bin;
+   output [11:0] bcd;
+   
+   
+   bin8bcd  XLXI_40 (.bin(bin[7:0]), 
+                    .bcd(bcd[11:0]));
+endmodule

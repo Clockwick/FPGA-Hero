@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym bcdto7 C:/Users/Admin/Desktop/xilinx_workspace/labRandomNumber0-9Buzzer/bcdto7.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bcdto7.sym 

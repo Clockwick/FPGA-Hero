@@ -1,0 +1,2 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym bitCommand C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bitCommand.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bitCommand.sym 
+sch2sym -intstyle ise -family spartan6 -w -refsym bitCommand C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bitCommand.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bitCommand.sym 

@@ -1,0 +1,139 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : PreState.vf
+// /___/   /\     Timestamp : 12/16/2020 15:37:19
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/PreState.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/PreState.sch
+//Design Name: PreState
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FTC_HXILINX_PreState(Q, C, CLR, T);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              T;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+  
+   
+ 
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else if(T)
+          Q <= !Q;
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module PreState(PB1, 
+                PB2, 
+                PB3, 
+                PB4, 
+                PB5, 
+                reset_, 
+                bbbbbb, 
+                b1, 
+                b2, 
+                b3, 
+                b4, 
+                b5);
+
+    input PB1;
+    input PB2;
+    input PB3;
+    input PB4;
+    input PB5;
+    input reset_;
+   output bbbbbb;
+   output b1;
+   output b2;
+   output b3;
+   output b4;
+   output b5;
+   
+   wire XLXN_11;
+   wire XLXN_12;
+   wire XLXN_13;
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_24;
+   wire b1_DUMMY;
+   wire b2_DUMMY;
+   wire b3_DUMMY;
+   wire b4_DUMMY;
+   wire b5_DUMMY;
+   wire bbbbbb_DUMMY;
+   
+   assign bbbbbb = bbbbbb_DUMMY;
+   assign b1 = b1_DUMMY;
+   assign b2 = b2_DUMMY;
+   assign b3 = b3_DUMMY;
+   assign b4 = b4_DUMMY;
+   assign b5 = b5_DUMMY;
+   (* HU_SET = "XLXI_1_30" *) 
+   FTC_HXILINX_PreState  XLXI_1 (.C(XLXN_12), 
+                                .CLR(reset_), 
+                                .T(XLXN_24), 
+                                .Q(b2_DUMMY));
+   (* HU_SET = "XLXI_2_31" *) 
+   FTC_HXILINX_PreState  XLXI_2 (.C(XLXN_13), 
+                                .CLR(reset_), 
+                                .T(XLXN_24), 
+                                .Q(b3_DUMMY));
+   (* HU_SET = "XLXI_3_32" *) 
+   FTC_HXILINX_PreState  XLXI_3 (.C(XLXN_14), 
+                                .CLR(reset_), 
+                                .T(XLXN_24), 
+                                .Q(b4_DUMMY));
+   (* HU_SET = "XLXI_4_33" *) 
+   FTC_HXILINX_PreState  XLXI_4 (.C(XLXN_15), 
+                                .CLR(reset_), 
+                                .T(XLXN_24), 
+                                .Q(b5_DUMMY));
+   (* HU_SET = "XLXI_5_34" *) 
+   FTC_HXILINX_PreState  XLXI_5 (.C(XLXN_11), 
+                                .CLR(reset_), 
+                                .T(XLXN_24), 
+                                .Q(b1_DUMMY));
+   AND2  XLXI_6 (.I0(bbbbbb_DUMMY), 
+                .I1(PB1), 
+                .O(XLXN_11));
+   AND2  XLXI_7 (.I0(bbbbbb_DUMMY), 
+                .I1(PB2), 
+                .O(XLXN_12));
+   AND2  XLXI_8 (.I0(bbbbbb_DUMMY), 
+                .I1(PB3), 
+                .O(XLXN_13));
+   AND2  XLXI_9 (.I0(bbbbbb_DUMMY), 
+                .I1(PB4), 
+                .O(XLXN_14));
+   AND2  XLXI_10 (.I0(PB5), 
+                 .I1(bbbbbb_DUMMY), 
+                 .O(XLXN_15));
+   VCC  XLXI_12 (.P(XLXN_24));
+   NOR5  XLXI_20 (.I0(b5_DUMMY), 
+                 .I1(b4_DUMMY), 
+                 .I2(b3_DUMMY), 
+                 .I3(b2_DUMMY), 
+                 .I4(b1_DUMMY), 
+                 .O(bbbbbb_DUMMY));
+endmodule

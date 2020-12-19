@@ -1,0 +1,108 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : hexA.vf
+// /___/   /\     Timestamp : 12/12/2020 00:30:57
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/hexA.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/hexA.sch
+//Design Name: hexA
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module OR6_HXILINX_hexA (O, I0, I1, I2, I3, I4, I5);
+    
+
+   output O;
+
+   input I0;
+   input I1;
+   input I2;
+   input I3;
+   input I4;
+   input I5;
+
+assign O = (I0 || I1 || I2 || I3 || I4 || I5);
+
+endmodule
+`timescale 1ns / 1ps
+
+module hexA(a, 
+            b, 
+            c, 
+            d, 
+            AA);
+
+    input a;
+    input b;
+    input c;
+    input d;
+   output AA;
+   
+   wire XLXN_9;
+   wire XLXN_10;
+   wire XLXN_11;
+   wire XLXN_12;
+   wire XLXN_13;
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_23;
+   wire XLXN_25;
+   wire XLXN_26;
+   wire XLXN_27;
+   wire XLXN_28;
+   wire XLXN_29;
+   
+   AND2  XLXI_1 (.I0(XLXN_10), 
+                .I1(XLXN_9), 
+                .O(XLXN_23));
+   AND2  XLXI_2 (.I0(b), 
+                .I1(XLXN_11), 
+                .O(XLXN_25));
+   AND3  XLXI_3 (.I0(a), 
+                .I1(c), 
+                .I2(XLXN_12), 
+                .O(XLXN_26));
+   AND2  XLXI_4 (.I0(b), 
+                .I1(c), 
+                .O(XLXN_27));
+   AND3  XLXI_5 (.I0(XLXN_14), 
+                .I1(XLXN_13), 
+                .I2(d), 
+                .O(XLXN_28));
+   AND2  XLXI_6 (.I0(XLXN_15), 
+                .I1(d), 
+                .O(XLXN_29));
+   INV  XLXI_7 (.I(c), 
+               .O(XLXN_9));
+   INV  XLXI_8 (.I(a), 
+               .O(XLXN_10));
+   INV  XLXI_9 (.I(d), 
+               .O(XLXN_11));
+   INV  XLXI_10 (.I(d), 
+                .O(XLXN_12));
+   INV  XLXI_11 (.I(c), 
+                .O(XLXN_13));
+   INV  XLXI_12 (.I(b), 
+                .O(XLXN_14));
+   INV  XLXI_13 (.I(a), 
+                .O(XLXN_15));
+   (* HU_SET = "XLXI_15_58" *) 
+   OR6_HXILINX_hexA  XLXI_15 (.I0(XLXN_29), 
+                             .I1(XLXN_28), 
+                             .I2(XLXN_27), 
+                             .I3(XLXN_26), 
+                             .I4(XLXN_25), 
+                             .I5(XLXN_23), 
+                             .O(AA));
+endmodule

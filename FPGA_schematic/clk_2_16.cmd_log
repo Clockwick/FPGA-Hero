@@ -1,0 +1,2 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym clk_2_16 C:/Users/Admin/Desktop/symbolDigi/clock/clk_2_16.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_2_16.sym 
+sch2sym -intstyle ise -family spartan6 -w -refsym clk_2_16 C:/Users/Admin/Desktop/symbolDigi/clock/clk_2_16.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_2_16.sym 

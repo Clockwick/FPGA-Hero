@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym clk_ii22ii C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_ii22ii.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_ii22ii.sym 

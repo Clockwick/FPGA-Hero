@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Admin\Desktop\xilinx_workspace\DigitalProject\mainCircuit.ncd
+OUTFILE=C:\Users\Admin\Desktop\xilinx_workspace\DigitalProject\mainCircuit.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\Users\Admin\Desktop\xilinx_workspace\DigitalProject
+LICENSE=WebPack
+USER_INFO=__0_0_0

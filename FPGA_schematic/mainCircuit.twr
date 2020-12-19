@@ -1,0 +1,236 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr
+mainCircuit.pcf -ucf pinANA.ucf
+
+Design file:              mainCircuit.ncd
+Physical constraint file: mainCircuit.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock blue_P11 to Pad
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                      |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination           |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+LED7_P67              |        13.295(R)|      SLOW  |         7.632(R)|      FAST  |XLXI_222/XLXN_13  |   0.000|
+P75                   |        12.142(R)|      SLOW  |         7.181(R)|      FAST  |XLXI_222/XLXN_13  |   0.000|
+P78                   |        11.180(R)|      SLOW  |         6.622(R)|      FAST  |XLXI_222/XLXN_13  |   0.000|
+P79                   |        11.237(R)|      SLOW  |         6.712(R)|      FAST  |XLXI_222/XLXN_13  |   0.000|
+buttonOut_K3_7_P138   |        12.690(R)|      SLOW  |         7.218(R)|      FAST  |XLXI_222/XLXN_13  |   0.000|
+cclk_K3_15_P124       |        11.297(R)|      SLOW  |         6.753(R)|      FAST  |XLXI_1/XLXN_13    |   0.000|
+clkbb_K3_11_P132      |        10.088(R)|      SLOW  |         5.893(R)|      FAST  |XLXI_222/XLXN_13  |   0.000|
+flag_K3_9_P134        |        11.561(R)|      SLOW  |         6.968(R)|      FAST  |XLXI_1/XLXN_13    |   0.000|
+flag_output_K3_13_P127|        10.925(R)|      SLOW  |         6.412(R)|      FAST  |XLXI_222/XLXN_13  |   0.000|
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock green_K1_13_P7 to Pad
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                      |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination           |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+LED7_P67              |        14.267(R)|      SLOW  |         8.194(R)|      FAST  |XLXI_222/XLXN_11  |   0.000|
+P75                   |        13.114(R)|      SLOW  |         7.852(R)|      FAST  |XLXI_222/XLXN_11  |   0.000|
+P78                   |        11.989(R)|      SLOW  |         7.153(R)|      FAST  |XLXI_222/XLXN_11  |   0.000|
+P79                   |        12.080(R)|      SLOW  |         7.274(R)|      FAST  |XLXI_222/XLXN_11  |   0.000|
+buttonOut_K3_7_P138   |        13.662(R)|      SLOW  |         7.780(R)|      FAST  |XLXI_222/XLXN_11  |   0.000|
+cclk_K3_15_P124       |        10.446(R)|      SLOW  |         6.064(R)|      FAST  |XLXI_1/XLXN_11    |   0.000|
+clkbb_K3_11_P132      |        10.985(R)|      SLOW  |         6.512(R)|      FAST  |XLXI_222/XLXN_11  |   0.000|
+flag_K3_9_P134        |        10.705(R)|      SLOW  |         6.276(R)|      FAST  |XLXI_1/XLXN_11    |   0.000|
+flag_output_K3_13_P127|        11.754(R)|      SLOW  |         6.996(R)|      FAST  |XLXI_222/XLXN_11  |   0.000|
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock red_P14 to Pad
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                      |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination           |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+LED7_P67              |        13.214(R)|      SLOW  |         7.578(R)|      FAST  |XLXI_222/XLXN_14  |   0.000|
+P75                   |        12.061(R)|      SLOW  |         6.957(R)|      FAST  |XLXI_222/XLXN_14  |   0.000|
+P78                   |        11.095(R)|      SLOW  |         6.400(R)|      FAST  |XLXI_222/XLXN_14  |   0.000|
+P79                   |        11.507(R)|      SLOW  |         6.765(R)|      FAST  |XLXI_222/XLXN_14  |   0.000|
+buttonOut_K3_7_P138   |        12.609(R)|      SLOW  |         7.164(R)|      FAST  |XLXI_222/XLXN_14  |   0.000|
+cclk_K3_15_P124       |        11.315(R)|      SLOW  |         6.658(R)|      FAST  |XLXI_1/XLXN_14    |   0.000|
+clkbb_K3_11_P132      |        10.179(R)|      SLOW  |         5.768(R)|      FAST  |XLXI_222/XLXN_14  |   0.000|
+flag_K3_9_P134        |        11.549(R)|      SLOW  |         6.862(R)|      FAST  |XLXI_1/XLXN_14    |   0.000|
+flag_output_K3_13_P127|        10.855(R)|      SLOW  |         6.181(R)|      FAST  |XLXI_222/XLXN_14  |   0.000|
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock white_P16 to Pad
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                      |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination           |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+LED7_P67              |        13.435(R)|      SLOW  |         7.600(R)|      FAST  |XLXI_222/XLXN_15  |   0.000|
+P75                   |        12.222(R)|      SLOW  |         7.153(R)|      FAST  |XLXI_222/XLXN_15  |   0.000|
+P78                   |        11.539(R)|      SLOW  |         6.809(R)|      FAST  |XLXI_222/XLXN_15  |   0.000|
+P79                   |        11.282(R)|      SLOW  |         6.680(R)|      FAST  |XLXI_222/XLXN_15  |   0.000|
+buttonOut_K3_7_P138   |        12.830(R)|      SLOW  |         7.186(R)|      FAST  |XLXI_222/XLXN_15  |   0.000|
+cclk_K3_15_P124       |        10.803(R)|      SLOW  |         6.248(R)|      FAST  |XLXI_1/XLXN_15    |   0.000|
+clkbb_K3_11_P132      |        10.288(R)|      SLOW  |         5.979(R)|      FAST  |XLXI_222/XLXN_15  |   0.000|
+flag_K3_9_P134        |        10.822(R)|      SLOW  |         6.370(R)|      FAST  |XLXI_1/XLXN_15    |   0.000|
+flag_output_K3_13_P127|        10.860(R)|      SLOW  |         6.295(R)|      FAST  |XLXI_222/XLXN_15  |   0.000|
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock yellow_P9 to Pad
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                      |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination           |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+LED7_P67              |        13.963(R)|      SLOW  |         8.048(R)|      FAST  |XLXI_222/XLXN_12  |   0.000|
+P75                   |        12.810(R)|      SLOW  |         7.551(R)|      FAST  |XLXI_222/XLXN_12  |   0.000|
+P78                   |        11.878(R)|      SLOW  |         6.999(R)|      FAST  |XLXI_222/XLXN_12  |   0.000|
+P79                   |        11.981(R)|      SLOW  |         7.128(R)|      FAST  |XLXI_222/XLXN_12  |   0.000|
+buttonOut_K3_7_P138   |        13.358(R)|      SLOW  |         7.634(R)|      FAST  |XLXI_222/XLXN_12  |   0.000|
+cclk_K3_15_P124       |        11.744(R)|      SLOW  |         7.082(R)|      FAST  |XLXI_1/XLXN_12    |   0.000|
+clkbb_K3_11_P132      |        10.773(R)|      SLOW  |         6.259(R)|      FAST  |XLXI_222/XLXN_12  |   0.000|
+flag_K3_9_P134        |        12.283(R)|      SLOW  |         7.516(R)|      FAST  |XLXI_1/XLXN_12    |   0.000|
+flag_output_K3_13_P127|        11.604(R)|      SLOW  |         6.775(R)|      FAST  |XLXI_222/XLXN_12  |   0.000|
+----------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock OSC_P123
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+OSC_P123       |    1.424|         |         |    0.895|
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock blue_P11
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+blue_P11       |    0.931|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock green_K1_13_P7
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+green_K1_13_P7 |    0.994|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock red_P14
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+red_P14        |    0.899|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock white_P16
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+white_P16      |    0.886|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock yellow_P9
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+yellow_P9      |    0.985|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+DIP8_P99       |a_P41          |   14.782|
+DIP8_P99       |b_P40          |   14.843|
+DIP8_P99       |c_P35          |   14.799|
+DIP8_P99       |d_P34          |   14.931|
+DIP8_P99       |e_P32          |   14.324|
+DIP8_P99       |f_P29          |   15.536|
+DIP8_P99       |g_P27          |   15.775|
+SW0__P66       |a_P41          |    8.946|
+SW0__P66       |b_P40          |    9.007|
+SW0__P66       |c_P35          |    8.963|
+SW0__P66       |d_P34          |    9.095|
+SW0__P66       |e_P32          |    8.488|
+SW0__P66       |f_P29          |    9.700|
+SW0__P66       |g_P27          |    9.939|
+SW1__P62       |a_P41          |   10.597|
+SW1__P62       |b_P40          |   10.658|
+SW1__P62       |c_P35          |   10.614|
+SW1__P62       |d_P34          |   10.746|
+SW1__P62       |e_P32          |   10.139|
+SW1__P62       |f_P29          |   11.351|
+SW1__P62       |g_P27          |   11.590|
+SW2__P61       |a_P41          |   11.642|
+SW2__P61       |b_P40          |   11.703|
+SW2__P61       |c_P35          |   11.659|
+SW2__P61       |d_P34          |   11.791|
+SW2__P61       |e_P32          |   11.184|
+SW2__P61       |f_P29          |   12.396|
+SW2__P61       |g_P27          |   12.635|
+SW3__P59       |a_P41          |   12.290|
+SW3__P59       |b_P40          |   12.351|
+SW3__P59       |c_P35          |   12.307|
+SW3__P59       |d_P34          |   12.439|
+SW3__P59       |e_P32          |   11.832|
+SW3__P59       |f_P29          |   13.044|
+SW3__P59       |g_P27          |   13.283|
+SW4__P58       |a_P41          |   12.086|
+SW4__P58       |b_P40          |   12.147|
+SW4__P58       |c_P35          |   12.103|
+SW4__P58       |d_P34          |   12.235|
+SW4__P58       |e_P32          |   11.628|
+SW4__P58       |f_P29          |   12.840|
+SW4__P58       |g_P27          |   13.079|
+SW5__P57       |a_P41          |   12.029|
+SW5__P57       |b_P40          |   12.090|
+SW5__P57       |c_P35          |   12.046|
+SW5__P57       |d_P34          |   12.178|
+SW5__P57       |e_P32          |   11.571|
+SW5__P57       |f_P29          |   12.783|
+SW5__P57       |g_P27          |   13.022|
+SW6__P56       |a_P41          |   11.826|
+SW6__P56       |b_P40          |   11.887|
+SW6__P56       |c_P35          |   11.843|
+SW6__P56       |d_P34          |   11.975|
+SW6__P56       |e_P32          |   11.368|
+SW6__P56       |f_P29          |   12.580|
+SW6__P56       |g_P27          |   12.819|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Dec 16 22:58:00 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4571 MB
+
+
+

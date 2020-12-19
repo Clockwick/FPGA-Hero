@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family spartan6 -w -refsym muxx C:/Users/Admin/Desktop/xilinx_workspace/lab08add/muxx.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/muxx.sym 

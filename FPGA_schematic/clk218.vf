@@ -1,0 +1,228 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : clk218.vf
+// /___/   /\     Timestamp : 12/12/2020 01:14:05
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk218.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk218.sch
+//Design Name: clk218
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FJKC_HXILINX_clk218(Q, C, CLR, J, K);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              J;
+   input              K;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+
+
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else
+        begin
+           if(!J)
+           begin
+              if(K)
+              Q <= 1'b0;
+           end
+           else
+           begin
+              if(!K)
+              Q <= 1'b1;
+              else 
+              Q <= !Q;
+           end
+        end
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module clk218(clk_in, 
+              clk_outt);
+
+    input clk_in;
+   output clk_outt;
+   
+   wire clk_out;
+   wire XLXN_1;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_5;
+   wire XLXN_6;
+   wire XLXN_7;
+   wire XLXN_48;
+   wire XLXN_49;
+   wire XLXN_50;
+   wire XLXN_51;
+   wire XLXN_61;
+   wire XLXN_62;
+   wire XLXN_63;
+   wire XLXN_64;
+   wire XLXN_65;
+   wire XLXN_66;
+   wire XLXN_67;
+   wire XLXN_68;
+   wire XLXN_73;
+   wire XLXN_74;
+   wire XLXN_75;
+   wire XLXN_76;
+   wire XLXN_77;
+   wire XLXN_78;
+   wire XLXN_79;
+   wire XLXN_80;
+   wire XLXN_81;
+   wire XLXN_82;
+   wire XLXN_83;
+   wire XLXN_84;
+   wire XLXN_86;
+   wire XLXN_87;
+   wire XLXN_88;
+   wire XLXN_89;
+   
+   (* HU_SET = "XLXI_1_22" *) 
+   FJKC_HXILINX_clk218  XLXI_1 (.C(clk_in), 
+                               .CLR(XLXN_4), 
+                               .J(XLXN_1), 
+                               .K(XLXN_1), 
+                               .Q(XLXN_3));
+   (* HU_SET = "XLXI_2_23" *) 
+   FJKC_HXILINX_clk218  XLXI_2 (.C(XLXN_3), 
+                               .CLR(XLXN_4), 
+                               .J(XLXN_1), 
+                               .K(XLXN_1), 
+                               .Q(clk_out));
+   GND  XLXI_3 (.G(XLXN_4));
+   VCC  XLXI_4 (.P(XLXN_1));
+   (* HU_SET = "XLXI_5_24" *) 
+   FJKC_HXILINX_clk218  XLXI_5 (.C(clk_out), 
+                               .CLR(XLXN_7), 
+                               .J(XLXN_5), 
+                               .K(XLXN_5), 
+                               .Q(XLXN_6));
+   (* HU_SET = "XLXI_6_25" *) 
+   FJKC_HXILINX_clk218  XLXI_6 (.C(XLXN_6), 
+                               .CLR(XLXN_7), 
+                               .J(XLXN_5), 
+                               .K(XLXN_5), 
+                               .Q(XLXN_49));
+   GND  XLXI_7 (.G(XLXN_7));
+   VCC  XLXI_8 (.P(XLXN_5));
+   (* HU_SET = "XLXI_9_26" *) 
+   FJKC_HXILINX_clk218  XLXI_9 (.C(XLXN_49), 
+                               .CLR(XLXN_51), 
+                               .J(XLXN_48), 
+                               .K(XLXN_48), 
+                               .Q(XLXN_50));
+   (* HU_SET = "XLXI_10_27" *) 
+   FJKC_HXILINX_clk218  XLXI_10 (.C(XLXN_50), 
+                                .CLR(XLXN_51), 
+                                .J(XLXN_48), 
+                                .K(XLXN_48), 
+                                .Q(XLXN_62));
+   GND  XLXI_11 (.G(XLXN_51));
+   VCC  XLXI_37 (.P(XLXN_48));
+   (* HU_SET = "XLXI_46_28" *) 
+   FJKC_HXILINX_clk218  XLXI_46 (.C(XLXN_62), 
+                                .CLR(XLXN_64), 
+                                .J(XLXN_61), 
+                                .K(XLXN_61), 
+                                .Q(XLXN_63));
+   (* HU_SET = "XLXI_47_29" *) 
+   FJKC_HXILINX_clk218  XLXI_47 (.C(XLXN_63), 
+                                .CLR(XLXN_64), 
+                                .J(XLXN_61), 
+                                .K(XLXN_61), 
+                                .Q(XLXN_66));
+   GND  XLXI_48 (.G(XLXN_64));
+   VCC  XLXI_49 (.P(XLXN_61));
+   (* HU_SET = "XLXI_50_30" *) 
+   FJKC_HXILINX_clk218  XLXI_50 (.C(XLXN_66), 
+                                .CLR(XLXN_68), 
+                                .J(XLXN_65), 
+                                .K(XLXN_65), 
+                                .Q(XLXN_67));
+   (* HU_SET = "XLXI_51_31" *) 
+   FJKC_HXILINX_clk218  XLXI_51 (.C(XLXN_67), 
+                                .CLR(XLXN_68), 
+                                .J(XLXN_65), 
+                                .K(XLXN_65), 
+                                .Q(XLXN_74));
+   GND  XLXI_52 (.G(XLXN_68));
+   VCC  XLXI_53 (.P(XLXN_65));
+   (* HU_SET = "XLXI_58_32" *) 
+   FJKC_HXILINX_clk218  XLXI_58 (.C(XLXN_74), 
+                                .CLR(XLXN_76), 
+                                .J(XLXN_73), 
+                                .K(XLXN_73), 
+                                .Q(XLXN_75));
+   (* HU_SET = "XLXI_59_33" *) 
+   FJKC_HXILINX_clk218  XLXI_59 (.C(XLXN_75), 
+                                .CLR(XLXN_76), 
+                                .J(XLXN_73), 
+                                .K(XLXN_73), 
+                                .Q(XLXN_78));
+   GND  XLXI_60 (.G(XLXN_76));
+   VCC  XLXI_61 (.P(XLXN_73));
+   (* HU_SET = "XLXI_62_34" *) 
+   FJKC_HXILINX_clk218  XLXI_62 (.C(XLXN_78), 
+                                .CLR(XLXN_80), 
+                                .J(XLXN_77), 
+                                .K(XLXN_77), 
+                                .Q(XLXN_79));
+   (* HU_SET = "XLXI_63_35" *) 
+   FJKC_HXILINX_clk218  XLXI_63 (.C(XLXN_79), 
+                                .CLR(XLXN_80), 
+                                .J(XLXN_77), 
+                                .K(XLXN_77), 
+                                .Q(XLXN_82));
+   GND  XLXI_64 (.G(XLXN_80));
+   VCC  XLXI_65 (.P(XLXN_77));
+   (* HU_SET = "XLXI_66_36" *) 
+   FJKC_HXILINX_clk218  XLXI_66 (.C(XLXN_82), 
+                                .CLR(XLXN_84), 
+                                .J(XLXN_81), 
+                                .K(XLXN_81), 
+                                .Q(XLXN_83));
+   (* HU_SET = "XLXI_67_37" *) 
+   FJKC_HXILINX_clk218  XLXI_67 (.C(XLXN_83), 
+                                .CLR(XLXN_84), 
+                                .J(XLXN_81), 
+                                .K(XLXN_81), 
+                                .Q(XLXN_89));
+   GND  XLXI_68 (.G(XLXN_84));
+   VCC  XLXI_69 (.P(XLXN_81));
+   (* HU_SET = "XLXI_70_38" *) 
+   FJKC_HXILINX_clk218  XLXI_70 (.C(XLXN_89), 
+                                .CLR(XLXN_88), 
+                                .J(XLXN_86), 
+                                .K(XLXN_86), 
+                                .Q(XLXN_87));
+   (* HU_SET = "XLXI_71_39" *) 
+   FJKC_HXILINX_clk218  XLXI_71 (.C(XLXN_87), 
+                                .CLR(XLXN_88), 
+                                .J(XLXN_86), 
+                                .K(XLXN_86), 
+                                .Q(clk_outt));
+   GND  XLXI_72 (.G(XLXN_88));
+   VCC  XLXI_73 (.P(XLXN_86));
+endmodule

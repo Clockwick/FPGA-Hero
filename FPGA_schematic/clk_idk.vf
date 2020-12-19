@@ -1,0 +1,143 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : clk_idk.vf
+// /___/   /\     Timestamp : 12/16/2020 22:57:19
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_idk.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_idk.sch
+//Design Name: clk_idk
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FJKC_HXILINX_clk_idk(Q, C, CLR, J, K);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              J;
+   input              K;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+
+
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else
+        begin
+           if(!J)
+           begin
+              if(K)
+              Q <= 1'b0;
+           end
+           else
+           begin
+              if(!K)
+              Q <= 1'b1;
+              else 
+              Q <= !Q;
+           end
+        end
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module clk_ii22ii_MUSER_clk_idk(clk_iiiiin, 
+                                outttttttt);
+
+    input clk_iiiiin;
+   output outttttttt;
+   
+   wire XLXN_188;
+   wire XLXN_189;
+   wire XLXN_190;
+   wire XLXN_192;
+   wire XLXN_193;
+   
+   (* HU_SET = "XLXI_140_0" *) 
+   FJKC_HXILINX_clk_idk  XLXI_140 (.C(XLXN_190), 
+                                  .CLR(XLXN_189), 
+                                  .J(XLXN_188), 
+                                  .K(XLXN_188), 
+                                  .Q(XLXN_192));
+   (* HU_SET = "XLXI_141_1" *) 
+   FJKC_HXILINX_clk_idk  XLXI_141 (.C(XLXN_193), 
+                                  .CLR(XLXN_189), 
+                                  .J(XLXN_188), 
+                                  .K(XLXN_188), 
+                                  .Q(outttttttt));
+   GND  XLXI_142 (.G(XLXN_189));
+   VCC  XLXI_143 (.P(XLXN_188));
+   INV  XLXI_144 (.I(clk_iiiiin), 
+                 .O(XLXN_190));
+   INV  XLXI_145 (.I(XLXN_192), 
+                 .O(XLXN_193));
+endmodule
+`timescale 1ns / 1ps
+
+module clk_idk(clk_ini, 
+               clk_ououo);
+
+    input clk_ini;
+   output clk_ououo;
+   
+   wire XLXN_190;
+   wire XLXN_227;
+   wire XLXN_228;
+   wire XLXN_229;
+   wire XLXN_230;
+   wire XLXN_231;
+   wire XLXN_232;
+   wire XLXN_233;
+   wire XLXN_251;
+   wire XLXN_252;
+   wire XLXN_253;
+   wire XLXN_255;
+   wire XLXN_256;
+   
+   (* HU_SET = "XLXI_140_2" *) 
+   FJKC_HXILINX_clk_idk  XLXI_140 (.C(XLXN_190), 
+                                  .CLR(XLXN_253), 
+                                  .J(XLXN_251), 
+                                  .K(XLXN_251), 
+                                  .Q(XLXN_252));
+   GND  XLXI_142 (.G(XLXN_253));
+   VCC  XLXI_143 (.P(XLXN_251));
+   INV  XLXI_144 (.I(XLXN_256), 
+                 .O(XLXN_190));
+   clk_ii22ii_MUSER_clk_idk  XLXI_146 (.clk_iiiiin(clk_ini), 
+                                      .outttttttt(XLXN_227));
+   clk_ii22ii_MUSER_clk_idk  XLXI_147 (.clk_iiiiin(XLXN_227), 
+                                      .outttttttt(XLXN_228));
+   clk_ii22ii_MUSER_clk_idk  XLXI_148 (.clk_iiiiin(XLXN_228), 
+                                      .outttttttt(XLXN_229));
+   clk_ii22ii_MUSER_clk_idk  XLXI_149 (.clk_iiiiin(XLXN_229), 
+                                      .outttttttt(XLXN_230));
+   clk_ii22ii_MUSER_clk_idk  XLXI_150 (.clk_iiiiin(XLXN_230), 
+                                      .outttttttt(XLXN_231));
+   clk_ii22ii_MUSER_clk_idk  XLXI_151 (.clk_iiiiin(XLXN_231), 
+                                      .outttttttt(XLXN_232));
+   clk_ii22ii_MUSER_clk_idk  XLXI_152 (.clk_iiiiin(XLXN_232), 
+                                      .outttttttt(XLXN_233));
+   clk_ii22ii_MUSER_clk_idk  XLXI_153 (.clk_iiiiin(XLXN_233), 
+                                      .outttttttt(XLXN_255));
+   clk_ii22ii_MUSER_clk_idk  XLXI_161 (.clk_iiiiin(XLXN_252), 
+                                      .outttttttt(clk_ououo));
+   clk_ii22ii_MUSER_clk_idk  XLXI_162 (.clk_iiiiin(XLXN_255), 
+                                      .outttttttt(XLXN_256));
+endmodule

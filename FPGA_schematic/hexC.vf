@@ -1,0 +1,80 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : hexC.vf
+// /___/   /\     Timestamp : 12/12/2020 00:30:58
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/hexC.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/hexC.sch
+//Design Name: hexC
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module hexC(a, 
+            b, 
+            c, 
+            d, 
+            cc);
+
+    input a;
+    input b;
+    input c;
+    input d;
+   output cc;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_5;
+   wire XLXN_6;
+   wire XLXN_17;
+   wire XLXN_18;
+   wire XLXN_19;
+   wire XLXN_20;
+   wire XLXN_21;
+   
+   AND2  XLXI_1 (.I0(a), 
+                .I1(XLXN_3), 
+                .O(XLXN_18));
+   AND2  XLXI_2 (.I0(a), 
+                .I1(XLXN_4), 
+                .O(XLXN_19));
+   AND2  XLXI_3 (.I0(XLXN_2), 
+                .I1(XLXN_1), 
+                .O(XLXN_17));
+   AND2  XLXI_4 (.I0(c), 
+                .I1(XLXN_5), 
+                .O(XLXN_20));
+   AND2  XLXI_5 (.I0(XLXN_6), 
+                .I1(d), 
+                .O(XLXN_21));
+   INV  XLXI_6 (.I(d), 
+               .O(XLXN_1));
+   INV  XLXI_7 (.I(b), 
+               .O(XLXN_2));
+   INV  XLXI_8 (.I(d), 
+               .O(XLXN_3));
+   INV  XLXI_9 (.I(b), 
+               .O(XLXN_4));
+   INV  XLXI_10 (.I(d), 
+                .O(XLXN_5));
+   INV  XLXI_11 (.I(c), 
+                .O(XLXN_6));
+   OR5  XLXI_12 (.I0(XLXN_21), 
+                .I1(XLXN_20), 
+                .I2(XLXN_19), 
+                .I3(XLXN_18), 
+                .I4(XLXN_17), 
+                .O(cc));
+endmodule

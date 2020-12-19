@@ -1,0 +1,120 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : bitCommand.vf
+// /___/   /\     Timestamp : 12/16/2020 16:20:39
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bitCommand.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bitCommand.sch
+//Design Name: bitCommand
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FTC_HXILINX_bitCommand(Q, C, CLR, T);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              T;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+  
+   
+ 
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else if(T)
+          Q <= !Q;
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module bitCommand(b1, 
+                  b2, 
+                  b3, 
+                  b4, 
+                  b5, 
+                  b6, 
+                  b7, 
+                  cle_ar, 
+                  clk_ini, 
+                  q1, 
+                  q2, 
+                  q3, 
+                  q4, 
+                  q5, 
+                  q6, 
+                  q7);
+
+    input b1;
+    input b2;
+    input b3;
+    input b4;
+    input b5;
+    input b6;
+    input b7;
+    input cle_ar;
+    input clk_ini;
+   output q1;
+   output q2;
+   output q3;
+   output q4;
+   output q5;
+   output q6;
+   output q7;
+   
+   wire cllk;
+   
+   (* HU_SET = "XLXI_1_30" *) 
+   FTC_HXILINX_bitCommand  XLXI_1 (.C(cllk), 
+                                  .CLR(cle_ar), 
+                                  .T(b1), 
+                                  .Q(q1));
+   (* HU_SET = "XLXI_2_31" *) 
+   FTC_HXILINX_bitCommand  XLXI_2 (.C(cllk), 
+                                  .CLR(cle_ar), 
+                                  .T(b2), 
+                                  .Q(q2));
+   (* HU_SET = "XLXI_3_32" *) 
+   FTC_HXILINX_bitCommand  XLXI_3 (.C(cllk), 
+                                  .CLR(cle_ar), 
+                                  .T(b3), 
+                                  .Q(q3));
+   (* HU_SET = "XLXI_4_33" *) 
+   FTC_HXILINX_bitCommand  XLXI_4 (.C(cllk), 
+                                  .CLR(cle_ar), 
+                                  .T(b4), 
+                                  .Q(q4));
+   (* HU_SET = "XLXI_5_34" *) 
+   FTC_HXILINX_bitCommand  XLXI_5 (.C(cllk), 
+                                  .CLR(cle_ar), 
+                                  .T(b5), 
+                                  .Q(q5));
+   (* HU_SET = "XLXI_6_35" *) 
+   FTC_HXILINX_bitCommand  XLXI_6 (.C(cllk), 
+                                  .CLR(cle_ar), 
+                                  .T(b6), 
+                                  .Q(q6));
+   (* HU_SET = "XLXI_7_36" *) 
+   FTC_HXILINX_bitCommand  XLXI_7 (.C(cllk), 
+                                  .CLR(cle_ar), 
+                                  .T(b7), 
+                                  .Q(q7));
+   INV  XLXI_14 (.I(clk_ini), 
+                .O(cllk));
+endmodule

@@ -1,0 +1,765 @@
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+sch2sym -intstyle ise -family spartan6 -w -refsym mainCircuit C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.sym 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -uc mainRX.ucf -uc C:/Users/Admin/Desktop/symbolDigi/clock/clk_2_16.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+sch2sym -intstyle ise -family spartan6 -w -refsym mainCircuit C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.sch C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.sym 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+xst -intstyle ise -ifn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.xst" -ofn "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pinANA.ucf -p xc6slx9-tqg144-3 mainCircuit.ngc mainCircuit.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mainCircuit_map.ncd mainCircuit.ngd mainCircuit.pcf 
+par -w -intstyle ise -ol high -mt off mainCircuit_map.ncd mainCircuit.ncd mainCircuit.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mainCircuit.twx mainCircuit.ncd -o mainCircuit.twr mainCircuit.pcf -ucf pinANA.ucf 
+bitgen -intstyle ise -f mainCircuit.ut mainCircuit.ncd 
+xst -intstyle ise -ifn "C:/Users/Admin/FPGA-Hero/Digital/mainCircuit.xst" -ofn "C:/Users/Admin/FPGA-Hero/Digital/mainCircuit.syr" 

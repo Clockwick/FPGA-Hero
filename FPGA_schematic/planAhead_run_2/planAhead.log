@@ -1,0 +1,129 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Thu Dec 10 20:40:21 2020
+# Process ID: 18136
+# Log file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pa.fromNetlist.tcl
+# create_project -name DigitalProject -dir "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_2" -part xc6slx9tqg144-3
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject} }
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf' to fileset 'constrs_1'
+# add_files [list {pinANA.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {mainRX.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {C:/Users/Admin/Desktop/symbolDigi/clock/clk_2_16.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx9tqg144-3
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mainCircuit.ngc ...
+WARNING:NetListWriters:298 - No output is written to mainCircuit.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file mainCircuit.edif ...
+ngc2edif: Total memory usage is 4314544 kilobytes
+
+Parsing EDIF File [./planAhead_run_2/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+Finished Parsing EDIF File [./planAhead_run_2/DigitalProject.data/cache/mainCircuit_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf]
+Finished Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf]
+Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_117' at site P55, Illegal to place instance XLXI_117 on site P55 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:4]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_116' at site P56, Illegal to place instance XLXI_116 on site P56 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:5]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_118' at site P57, Illegal to place instance XLXI_118 on site P57 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:6]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_119' at site P58, Illegal to place instance XLXI_119 on site P58 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:7]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_120' at site P59, Illegal to place instance XLXI_120 on site P59 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:8]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_121' at site P61, Illegal to place instance XLXI_121 on site P61 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:9]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_122' at site P62, Illegal to place instance XLXI_122 on site P62 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:10]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_124' at site P66, Illegal to place instance XLXI_124 on site P66 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:11]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'bcd[0]' [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:12]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_114/Mmux_U4bcd11' at site P81, Illegal to place instance XLXI_114/Mmux_U4bcd11 on site P81 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:13]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_114/Mmux_U4bcd31' at site P79, Illegal to place instance XLXI_114/Mmux_U4bcd31 on site P79 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:14]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_114/Mmux_U4bcd21' at site P80, Illegal to place instance XLXI_114/Mmux_U4bcd21 on site P80 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:15]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_114/Mmux_U4bcd42' at site P78, Illegal to place instance XLXI_114/Mmux_U4bcd42 on site P78 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:16]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_114/Mmux_U6bcd11' at site P75, Illegal to place instance XLXI_114/Mmux_U6bcd11 on site P75 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:17]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_114/Mmux_U6bcd31' at site P67, Illegal to place instance XLXI_114/Mmux_U6bcd31 on site P67 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:18]
+CRITICAL WARNING: [Constraints 18-5] Cannot loc instance 'XLXI_114/Mmux_U6bcd21' at site P74, Illegal to place instance XLXI_114/Mmux_U6bcd21 on site P74 [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf:19]
+Finished Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainRX.ucf]
+Parsing UCF File [C:/Users/Admin/Desktop/symbolDigi/clock/clk_2_16.ucf]
+Finished Parsing UCF File [C:/Users/Admin/Desktop/symbolDigi/clock/clk_2_16.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  BUFGP => BUFGP (IBUF, BUFG): 1 instances
+
+Phase 0 | Netlist Checksum: b2394cc7
+link_design: Time (s): elapsed = 00:00:07 . Memory (MB): peak = 653.543 ; gain = 166.777
+set_property package_pin "" [get_ports [list  a_P41]]
+startgroup
+set_property package_pin P41 [get_ports a_P41]
+endgroup
+startgroup
+set_property package_pin P40 [get_ports b_P40]
+endgroup
+startgroup
+set_property package_pin P35 [get_ports c_P35]
+endgroup
+startgroup
+set_property package_pin P140 [get_ports clk_out_k3_5_P140]
+endgroup
+startgroup
+set_property package_pin P44 [get_ports common0_P44]
+endgroup
+set_property package_pin "" [get_ports [list  common2_P33]]
+startgroup
+set_property package_pin P43 [get_ports common1_P43]
+endgroup
+startgroup
+set_property package_pin P33 [get_ports common2_P33]
+endgroup
+startgroup
+set_property package_pin P30 [get_ports common3_P30]
+endgroup
+startgroup
+set_property package_pin P34 [get_ports d_P34]
+endgroup
+startgroup
+set_property package_pin P32 [get_ports e_P32]
+endgroup
+startgroup
+set_property package_pin P29 [get_ports f_P29]
+endgroup
+startgroup
+set_property package_pin P27 [get_ports g_P27]
+endgroup
+save_constraints
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject\planAhead_pid18136.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Thu Dec 10 21:51:15 2020...
+INFO: [Common 17-83] Releasing license: PlanAhead

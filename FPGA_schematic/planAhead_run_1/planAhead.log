@@ -1,0 +1,119 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Wed Dec 09 22:44:24 2020
+# Process ID: 5048
+# Log file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pa.fromHdl.tcl
+# create_project -name DigitalProject -dir "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/planAhead_run_1" -part xc6slx9tqg144-3
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {PreState.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {encoder5_3.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {counter1HZ.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {commandCounter.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {mainCircuit.vf}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top mainCircuit $srcset
+# add_files [list {pinANA.ucf}] -fileset [get_property constrset [current_run]]
+# add_files [list {mainCircuit.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx9tqg144-3
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.vf" into library work
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf]
+Finished Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/pinANA.ucf]
+Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.ucf]
+Finished Parsing UCF File [C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/mainCircuit.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: ebf8645f
+open_rtl_design: Time (s): elapsed = 00:00:06 . Memory (MB): peak = 640.672 ; gain = 183.145
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P82 [get_ports LED1_P82]
+endgroup
+startgroup
+set_property package_pin P67 [get_ports LED7_P67]
+endgroup
+startgroup
+set_property package_pin P45 [get_ports PB1_P45]
+endgroup
+startgroup
+set_property package_pin P123 [get_ports OSC_P123]
+endgroup
+startgroup
+set_property package_pin P45 [get_ports PB1_P45]
+endgroup
+startgroup
+set_property package_pin P46 [get_ports PB2_P46]
+endgroup
+startgroup
+set_property package_pin P47 [get_ports PB3_P47]
+endgroup
+startgroup
+set_property package_pin P48 [get_ports PB4_P48]
+endgroup
+startgroup
+set_property package_pin P51 [get_ports PB5_P51]
+endgroup
+startgroup
+set_property package_pin P66 [get_ports SW0_P66]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports SW1_P62]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports SW2_P61]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports SW3_P56]
+endgroup
+startgroup
+set_property package_pin P58 [get_ports SW4_P58]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports SW5_P57]
+endgroup
+startgroup
+set_property package_pin P57 [get_ports SW5_P57]
+endgroup
+set_property package_pin "" [get_ports [list  SW6_P56]]
+set_property is_loc_fixed false [get_ports [list  PB4_P48]]
+startgroup
+set_property package_pin P59 [get_ports SW3_P56]
+endgroup
+startgroup
+set_property package_pin P56 [get_ports SW6_P56]
+endgroup
+startgroup
+set_property package_pin P55 [get_ports SW7_P55]
+endgroup
+save_constraints

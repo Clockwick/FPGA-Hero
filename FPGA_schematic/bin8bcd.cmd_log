@@ -1,0 +1,1 @@
+vhdtdtfi -prj DigitalProject -o C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/bin8bcd.tfi -module bin8bcd -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work TestBCD.vhd 

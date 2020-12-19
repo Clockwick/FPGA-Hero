@@ -1,0 +1,19 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "bin[7]" LOC = P55;
+NET "bin[6]" LOC = P56;
+NET "bin[5]" LOC = P57;
+NET "bin[4]" LOC = P58;
+NET "bin[3]" LOC = P59;
+NET "bin[2]" LOC = P61;
+NET "bin[1]" LOC = P62;
+NET "bin[0]" LOC = P66;
+NET "bcd[0]" LOC = P82;
+NET "bcd[1]" LOC = P81;
+NET "bcd[3]" LOC = P79;
+NET "bcd[2]" LOC = P80;
+NET "bcd[4]" LOC = P78;
+NET "bcd[5]" LOC = P75;
+NET "bcd[7]" LOC = P67;
+NET "bcd[6]" LOC = P74;

@@ -1,0 +1,90 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : clk_ii22ii.vf
+// /___/   /\     Timestamp : 12/16/2020 03:21:50
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_ii22ii.vf -w C:/Users/Admin/Desktop/xilinx_workspace/DigitalProject/clk_ii22ii.sch
+//Design Name: clk_ii22ii
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FJKC_HXILINX_clk_ii22ii(Q, C, CLR, J, K);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              J;
+   input              K;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+
+
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else
+        begin
+           if(!J)
+           begin
+              if(K)
+              Q <= 1'b0;
+           end
+           else
+           begin
+              if(!K)
+              Q <= 1'b1;
+              else 
+              Q <= !Q;
+           end
+        end
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module clk_ii22ii(clk_iiiiin, 
+                  outttttttt);
+
+    input clk_iiiiin;
+   output outttttttt;
+   
+   wire XLXN_188;
+   wire XLXN_189;
+   wire XLXN_190;
+   wire XLXN_192;
+   wire XLXN_193;
+   
+   (* HU_SET = "XLXI_140_26" *) 
+   FJKC_HXILINX_clk_ii22ii  XLXI_140 (.C(XLXN_190), 
+                                     .CLR(XLXN_189), 
+                                     .J(XLXN_188), 
+                                     .K(XLXN_188), 
+                                     .Q(XLXN_192));
+   (* HU_SET = "XLXI_141_27" *) 
+   FJKC_HXILINX_clk_ii22ii  XLXI_141 (.C(XLXN_193), 
+                                     .CLR(XLXN_189), 
+                                     .J(XLXN_188), 
+                                     .K(XLXN_188), 
+                                     .Q(outttttttt));
+   GND  XLXI_142 (.G(XLXN_189));
+   VCC  XLXI_143 (.P(XLXN_188));
+   INV  XLXI_144 (.I(clk_iiiiin), 
+                 .O(XLXN_190));
+   INV  XLXI_145 (.I(XLXN_192), 
+                 .O(XLXN_193));
+endmodule
